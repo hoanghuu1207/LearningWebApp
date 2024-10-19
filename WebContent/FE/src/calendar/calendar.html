@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Hẹn</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #343a40;
+        }
+
+        .table th {
+            background-color: #535456;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #86898c;
+            border: none;
+
+        }
+
+        .btn-primary:hover {
+            background-color: #e9ecef;
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container my-5">
+        <h2 class="mb-4">Cuộc Hẹn Sắp Tới</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Thời gian</th>
+                    <th>Người tham gia</th>
+                    <th>Nội dung</th>
+                </tr>
+            </thead>
+            <tbody id="appointment-list">
+                <tr>
+                    <td>2024-10-20 10:00</td>
+                    <td>Nguyễn Văn Hoàng</td>
+                    <td>Lớp TA</td>
+                </tr>
+                <tr>
+                    <td>2024-10-22 14:00</td>
+                    <td>Trần Thị Mỹ Duyên</td>
+                    <td>LSD</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="mt-5 mb-4">Tạo lịch hẹn</h2>
+        <form id="appointment-form">
+            <div class="form-group">
+                <label for="datetime">Thời Gian</label>
+                <input type="datetime-local" class="form-control" id="datetime" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Người tham gia</label>
+                <input type="email" class="form-control" id="name" required placeholder="Nhập email của người tham gia">
+            </div>
+            <div class="form-group">
+                <label for="content">Nội dung</label>
+                <textarea class="form-control" id="content" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Thêm Cuộc Hẹn</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('appointment-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const datetime = document.getElementById('datetime').value;
+            const name = document.getElementById('name').value;
+            const content = document.getElementById('content').value;
+
+            const newRow = `<tr>
+                                <td>${datetime}</td>
+                                <td>${name}</td>
+                                <td>${content}</td>
+                            </tr>`;
+            document.getElementById('appointment-list').innerHTML += newRow;
+
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

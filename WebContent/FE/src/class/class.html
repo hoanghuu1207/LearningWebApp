@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/class.css">
+    <style>
+        .subnav {
+            list-style-type: none;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f4f4f4;
+            min-width: 100px;
+            padding: 0;
+            z-index: 9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+
+        .subnav li {
+            display: block;
+        }
+
+        .subnav a {
+            color: black;
+            padding: 0 12px;
+            line-height: 38px;
+            text-decoration: none;
+        }
+
+        .subnav>li:hover>a {
+            display: block;
+            color: white;
+            background-color: gray;
+        }
+
+        .dropdown {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .dropdown.active .subnav {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid m-5 p-0">
+        <div class="d-flex flex-wrap">
+            <!-- Hộp lớp 1 -->
+            <div class="fixed-box">
+                <div class="container-md class-box p-3 border rounded shadow-lg text-center" id="class-box"
+                    onclick="openClass()">
+                    <div
+                        class="container class-avatar bg-secondary text-white p-3 rounded justify-content-center align-content-center">
+                        <strong>GV</strong>
+                    </div>
+
+                    <div class="container class-box-bottom d-flex align-items-center mt-2">
+                        <div class="class_name_box small m-1">
+                            Group_KI2_2023-2024_Lập Trình Nâng Cao
+                        </div>
+                        <i class="ti-more-alt small dropdown">
+                            <ul class="subnav">
+                                <li><a href="#">Xóa</a></li>
+                                <li><a href="#">Ẩn</a></li>
+                                <li><a href="#">...</a></li>
+                            </ul>
+                        </i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hộp lớp 2 -->
+            <div class="fixed-box">
+                <div class="container-md class-box p-3 border rounded shadow-lg text-center">
+                    <div
+                        class="container class-avatar bg-secondary text-white p-3 rounded justify-content-center align-content-center">
+                        <strong>GV</strong>
+                    </div>
+
+                    <div class="container class-box-bottom d-flex align-items-center mt-2">
+                        <div class="class-name small m-1">
+                            Group_CỐ VẤN HỌC TẬP 2022 vaf hgsdjk hjk ghjkl jkl ghjkl
+                        </div>
+                        <i class="ti-more-alt small dropdown">
+                            <ul class="subnav">
+                                <li><a href="#">Xóa</a></li>
+                                <li><a href="#">Ẩn</a></li>                                
+                                <li><a href="#">...</a></li>
+                            </ul>
+                        </i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hộp lớp 3 -->
+            <div class="fixed-box">
+                <div class="container-md class-box p-3 border rounded shadow-lg text-center">
+                    <div
+                        class="container class-avatar bg-secondary text-white p-3 rounded justify-content-center align-content-center">
+                        <strong>GV</strong>
+                    </div>
+
+                    <div class="container class-box-bottom d-flex align-items-center mt-2">
+                        <div class="class-name small m-1">
+                            Group_CỐ VẤN HỌC TẬP 2022 vaf hgsdjk hjk ghjkl jkl ghjkl
+                        </div>
+                        <i class="ti-more-alt small dropdown">
+                            <ul class="subnav">
+                                <li><a href="#">Xóa</a></li>
+                                <li><a href="#">Tùy chọn khác</a></li>
+                            </ul>
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script >
+        // Đảm bảo script được chạy sau khi DOM đã tải xong
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            dropdowns.forEach((dropdown) => {
+                dropdown.addEventListener('click', function (event) {
+                    event.stopPropagation(); // Ngăn không cho sự kiện lan ra ngoài
+                    this.classList.toggle('active');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                dropdowns.forEach((dropdown) => {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+            });
+        });
+        function openClass() {
+                const className = document.querySelector('.class_name_box').textContent;
+
+                localStorage.setItem('className', className);
+
+                window.location.href = "class_detail.html";
+            }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    /* overflow:hidden; */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    /* text-align: center; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+}
+
+li {
+    list-style: none;
+}
+
+#nav{
+    display: inline-block;
+}
+
+#nav,
+.subnav {
+    list-style-type: none;
+}
+
+
+#nav>li {
+    display: inline-block;
+    position: relative;
+}
+
+#nav>li>a {
+    /* margin: 0 15px; */
+    text-decoration: none;
+    padding: 0 24px;
+    color: white;
+    display: block;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+.subnav>li:hover>a,
+#nav>li:hover>a {
+    display: block;
+    color: black;
+    background-color: gray;
+}
+
+
+ .subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-color: #f4f4f4;
+    min-width: 160px;
+    padding: 0;
+    z-index: 9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+
+
+
+
+
+.subnav a {
+    color: black;
+    padding: 0 12px;
+    line-height: 38px;
+    text-decoration: none;
+
+}
+
+.subnav li{
+    display: block;
+} 
+.icon.active .subnav {
+    display: block;
+}
+
+main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+section {
+    margin: 50px 0;
+    align-items: center;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.meeting-btn,
+.join-btn {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.meeting-btn:hover {
+    background-color: #357ae8;
+}
+
+.join-btn {
+    padding: 10px;
+    background-color: #f4f4f4;
+    color: darkgray;
+    border-radius: 3px;
+}
+
+.join-btn.active {
+    background-color: transparent;
+    color: #4285f4;
+    cursor: pointer;
+}
+
+.join-btn.active:hover {
+    color: #0d64c1;
+    background-color: #e6ecf1;
+}
+
+.input_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input_container .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.input_container input[type="text"] {
+    width: 300px;
+    padding: 10px 10px 10px 40px;
+    border: 2px solid #0066ff;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #666;
+    top: 50%;
+}
+
+input[type="text"]::placeholder {
+    font-size: 16px;
+    color: #666;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #0066ff;
+}
+
+header .icon{
+    color: white;
+    font-size: 20px;
+
+}
+
+.ti-bell{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: block;
+    padding: 0 16px;
+    float: right;
+    line-height: 50px;
+}
+
+.ti-bell:hover{
+    cursor: pointer;
+    color: grey;
+}
+
+.notification-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #f4f4f4;
+    min-width: 240px;
+    padding: 0;
+    z-index: 9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.notification-menu li {
+    padding: 10px;
+    display: block;
+}
+
+.notification-menu a {
+    color: black;
+    /* padding: 10px; */
+    line-height: 38px;
+    text-decoration: none;
+}
+
+.notification-menu li:hover{
+    background-color: #ddd;
+    display: block;
+    
+}
+
+.icon .active.notification-menu {
+    display: block;
+}
+
+iframe#content {
+    height: calc(100vh - 100px);
+    border: none;
+    overflow-y:scroll;
+    padding: 0;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+.icon-btn {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: black;
+
+}

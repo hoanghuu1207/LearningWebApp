@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Interface</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <style>
+        *{
+            overflow: hidden;
+
+        }
+
+        .meeting-screen {
+            background-color: #1c1c1c;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bottom-bar {
+            background-color: #2c2c2c;
+            width: 70%;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+
+        .chat-sidebar {
+            background-color: #f8f9fa;
+            height: 100%;
+            width: 300px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-sidebar>label{
+            position: absolute;
+            bottom: 60px;
+        }
+
+
+        .chat-input {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            bottom: 10px;
+        }
+
+        .chat-input input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            width: 240px;
+        }
+/* 
+        .popup-invite {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            max-width: 400px;
+            text-align: center;
+        } */
+
+        .icon-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            color: black;
+
+        }
+
+        .icon-muted {
+            background-color: rgb(234, 22, 22);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="meeting-screen container-fluid">
+        <!-- Meeting popup invite
+        <div class="popup-invite">
+            <h5>Cuộc họp đã sẵn sàng</h5>
+            <button class="btn btn-primary mb-3">Thêm người khác</button>
+            <p>
+                Hoặc chia sẻ đường liên kết của cuộc họp này:<br>
+                <a href="#">meet.google.com/ejq-pmet-bbz</a>
+            </p>
+        </div> -->
+
+        <!-- Bottom bar -->
+        <div class="bottom-bar">
+            <img src="/assets/fonts/myself-icons/ic_mute.png" alt="" id="ic_mute" class="icon-btn icon-muted">
+            <img src="/assets/fonts/myself-icons/ic_mute_camera.png" alt="" id="ic_mute" class="icon-btn icon-muted">
+
+        </div>
+
+        <!-- Chat sidebar -->
+        <div class="chat-sidebar p-2">
+            <i class="ti-angle-left icon-btn"></i>
+            <h5>Tin nhắn trong cuộc gọi</h5>
+            <label>
+                <input type="checkbox" checked> Cho phép mọi người nhắn tin
+            </label>
+
+            <div class="chat-input">
+                <input type="text" placeholder="Gửi tin nhắn" >
+                <img src="/assets/fonts/myself-icons/ic_send_message.png" alt="" class = "icon-btn">
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

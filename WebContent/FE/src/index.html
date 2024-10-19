@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Classroom</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+
+</head>
+
+<body>
+    <header>
+        <ul id="nav">
+            <li><a href="./content_main.html" target="content">Trang chủ</a></li>
+            <li><a href="#">Tài khoản</a></li>
+            <li><a href="/src/class/class.html" target="content">Lớp học</a></li>
+            <li><a href="/src/calendar/calendar.html" target="content">Lịch hẹn</a></li>
+        </ul>
+
+        <div class="icon">
+            <i class="ti-bell" id="bell-icon"></i>
+            <ul class="notification-menu" id="notification-menu">
+                <li><a href="#">Thông báo 1</a></li>
+                <li><a href="#">Thông báo 2</a></li>
+                <li><a href="#">Thông báo 3</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        
+        <iframe class="container-fluid" id="content" name="content">
+            
+        </iframe>
+    </main>
+    <footer>
+        <p>&copy; PBL4</p>
+    </footer>
+
+    <!-- <script src="/assets/js/script.js"></script> -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const bellIcon = document.getElementById("bell-icon");
+            const notificationMenu = document.getElementById("notification-menu");
+
+            bellIcon.addEventListener("click", function (event) {
+                event.stopPropagation();
+                notificationMenu.classList.toggle("active");
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!bellIcon.contains(event.target)) {
+                    notificationMenu.classList.remove("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
