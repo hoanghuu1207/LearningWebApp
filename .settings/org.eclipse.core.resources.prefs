@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/controller/clients/UserForgotPasswordController.java=UTF-8
+encoding//src/controller/clients/UserRegisterController.java=UTF-8
+encoding//src/dao/impl/UserDAO.java=UTF-8
+encoding//src/helper/EmailSender.java=UTF-8
+encoding//src/service/impl/UserService.java=UTF-8
+encoding//src/validate/clients/ForgotPasswordValidate.java=UTF-8
+encoding//src/validate/clients/LoginValidate.java=UTF-8
+encoding//src/validate/clients/OtpPasswordValidate.java=UTF-8
+encoding//src/validate/clients/RegisterValidate.java=UTF-8
+encoding//src/validate/clients/ResetPasswordValidate.java=UTF-8
