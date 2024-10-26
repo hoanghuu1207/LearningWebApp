@@ -109,6 +109,7 @@ public class UserDAO implements DAOInterface<UserModel> {
 
 	public UserModel getUserByTokenUser(String tokenUser) {
 		UserModel userModel = null;
+
 		try {
 			Connection con = JDBCUtil.getConnection();
 

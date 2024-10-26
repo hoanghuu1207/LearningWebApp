@@ -9,14 +9,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="/views/clients/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/views/clients/assets/css/style.css">
-    <link rel="stylesheet" href="/views/clients/assets/css/login.css">
-
-    <script>
-//        function login(event) {
-//            event.preventDefault(); // Ngăn chặn hành động mặc định của form
-//            window.location.href = "../index.html"; // Chuyển hướng đến trang chính
-        }
-    </script>
+    <link rel="stylesheet" href="/vsiews/clients/assets/css/login.css">
 </head>
 
 <body class="mt-0 overflow-hidden vh-100 d-flex justify-content-center align-items-center p-4">

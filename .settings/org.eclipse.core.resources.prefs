@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebContent/views/clients/partials/header.jsp=UTF-8
 encoding//src/controller/clients/UserForgotPasswordController.java=UTF-8
 encoding//src/controller/clients/UserRegisterController.java=UTF-8
 encoding//src/dao/impl/UserDAO.java=UTF-8

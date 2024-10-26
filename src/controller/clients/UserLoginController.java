@@ -54,7 +54,7 @@ public class UserLoginController extends HttpServlet {
 			Cookie cookie = new Cookie("tokenUser", userModel.getTokenUser());
 
 			cookie.setPath("/");
-			cookie.setMaxAge(120); // set coookie trong 12h
+			cookie.setMaxAge(1 * 60 * 60); // set coookie trong 1h
 
 			resp.addCookie(cookie);
 
