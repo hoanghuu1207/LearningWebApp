@@ -29,22 +29,22 @@ li {
     list-style: none;
 }
 
-#nav{
+.nav{
     display: inline-block;
 }
 
-#nav,
+.nav,
 .subnav {
     list-style-type: none;
 }
 
 
-#nav>li {
+.nav>li {
     display: inline-block;
     position: relative;
 }
 
-#nav>li>a {
+.nav>li>a {
     /* margin: 0 15px; */
     text-decoration: none;
     padding: 0 24px;
@@ -54,12 +54,12 @@ li {
     font-size: 20px;
 }
 
-#nav li:hover .subnav {
+.nav li:hover .subnav {
     display: block;
 }
 
 .subnav>li:hover>a,
-#nav>li:hover>a {
+.nav>li:hover>a {
     display: block;
     color: black;
     background-color: gray;

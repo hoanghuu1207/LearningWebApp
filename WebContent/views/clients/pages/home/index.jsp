@@ -51,16 +51,6 @@ body {
 </head>
 
 <body>
-	<nav class="navbar navbar-light bg-white border-bottom">
-		<div class="container-fluid d-flex justify-content-end">
-			<ul class="nav">
-				<li class="nav-item"><a class="nav-link text-body"
-					href="/user/login">Đăng nhập</a></li>
-				<li class="nav-item"><a class="nav-link text-body"
-					href="/user/register">Đăng ký</a></li>
-			</ul>
-		</div>
-	</nav>
 
 	<section class="mt-0 ">
 		<!-- Top Banner -->

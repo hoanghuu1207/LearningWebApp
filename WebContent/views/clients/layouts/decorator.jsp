@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><sitemesh:write property="title"/></title>
+<title><sitemesh:write property="title" /></title>
 <link rel="stylesheet"
 	href="/views/clients/assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="/views/clients/assets/css/style.css">
@@ -23,20 +23,20 @@ footer {
 </style>
 
 </head>
-  <body>
+<body>
 	<header>
-	<%@ include file="../partials/header.jsp"%>
+		<%@ include file="../partials/header.jsp"%>
 	</header>
 
-    <div class="mainBody">
-      <sitemesh:write property="body"/>
-    </div>
+	<div class="mainBody">
+		<sitemesh:write property="body" />
+	</div>
 
-		<footer>
-	<%@ include file="../partials/footer.jsp"%>
+	<footer>
+		<%@ include file="../partials/footer.jsp"%>
 	</footer>
-	
-		<script>
+
+	<script>
 		document.addEventListener("DOMContentLoaded", function() {
 			const bellIcon = document.getElementById("bell-icon");
 			const notificationMenu = document
@@ -60,5 +60,5 @@ footer {
 	<script src="/views/clients/assets/js/vendor.bundle.js"></script>
 
 	<script src="/views/clients/assets/js/theme.bundle.js"></script>
-  </body>
+</body>
 </html>
