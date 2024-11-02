@@ -1,59 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-
+    
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Homepage Intro</title>
-<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">-->
-<style>
-body {
-	font-family: Arial, sans-serif;
-	background-color: #f4f4f4;
-	color: #333;
-	overflow-y: scroll;
-}
-
-.swiper-slide {
-	background-size: cover;
-	background-position: center;
-}
-
-.title-small {
-	font-size: 1.25rem;
-}
-
-.display-3 {
-	font-size: 2.5rem;
-}
-
-.btn-psuedo {
-	background-color: rgba(255, 255, 255, 0.1);
-	border: 1px solid white;
-	padding: 0.75rem 1.5rem;
-}
-
-.text-outline-dark {
-	text-shadow: 1px 1px 2px black;
-}
-
-.nav-item {
-	display: block;
-}
-
-.nav-item:hover {
-	background-color: rgb(215, 214, 214);
-	border-radius: 5px;
-}
-</style>
+	<title>Homepage</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			color: #333;
+			overflow-y: scroll;
+		}
+		
+		.swiper-slide {
+			background-size: cover;
+			background-position: center;
+		}
+		
+		.title-small {
+			font-size: 1.25rem;
+		}
+		
+		.display-3 {
+			font-size: 2.5rem;
+		}
+		
+		.btn-psuedo {
+			background-color: rgba(255, 255, 255, 0.1);
+			border: 1px solid white;
+			padding: 0.75rem 1.5rem;
+		}
+		
+		.text-outline-dark {
+			text-shadow: 1px 1px 2px black;
+		}
+		
+		.nav-item {
+			display: block;
+		}
+		
+		.nav-item:hover {
+			background-color: rgb(215, 214, 214);
+			border-radius: 5px;
+		}
+		</style>
 </head>
 
-<body>
 
+<body>
 	<section class="mt-0 ">
-		<!-- Top Banner -->
 		<div class="container-fluid p-0">
 			<div id="carouselExample" class="carousel slide"
 				data-bs-ride="carousel" data-bs-interval="5000">
@@ -89,7 +84,6 @@ body {
 				</button>
 			</div>
 		</div>
-		<!--/ Top Banner-->
 		<div class="container my-5">
 			<div class="row g-4 align-items-center">
 				<div class="col-lg-6" data-aos="fade-right">
@@ -123,5 +117,4 @@ body {
 		</div>
 	</section>
 </body>
-
 </html>

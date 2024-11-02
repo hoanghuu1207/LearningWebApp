@@ -4,37 +4,29 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><sitemesh:write property="title" /></title>
-<link rel="stylesheet"
-	href="/views/clients/assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="/views/clients/assets/css/style.css">
-<link rel="stylesheet"
-	href="/views/clients/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
-
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
-
-<style>
-footer {
-	position: relative;
-}
-</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><sitemesh:write property="title"/></title>
+	<link rel="stylesheet"
+		href="/views/clients/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/views/clients/assets/css/style.css">
+	<!-- <link rel="stylesheet"
+		href="/views/clients/assets/fonts/themify-icons-font/themify-icons/themify-icons.css"> -->
+	
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+	<sitemesh:write property="head"/>
 
 </head>
 <body>
-	<header>
-		<%@ include file="../partials/header.jsp"%>
-	</header>
+	<%@ include file="../partials/header.jsp"%>
+	<!-- <sitemesh:write property="header"/> -->
 
-	<div class="mainBody">
-		<sitemesh:write property="body" />
-	</div>
+	<sitemesh:write property="body"/>
 
-	<footer>
-		<%@ include file="../partials/footer.jsp"%>
-	</footer>
+
+	<!-- <sitemesh:write property="footer"/> -->
+	<!-- <%@ include file="../partials/footer.jsp"%> -->
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

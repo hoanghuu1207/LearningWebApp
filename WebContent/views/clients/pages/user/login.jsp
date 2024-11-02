@@ -44,10 +44,6 @@
             <a class="text-muted" href="./register">Sign up</a>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; PBL4</p>
-    </footer>
 </body>
 
 </html>
