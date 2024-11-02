@@ -11,7 +11,7 @@
 <link rel="stylesheet"
 	href="../../assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="../../assets/css/style.css">
-<link rel="stylesheet" href="../../assets/css/class.css">
+<!-- <link rel="stylesheet" href="../../assets/css/class.css"> -->
 <style>
 .subnav {
 	list-style-type: none;
