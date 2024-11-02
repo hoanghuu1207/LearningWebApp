@@ -10,8 +10,8 @@
 	<link rel="stylesheet"
 		href="/views/clients/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/views/clients/assets/css/style.css">
-	<!-- <link rel="stylesheet"
-		href="/views/clients/assets/fonts/themify-icons-font/themify-icons/themify-icons.css"> -->
+	 <link rel="stylesheet"
+		href="/views/clients/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
 	
 	<link rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
