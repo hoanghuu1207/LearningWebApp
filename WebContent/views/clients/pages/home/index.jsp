@@ -48,6 +48,7 @@
 
 
 <body>
+<%--slider--%>
 	<section class="mt-0 ">
 		<div class="container-fluid p-0">
 			<div id="carouselExample" class="carousel slide"
@@ -55,18 +56,14 @@
 				<div class="carousel-inner">
 					<div class="carousel-item active"
 						style="background-image: url('/views/clients/assets/img/i3.jpg'); height: 75vh;">
-						<div
-							class="d-flex h-100 align-items-center justify-content-center text-center text-white bg-dark bg-opacity-50">
 							<div class="carousel-caption">
 								<p class="title-small opacity-75">Nơi Học Tập Hiện Đại</p>
 								<h2 class="display-3 fw-bold">Giáo Dục Cho Tương Lai</h2>
 							</div>
-						</div>
+
 					</div>
 					<div class="carousel-item"
 						style="background-image: url('/views/clients/assets/img/i2.jpg'); height: 75vh;">
-						<div
-							class="d-flex h-100 align-items-center justify-content-center text-center text-white bg-dark bg-opacity-50">
 							<div class="carousel-caption">
 								<p class="title-small opacity-75">Học Tập Không Giới Hạn</p>
 								<h2 class="display-3 fw-bold">Học Online Mọi Lúc, Mọi Nơi</h2>

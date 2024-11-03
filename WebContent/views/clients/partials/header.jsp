@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="/views/clients/assets/css/header.css">
 	
 	<style>
-		header{
+		header-dark{
 			position: relative;
 		}
 	</style>
@@ -22,7 +22,6 @@
 </head>
 
 <body>
-<header>
 	<div class="header-dark">
 		<nav
 			class="navbar navbar-dark navbar-expand-md navigation-clean-search"
@@ -77,7 +76,6 @@
 		</nav>
 	</div>
 
-</header>
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

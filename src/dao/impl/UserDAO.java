@@ -64,7 +64,7 @@ public class UserDAO implements DAOInterface<UserModel> {
 	}
 
 	@Override
-	public UserModel selectById(UserModel t) {
+	public UserModel selectById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
