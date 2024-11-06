@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Detail</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <!--<link rel="stylesheet" href="../../assets/fonts/themify-icons-font/themify-icons/themify-icons.css">-->
+    <!--<link rel="stylesheet" href="views/assets/css/style.css">-->
     <style>
         .container-class{
             display: flex;
@@ -46,7 +46,7 @@
                 <a href="?page=file" class="list-group-item list-group-item-action">Tài liệu</a>
                 <a href="?page=students" class="list-group-item list-group-item-action">Danh sách</a>
                 <a href="?page=scores" class="list-group-item list-group-item-action">Điểm số</a>
-                <a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>
+                <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
                 <a href="/views/clients/pages/class/prepare_meeting.jsp" class="list-group-item list-group-item-action">
                     Tạo cuộc họp
                     <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">

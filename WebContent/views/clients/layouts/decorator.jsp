@@ -7,8 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><sitemesh:write property="title"/></title>
 	<link rel="stylesheet" href="/views/clients/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/views/clients/assets/css/style.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/views/clients/assets/css/style.css?v=1.1">
+	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">-->
 	<sitemesh:write property="head"/>
 
 	<style>
@@ -17,8 +17,6 @@
 			display: flex;
 			flex-direction: column;
 		}
-
-
 
 		main {
 			flex-grow: 1;
@@ -39,7 +37,7 @@
 </main>
 
 <!-- Include the footer -->
-<%@ include file="../partials/footer.jsp" %>
+<!--<%@ include file="../partials/footer.jsp" %> -->
 
 <!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -168,3 +168,10 @@
   background-color:#666;
 }
 
+#notice{
+    cursor: pointer;
+}
+
+#notice:hover{
+    color: black;
+}
