@@ -5,11 +5,10 @@ public class ClassroomsModel {
 	private String title;
 	private int teacherID;
 
-	public ClassroomsModel(String title, int teacherID) {
-		super();
-		this.title = title;
-		this.teacherID = teacherID;
-	}
+	/*
+	 * public ClassroomsModel(String title, int teacherID) { super(); this.title =
+	 * title; this.teacherID = teacherID; }
+	 */
 
 	public int getClassroomID() {
 		return classroomID;

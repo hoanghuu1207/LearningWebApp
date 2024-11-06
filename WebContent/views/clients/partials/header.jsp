@@ -7,14 +7,13 @@
 <head>
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Bitter:400,700">
-	<link rel="stylesheet" href="/views/clients/assets/css/header.css">
+	<link rel="stylesheet" href="/views/clients/assets/css/header.css?v=1.1">
 	
 	<style>
-		header{
+		header-dark{
 			position: relative;
 		}
 	</style>
@@ -22,7 +21,6 @@
 </head>
 
 <body>
-<header>
 	<div class="header-dark">
 		<nav
 			class="navbar navbar-dark navbar-expand-md navigation-clean-search"
@@ -43,6 +41,12 @@
 								href="/class">Lớp học</a></li>
 						</ul>
 					</c:if>
+					<c:if test="${user != null}">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item" role="presentation"><a class="nav-link"
+                                href="/assignments">Bài tập</a></li>
+                        </ul>
+                    </c:if>
 					<form class="form-inline mr-auto" target="_self">
 						<c:if test="${user != null}">
 							<div class="form-group">
@@ -59,10 +63,11 @@
 											In</a></span><a class="btn btn-light action-button" role="button" href="/user/register">Sign Up</a>
 						</c:when>
 						<c:otherwise>
+						    <span><i class="fa-regular fa-bell me-5" id="notice" style="transform: scale(1.6);"></i></span>
 							<span class="dropdown"> <a class="nav-link"
 								data-toggle="dropdown" aria-expanded="false" href="#"><img
 									src="/views/clients/assets/img/user_icon.png" alt="User"
-									height="35px" width="35px"> </a>
+									height="35px" width="35px"></a>
 								<div class="dropdown-menu" role="menu">
 									<a class="dropdown-item" role="presentation" href="/account">Tài
 										khoản</a> <a class="dropdown-item" role="presentation"
@@ -77,7 +82,6 @@
 		</nav>
 	</div>
 
-</header>
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

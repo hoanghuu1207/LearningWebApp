@@ -1,5 +1,4 @@
 * {
-    margin: 5;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -12,18 +11,18 @@ body {
     /* overflow:hidden; */
 }
 
-header {
-    background-color: #333;
-    color: white;
-    /* text-align: center; */
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 0;
-    width: 100%;
-    height: 50px;
-    z-index: 1;
-}
+/*header {*/
+/*    background-color: #333;*/
+/*    color: white;*/
+/*    !* text-align: center; *!*/
+/*    position: relative;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    height: 0;*/
+/*    width: 100%;*/
+/*    height: 50px;*/
+/*    z-index: 1;*/
+/*}*/
 
 li {
     list-style: none;
@@ -101,7 +100,7 @@ li {
 
 main {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 0;
 }
 
 section {
@@ -248,16 +247,16 @@ iframe#content {
 }
 
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    height: 40px;
-}
+/*footer {*/
+/*    background-color: #333;*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    padding: 10px 0;*/
+/*    position: fixed;*/
+/*    width: 100%;*/
+/*    bottom: 0;*/
+/*    height: 40px;*/
+/*}*/
 
 
 .icon-btn {
@@ -271,6 +270,6 @@ footer {
 
 }
 
-footer {
-	position: relative;
-}
+/*footer {*/
+/*	position: relative;*/
+/*}*/

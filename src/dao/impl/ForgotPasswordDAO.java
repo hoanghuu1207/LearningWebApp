@@ -36,7 +36,7 @@ public class ForgotPasswordDAO implements DAOInterface<ForgotPasswordModel> {
 			row = pstm.executeUpdate();
 
 			if (row != 0) {
-				System.out.println("Thêm thành công: " + row);
+				System.out.println("Thï¿½m thï¿½nh cï¿½ng: " + row);
 			}
 
 			JDBCUtil.closeConnection(con);
@@ -65,7 +65,7 @@ public class ForgotPasswordDAO implements DAOInterface<ForgotPasswordModel> {
 	}
 
 	@Override
-	public ForgotPasswordModel selectById(ForgotPasswordModel t) {
+	public ForgotPasswordModel selectById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

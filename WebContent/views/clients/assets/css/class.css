@@ -21,8 +21,8 @@ body{
 }
 
 .class-box-bottom{
-    width: 180px;
-     height: 60px;
+    /*width: 180px;*/
+    height: 60px;
 }
 
 .class_name_box{
@@ -92,4 +92,15 @@ body{
 
 .dropdown.active .subnav {
     display: block;
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+  line-height:2;
+  font-size:14px;
+  color:white;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover {
+  background:white;
+  color: black;
 }
