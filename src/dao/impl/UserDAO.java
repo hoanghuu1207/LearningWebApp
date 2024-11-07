@@ -1,9 +1,6 @@
 package dao.impl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 import dao.DAOInterface;
@@ -59,8 +56,48 @@ public class UserDAO implements DAOInterface<UserModel> {
 
 	@Override
 	public ArrayList<UserModel> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<UserModel> userList = new ArrayList<>();
+		try {
+			Connection con = JDBCUtil.getConnection();
+
+			String query = "SELECT * FROM users WHERE roleID = ? OR roleID = ?";
+
+			PreparedStatement pstm = con.prepareStatement(query);
+
+			pstm.setInt(1, 2);
+			pstm.setInt(2, 3);
+
+			ResultSet rs = pstm.executeQuery();
+
+			while (rs.next()) {
+				int id = rs.getInt("userID");
+				String firstName = rs.getString("firstname");
+				String lastName = rs.getString("lastname");
+				String email = rs.getString("email");
+				String password = rs.getString("password");
+				int roleID = rs.getInt("roleID");
+				String avatar = rs.getString("avatar");
+				String tokenUser = rs.getString("tokenUser");
+
+				UserModel userModel = new UserModel();
+
+				userModel.setUserID(id);
+				userModel.setFirstName(firstName);
+				userModel.setLastName(lastName);
+				userModel.setEmail(email);
+				userModel.setPassword(password);
+				userModel.setRoleID(roleID);
+				userModel.setAvatar(avatar);
+				userModel.setTokenUser(tokenUser);
+
+				userList.add(userModel);
+			}
+
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return userList;
 	}
 
 	@Override
@@ -161,6 +198,56 @@ public class UserDAO implements DAOInterface<UserModel> {
 
 			if (row != 0) {
 				System.out.println("Thêm thành công: " + row);
+			}
+
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return row;
+	}
+
+	public int updateUserToTeacher(int userId){
+		int row = 0;
+		try {
+			Connection con = JDBCUtil.getConnection();
+
+			String query = "UPDATE users SET roleID = ? WHERE userID = ?";
+
+			PreparedStatement pstm = con.prepareStatement(query);
+
+			pstm.setInt(1, 2);
+			pstm.setInt(2, userId);
+
+			row = pstm.executeUpdate();
+
+			if (row != 0) {
+				System.out.println("Cập nhật thành công: " + row);
+			}
+
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return row;
+	}
+
+	public int updateUserToStudent(int userId){
+		int row = 0;
+		try {
+			Connection con = JDBCUtil.getConnection();
+
+			String query = "UPDATE users SET roleID = ? WHERE userID = ?";
+
+			PreparedStatement pstm = con.prepareStatement(query);
+
+			pstm.setInt(1, 3);
+			pstm.setInt(2, userId);
+
+			row = pstm.executeUpdate();
+
+			if (row != 0) {
+				System.out.println("Cập nhật thành công: " + row);
 			}
 
 			JDBCUtil.closeConnection(con);

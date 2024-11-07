@@ -2,4 +2,5 @@
 	<mapping path="/*" decorator="/views/clients/layouts/decorator.jsp" />
 	<mapping path="/user/*" exclude="true" />
 	<mapping path="/FE/*" exclude="true" />
+	<mapping path="/admin/*" exclude="true" />
 </sitemesh>

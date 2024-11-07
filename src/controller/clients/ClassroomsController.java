@@ -21,7 +21,7 @@ public class ClassroomsController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //int studentId = Integer.parseInt(request.getParameter("studentId")); // Lấy studentId từ request
-		int studentId = 3;      
+		int studentId = 3;
         
         // Lấy danh sách classroom mà học sinh tham gia
         ArrayList<ClassroomsModel> classrooms = classroomsService.getClassroomsByStudentId(studentId);

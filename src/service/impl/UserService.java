@@ -7,6 +7,11 @@ import dao.impl.UserDAO;
 import model.UserModel;
 import service.I_UserService;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class UserService implements I_UserService {
 	private UserDAO userDao = new UserDAO();
 	private ForgotPasswordDAO forgotPasswordDao = new ForgotPasswordDAO();
@@ -81,4 +86,57 @@ public class UserService implements I_UserService {
 		return false;
 	}
 
+	@Override
+	public ArrayList<UserModel> getAllUsers() {
+		return userDao.selectAll();
+	}
+
+	@Override
+	public boolean updateUserToTeacher(int userId) {
+		return userDao.updateUserToTeacher(userId) != 0;
+	}
+
+	@Override
+	public boolean updateUserToStudent(int userId) {
+		return userDao.updateUserToStudent(userId) != 0;
+	}
+
+	@Override
+	public ArrayList<UserModel> searchUsers(String inputText) {
+		ArrayList<UserModel> userList = userDao.selectAll();
+		ArrayList<UserModel> searchUserList = new ArrayList<>();
+
+		String searchText = removeAccent(inputText).toLowerCase();
+		Pattern pattern = Pattern.compile(searchText, Pattern.CASE_INSENSITIVE);
+
+		for(UserModel user: userList){
+			ArrayList<String> tmp = new ArrayList<>();
+			String role = user.getRoleID() == 2 ? "Teacher" : "Student";
+			tmp.add(role);
+			tmp.add(user.getFirstName());
+			tmp.add(user.getLastName());
+			tmp.add(user.getEmail());
+
+			for(String s: tmp){
+				Matcher matcher = pattern.matcher(s);
+				if(matcher.find()){
+					searchUserList.add(user);
+					break;
+				}
+			}
+		}
+
+		return searchUserList;
+	}
+
+	public String removeAccent(String text) {
+		return text
+			.replaceAll("[àáạảãâầấậẩẫăằắặẳẵ]", "a")
+			.replaceAll("[èéẹẻẽêềếệểễ]", "e")
+			.replaceAll("[ìíịỉĩ]", "i")
+			.replaceAll("[òóọỏõôồốộổỗơờớợởỡ]", "o")
+			.replaceAll("[ùúụủũưừứựửữ]", "u")
+			.replaceAll("[ỳýỵỷỹ]", "y")
+			.replaceAll("[đ]", "d");
+	}
 }

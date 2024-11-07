@@ -2,6 +2,9 @@ package service;
 
 import model.UserModel;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public interface I_UserService {
 	boolean registerUser(UserModel user);
 
@@ -12,4 +15,12 @@ public interface I_UserService {
 	UserModel otpPasswordUser(String email, String otp);
 
 	boolean resetPasswordUser(UserModel user);
+
+	ArrayList<UserModel> getAllUsers();
+
+	boolean updateUserToTeacher(int userId);
+
+	boolean updateUserToStudent(int userId);
+
+	ArrayList<UserModel> searchUsers(String inputText);
 }
