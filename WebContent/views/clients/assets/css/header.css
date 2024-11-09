@@ -116,11 +116,11 @@
 .header-dark .navbar .dropdown-menu .dropdown-item:focus, .header-dark .navbar .dropdown-menu .dropdown-item {
   line-height:2;
   font-size:14px;
-  color:white;
+  /*color:white;*/
 }
 
 .header-dark .navbar .dropdown-menu .dropdown-item:focus, .header-dark .navbar .dropdown-menu .dropdown-item:hover {
-  background:white;
+  background:gray;
   color: black;
 }
 

@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/class.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/class.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/views/clients/layouts/decorator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/layouts/decorator.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/user/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/user/signup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/ErrorHandleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/ErrorHandleController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/HomeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" afterDir="false" />

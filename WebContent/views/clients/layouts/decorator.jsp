@@ -46,7 +46,7 @@
 <script src="/views/clients/assets/js/vendor.bundle.js"></script>
 <script src="/views/clients/assets/js/theme.bundle.js"></script>
 
-<script>
+<!--<script>
 	document.addEventListener("DOMContentLoaded", function() {
 		const bellIcon = document.getElementById("bell-icon");
 		const notificationMenu = document.getElementById("notification-menu");
@@ -62,6 +62,6 @@
 			}
 		});
 	});
-</script>
+</script>-->
 </body>
 </html>
