@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,58 +9,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="views/clients/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons/themify-icons.css">
-<style>
-
-<!--.subnav {
-	list-style-type: none;
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	background-color: #f4f4f4;
-	min-width: 100px;
-	padding: 0;
-	z-index: 10;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-	text-align: left;
-}
-
-.subnav li {
-	display: block;
-}
-
-.subnav a {
-	color: black;
-	padding: 0 12px;
-	line-height: 38px;
-	text-decoration: none;
-}
-
-.subnav>li:hover>a {
-	display: block;
-	color: white;
-	background-color: gray;
-}
-
-.dropdown {
-	position: relative;
-	cursor: pointer;
-}
-
-.dropdown.active .subnav {
-	display: block;
-}
--->
-
-
-.fixed-box {
-	cursor: pointer;
-}
-
-.class-box{
-	margin: 5px;
-}
-</style>
 </head>
 <body>
     <link rel="stylesheet" href="views/clients/assets/css/class.css?v=1.1">
@@ -69,30 +18,26 @@
 			<!-- Lặp qua danh sách classroom -->
 			<c:forEach var="classroom" items="${classrooms}">
 				<div class="fixed-box">
-					<div
-						class="container-md class-box p-3 border rounded shadow-lg text-center"
-						class_id="${classroom.classroomID}"
-						>
-
+					<div class="container-md class-box p-3 border rounded shadow-lg text-center" class_id="${classroom.classroomID}" >
 						<!--onclick="openClass('${classroom.classroomID}')"-->
-						<div
-							class="container class-avatar bg-secondary text-white p-3 rounded justify-content-center align-content-center">
-							<strong>GV</strong>
+						<div class="container class-avatar bg-secondary text-white p-3 rounded justify-content-center align-content-center">
+							<strong>${classroom.title.substring(0, 2)}</strong>
 						</div>
-						<div
-							class="container class-box-bottom d-flex align-items-center mt-2">
-							<div class="class_name_box small m-1">${classroom.title}</div>
+						<div class="container class-box-bottom d-flex align-items-center mt-2 p-0 justify-content-between">
+							<div class="class_name_box small fs-6 m-1 flex-grow-1 text-center pt-2 p-1">
+									${classroom.title}
+							</div>
+							<span class="dropdown">
+        <a class="nav-link" aria-expanded="false" href="#">
+            <img src="/views/clients/assets/img/more_icon.jpg" alt="More" height="20px" width="20px">
+        </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="/class/delete">Xóa</a>
+            <a class="dropdown-item" href="#">Lấy code</a>
+        </div>
+    </span>
+						</div>
 
-							<span class="dropdown"><a class="nav-link"
-                                data-toggle="dropdown" aria-expanded="false" href="#"><img
-                                    src="/views/clients/assets/img/more_icon.jpg" alt="More"
-                                    height="20px" width="20px"> </a>
-                                <div class="dropdown-menu" role="menu">
-                                    <a class="dropdown-item" role="presentation" href="/class/delete">Xóa</a>
-                                    <a class="dropdown-item" role="presentation" href="#">Lấy code</a>
-                                </div>
-                            </span>
-						</div>
 					</div>
 				</div>
 			</c:forEach>

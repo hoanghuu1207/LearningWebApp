@@ -6,9 +6,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign up</title>
-<link rel="stylesheet"
-	href="/views/clients/assets/css/bootstrap.min.css">
+<link rel="stylesheet"href="/views/clients/assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="/views/clients/assets/css/style.css">
+	<style>
+		.form-group, .form-label {
+			text-align: left;
+			width: 100%;
+			display: block;
+			margin-top: 7px;
+			margin-bottom: 2px;
+		}
+
+	</style>
 </head>
 <body class=" bg-light">
 
@@ -45,11 +54,13 @@
 							name="password" placeholder="Enter your password" required>
 					</div>
 					<div class="form-group">
-						<label class="form-label" for="register-roles">Roles</label><br>
-						<input type="radio" id="teacher" name="role" value="teacher" checked>
-						<label for="teacher">Teacher</label><br> 
-						<input type="radio" id="student" name="role" value="student">
-						<label for="student">Student</label><br>
+						<label class="form-label" for="register-roles">Roles</label>
+						<div class = "m-3" >
+							<input type="radio" id="teacher" name="role" value="teacher" checked> Teacher
+						</div>
+						<div class = "m-3">
+							<input type="radio" id="student" name="role" value="student" > Student
+						</div>
 					</div>
 					<button type="submit" class="btn btn-dark d-block w-100 my-4">Sign
 						Up</button>
@@ -63,13 +74,6 @@
 		</div>
 
 	</section>
-
-	<footer>
-		<p>&copy; PBL4</p>
-	</footer>
-	<!-- <script src="./assets/js/vendor.bundle.js"></script>
-
-    <script src="./assets/js/theme.bundle.js"></script> -->
 </body>
 
 </html>

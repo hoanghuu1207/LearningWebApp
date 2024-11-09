@@ -21,7 +21,9 @@
 		main {
 			flex-grow: 1;
 			padding-bottom: 10px;
-			min-height: calc(100vh - 200px);
+			min-height: 100vh;
+			padding-top: 80px;
+			padding-bottom: 50px;
 		}
 
 	</style>
@@ -37,7 +39,7 @@
 </main>
 
 <!-- Include the footer -->
-<!--<%@ include file="../partials/footer.jsp" %> -->
+<%@ include file="../partials/footer.jsp" %>
 
 <!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

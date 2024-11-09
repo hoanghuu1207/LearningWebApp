@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
 <html>
 <head>
 	<title>Homepage</title>
@@ -11,34 +11,34 @@
 			color: #333;
 			overflow-y: scroll;
 		}
-		
+
 		.swiper-slide {
 			background-size: cover;
 			background-position: center;
 		}
-		
+
 		.title-small {
 			font-size: 1.25rem;
 		}
-		
+
 		.display-3 {
 			font-size: 2.5rem;
 		}
-		
+
 		.btn-psuedo {
 			background-color: rgba(255, 255, 255, 0.1);
 			border: 1px solid white;
 			padding: 0.75rem 1.5rem;
 		}
-		
+
 		.text-outline-dark {
 			text-shadow: 1px 1px 2px black;
 		}
-		
+
 		.nav-item {
 			display: block;
 		}
-		
+
 		.nav-item:hover {
 			background-color: rgb(215, 214, 214);
 			border-radius: 5px;
