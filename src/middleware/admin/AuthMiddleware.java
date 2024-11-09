@@ -13,12 +13,14 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.impl.AdminDAO;
 import dao.impl.UserDAO;
+import model.AdminModel;
 import model.UserModel;
 
-@WebFilter(urlPatterns = { "/admin/*" })
+@WebFilter(urlPatterns = { "/admin/home", "/admin/search" })
 public class AuthMiddleware implements Filter {
-    private UserDAO userDao = new UserDAO();
+    private AdminDAO adminDao = new AdminDAO();
 
     // them token, pass vao db; kiem tra neu duong dan ben usermiddleware la /admin/* thi return de authmiddleware ben day xu ly
     @Override
@@ -30,28 +32,30 @@ public class AuthMiddleware implements Filter {
 
         Cookie[] cookies = httpRequest.getCookies();
 
-        String tokenUser = "";
+        String token = "";
 
         if (cookies != null) {
             for (Cookie cookie : cookies) {
-                if ("tokenUser".equals(cookie.getName())) {
-                    tokenUser = cookie.getValue();
+                if ("token".equals(cookie.getName())) {
+                    token = cookie.getValue();
                     break;
                 }
             }
         }
 
-        if (!tokenUser.equals("")) {
-
-            UserModel user = userDao.getUserByTokenUser(tokenUser);
-
-            if (user != null) {
-                System.out.println("oke");
-                httpRequest.setAttribute("user", user);
-            }
+        if (token.equals("")) {
+            httpResponse.sendRedirect("/admin/login");
+            return;
         }
 
-        System.out.println("Filter User");
+        System.out.println("Filter authen Admin");
+
+        AdminModel adminModel = adminDao.getAdminByTokenUser(token);
+
+        if(adminModel == null){
+            httpResponse.sendRedirect("/admin/login");
+            return;
+        }
 
         chain.doFilter(request, response);
     }
@@ -67,5 +71,4 @@ public class AuthMiddleware implements Filter {
         // TODO Auto-generated method stub
 
     }
-
 }
