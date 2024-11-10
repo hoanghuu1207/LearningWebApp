@@ -79,9 +79,8 @@
 									src="/views/clients/assets/img/user_icon.png" alt="User"
 									height="35px" width="35px"></a>
 								<div class="dropdown-menu" role="menu">
-									<a class="dropdown-item" role="presentation" href="/account">Tài
-										khoản</a> <a class="dropdown-item" role="presentation"
-										href="/user/logout">Đăng xuất</a>
+									<a class="dropdown-item" role="presentation" href="/user/account">Tài khoản</a>
+									<a class="dropdown-item" role="presentation" href="/user/logout">Đăng xuất</a>
 								</div>
 							</span>
 						</c:otherwise>

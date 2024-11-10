@@ -4,43 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="">
+    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="save">
+      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/default-avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/user/account.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/clients/UserAccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/layouts/decorator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/layouts/decorator.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/ErrorHandleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/ErrorHandleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserLogoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserLogoutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserOtpPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserOtpPasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserRegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserResetPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserResetPasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DAOInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DAOInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/ForgotPasswordDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/ForgotPasswordDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/helper/EmailSender$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/EmailSender$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/helper/EmailSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/EmailSender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/helper/Generate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/Generate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/middleware/clients/UserMiddleware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/middleware/clients/UserMiddleware.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/AssignmentsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/AssignmentsModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ClassroomsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ClassroomsModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ForgotPasswordModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ForgotPasswordModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/MaterialsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/MaterialsModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/MeetingsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/MeetingsModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/NotificationModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/NotificationModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/RolesModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/RolesModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ScheduleModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ScheduleModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/StudentsClassroomsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/StudentsClassroomsModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/SubmissionsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SubmissionsModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/UserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/UserModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/JDBCUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/JDBCUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/ForgotPasswordValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/ForgotPasswordValidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/LoginValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/LoginValidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/OtpPasswordValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/OtpPasswordValidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/RegisterValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/RegisterValidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/ResetPasswordValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/ResetPasswordValidate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/catalina.policy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/catalina.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/jaspic-providers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/jaspic-providers.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/server.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/tomcat-users.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/tomcat-users.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +30,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -93,18 +78,23 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "feature/admin",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/TechCare/eclipse-workspace/LearningWebApp/WebContent/views/admin/pages/user",
+    "last_opened_file_path": "F:/OneDrive/Documents/TAI_LIEU_HK_5/PBL4/Source_PBL4/LearningWebApp/WebContent/views/clients/assets/img",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.general",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\OneDrive\Documents\TAI_LIEU_HK_5\PBL4\Source_PBL4\LearningWebApp\WebContent\views\clients\assets\img" />
       <recent name="C:\Users\TechCare\eclipse-workspace\LearningWebApp\WebContent\views\admin\pages\user" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\OneDrive\Documents\TAI_LIEU_HK_5\PBL4\Source_PBL4\LearningWebApp\WebContent\views\clients\pages\user" />
     </key>
   </component>
   <component name="RunManager">
@@ -119,15 +109,18 @@
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="catalinaBase" value="C:\Users\TechCare\.SmartTomcat\LearningWebApp\LearningWebApp" />
+      <option name="catalinaBase" value="C:\Users\voquy\.SmartTomcat\LearningWebApp\LearningWebApp" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/WebContent" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
-          <option name="name" value="Apache Tomcat/9.0.93" />
-          <option name="path" value="D:/apache-tomcat-9.0.93" />
-          <option name="version" value="9.0.93.0" />
+          <option name="name" value="Apache Tomcat/9.0.96" />
+          <option name="path" value="D:/apache-tomcat-9.0.96-windows-x64/apache-tomcat-9.0.96" />
+          <option name="version" value="9.0.96.0" />
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
@@ -155,10 +148,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/admin" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="save" />
+    <option name="LAST_COMMIT_MESSAGE" value="save" />
   </component>
 </project>
