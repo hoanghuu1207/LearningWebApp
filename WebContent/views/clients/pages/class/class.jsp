@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="views/clients/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="views/clients/assets/css/class.css">
+    <link rel="stylesheet" href="views/clients/assets/css/class.css?v=1.1">
 
 	<div class="container-fluid m-5 p-0">
 		<div class="d-flex flex-wrap">

@@ -31,14 +31,8 @@ public class UserRegisterController extends HttpServlet {
 		String lastName = req.getParameter("lastName");
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
-		String role = req.getParameter("role");
 
 		int roleID = 3;
-
-		if (role.equals("teacher")) {
-			roleID = 2;
-		} else if (role.equals("student"))
-			roleID = 3;
 
 		// Tạo Salt và băm mật khẩu
 		String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(12));

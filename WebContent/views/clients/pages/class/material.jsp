@@ -55,32 +55,30 @@
         </div>
     </div>
 
-    <!-- Main Content -->
-    <!--<div class="main-content-class">
-        <c:choose>
-            <c:when test="${param.page == 'post'}">
-                <jsp:include page="post.jsp"/>
-            </c:when>
-            <c:when test="${param.page == 'assignment_student'}">
-                <jsp:include page="post.jsp"/>
-            </c:when>
-            <c:when test="${param.page == 'file'}">
-                <jsp:include page="post.jsp"/>
-            </c:when>
-            <c:when test="${param.page == 'students'}">
-                <jsp:include page="post.jsp"/>
-            </c:when>
-            <c:when test="${param.page == 'scores'}">
-                <jsp:include page="post.jsp"/>
-            </c:when>
-            <c:when test="${param.page == 'schedule'}">
-                <jsp:include page="post.jsp"/>
-            </c:when>
-<%--            <c:otherwise>--%>
-<%--                <jsp:include page="post.jsp"/>--%>
-<%--            </c:otherwise>--%>
-        </c:choose>
-    </div>-->
+    <div class="main-content-class">
+        <div class="list-group">
+            <!-- Example file structure, replace with dynamic data -->
+            <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Class Materials
+            </a>
+            <a href="http://res.cloudinary.com/dgtrhaivj/raw/upload/v1731259096/kfdtdbjrdgws5da0h5oa.doc" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Bài Tập Áp Dụng
+                <span class="text-muted">Uploaded: October 23</span>
+            </a>
+            <a href="http://res.cloudinary.com/dgtrhaivj/raw/upload/v1731258969/qlfvx1ewzoskh2yjovcc.doc" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Bài Thực Hành Số 2
+                <span class="text-muted">Uploaded: September 23</span>
+            </a>
+            <a href="http://res.cloudinary.com/dgtrhaivj/raw/upload/v1731258644/wfwhvxf0aybcw1b9lgns.doc" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Mô Hình MVC
+                <span class="text-muted">Uploaded: 6 days ago</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Tài liệu học phần
+                <span class="text-muted">Uploaded: September 24</span>
+            </a>
+        </div>
+    </div>
 
 </div>
 </body>

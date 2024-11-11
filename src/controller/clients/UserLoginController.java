@@ -52,11 +52,15 @@ public class UserLoginController extends HttpServlet {
 			System.out.println("Dang nhap thanh cong");
 
 			Cookie cookie = new Cookie("tokenUser", userModel.getTokenUser());
+			Cookie role = new Cookie("role", userModel.getRoleID() + "");
 
 			cookie.setPath("/");
 			cookie.setMaxAge(1 * 60 * 60); // set coookie trong 1h
+			role.setPath("/");
+			role.setMaxAge(1 * 60 * 60);
 
 			resp.addCookie(cookie);
+			resp.addCookie(role);
 
 			resp.sendRedirect("/home");
 		}
