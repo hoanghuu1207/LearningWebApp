@@ -169,4 +169,82 @@ public class UserDAO implements DAOInterface<UserModel> {
 		}
 		return row;
 	}
+	public ArrayList<UserModel> getTeachersByClassId(int classId) {
+		ArrayList<UserModel> teachers = new ArrayList<>();
+
+		//ArrayList<UserModel> teachers = new ArrayList<>();
+//        String sql = "SELECT * FROM users c "
+//        		+ "JOIN students_classrooms sc ON c.userID = sc.studentID"
+//        		+ "WHERE roleID = '2' AND class_id = ?";
+		String sql = "SELECT * FROM users c "
+				+ "JOIN classrooms sc ON c.userID = sc.teacherID "
+				+ "WHERE c.roleID = 2 AND sc.classroomID = ?";
+		try (Connection conn = JDBCUtil.getConnection();
+			 PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+			stmt.setInt(1, classId);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				int userid = rs.getInt("userID");
+				String firstName = rs.getString("firstname");
+				String lastName = rs.getString("lastname");
+				String password = rs.getString("password");
+				int roleID = rs.getInt("roleID");
+				String avatar = rs.getString("avatar");
+				String tokenUser = rs.getString("tokenUser");
+				UserModel userModel = new UserModel();
+
+				userModel.setUserID(userid);
+				userModel.setFirstName(firstName);
+				userModel.setLastName(lastName);
+				userModel.setPassword(password);
+				userModel.setRoleID(roleID);
+				userModel.setAvatar(avatar);
+				userModel.setTokenUser(tokenUser);
+				teachers.add(userModel);
+			}
+			JDBCUtil.closeConnection(conn);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return teachers;
+	}
+
+	public ArrayList<UserModel> getStudentsByClassId(int classId) {
+		ArrayList<UserModel> students = new ArrayList<>();
+		String sql = "SELECT * FROM users c "
+				+ "JOIN students_classrooms sc ON c.userID = sc.studentID "
+				+ "WHERE c.roleID = 3 AND sc.classroomID = ?";
+
+		try (Connection conn = JDBCUtil.getConnection();
+			 PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+			stmt.setInt(1, classId);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				UserModel userModel= new UserModel();
+				int userid = rs.getInt("userID");
+				String firstName = rs.getString("firstname");
+				String lastName = rs.getString("lastname");
+				String password = rs.getString("password");
+				int roleID = rs.getInt("roleID");
+				String avatar = rs.getString("avatar");
+				String tokenUser = rs.getString("tokenUser");
+
+				userModel.setUserID(userid);
+				userModel.setFirstName(firstName);
+				userModel.setLastName(lastName);
+				userModel.setPassword(password);
+				userModel.setRoleID(roleID);
+				userModel.setAvatar(avatar);
+				userModel.setTokenUser(tokenUser);
+				students.add(userModel);
+			}
+			JDBCUtil.closeConnection(conn);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return students;
+	}
 }

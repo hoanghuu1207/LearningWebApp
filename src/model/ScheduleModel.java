@@ -1,15 +1,17 @@
 package model;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class ScheduleModel {
 	private int scheduleID;
 	private int meetingID;
-	private LocalDateTime timeCreate;
-	private LocalDateTime timeAccess;
+	private Timestamp timeCreate;
+	private Timestamp timeAccess;
 	private String title;
 
-	public ScheduleModel(int meetingID, LocalDateTime timeCreate, LocalDateTime timeAccess, String title) {
+	public ScheduleModel() {}
+	public ScheduleModel(int meetingID, Timestamp timeCreate, Timestamp timeAccess, String title) {
 		super();
 		this.meetingID = meetingID;
 		this.timeCreate = timeCreate;
@@ -33,19 +35,19 @@ public class ScheduleModel {
 		this.meetingID = meetingID;
 	}
 
-	public LocalDateTime getTimeCreate() {
+	public Timestamp getTimeCreate() {
 		return timeCreate;
 	}
 
-	public void setTimeCreate(LocalDateTime timeCreate) {
+	public void setTimeCreate(Timestamp timeCreate) {
 		this.timeCreate = timeCreate;
 	}
 
-	public LocalDateTime getTimeAccess() {
+	public Timestamp getTimeAccess() {
 		return timeAccess;
 	}
 
-	public void setTimeAccess(LocalDateTime timeAccess) {
+	public void setTimeAccess(Timestamp timeAccess) {
 		this.timeAccess = timeAccess;
 	}
 

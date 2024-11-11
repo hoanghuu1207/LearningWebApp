@@ -2,4 +2,13 @@
 	<mapping path="/*" decorator="/views/clients/layouts/decorator.jsp" />
 	<mapping path="/user/*" exclude="true" />
 	<mapping path="/FE/*" exclude="true" />
+	<mapping path="/class_post" exclude="true" />
+	<mapping path="/class_members" exclude="true" />
+	<mapping path="/class_post" exclude="true" />
+	<mapping path="/class_assignments" exclude="true" />
+	<mapping path="/materials" exclude="true" />
+	<mapping path="/downloadFile" exclude="true" />
+	<mapping path="/meetings" exclude="true" />
+	<mapping path="/meetingDetail" exclude="true" />
+	<mapping path="/teacher/schedules" exclude="true" />
 </sitemesh>
