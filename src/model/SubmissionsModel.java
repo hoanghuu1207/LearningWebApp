@@ -1,14 +1,15 @@
 package model;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class SubmissionsModel {
 	private int submissionID;
 	private int assignmentID;
 	private int studentID;
-	private LocalDateTime submissionDate;
+	private Timestamp submissionDate;
 
-	public SubmissionsModel(int assignmentID, int studentID, LocalDateTime submissionDate) {
+	public SubmissionsModel(int assignmentID, int studentID, Timestamp submissionDate) {
 		super();
 		this.assignmentID = assignmentID;
 		this.studentID = studentID;
@@ -39,11 +40,11 @@ public class SubmissionsModel {
 		this.studentID = studentID;
 	}
 
-	public LocalDateTime getSubmissionDate() {
+	public Timestamp getSubmissionDate() {
 		return submissionDate;
 	}
 
-	public void setSubmissionDate(LocalDateTime submissionDate) {
+	public void setSubmissionDate(Timestamp submissionDate) {
 		this.submissionDate = submissionDate;
 	}
 }

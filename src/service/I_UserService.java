@@ -23,4 +23,8 @@ public interface I_UserService {
 	boolean updateUserToStudent(int userId);
 
 	ArrayList<UserModel> searchUsers(String inputText);
+
+	ArrayList<UserModel> getTeachersByClassId(int classId);
+
+	ArrayList<UserModel> getStudentsByClassId(int classId);
 }

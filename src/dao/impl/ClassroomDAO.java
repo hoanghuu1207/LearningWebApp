@@ -33,11 +33,33 @@ public class ClassroomDAO implements DAOInterface<ClassroomsModel> {
 	                classroom.setTeacherID(rs.getInt("teacherID"));
 	                classrooms.add(classroom);
 	            }
-
+			JDBCUtil.closeConnection(conn);
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	        }	        
 	        return classrooms;		
+	}
+	public ArrayList<ClassroomsModel> getClassroomsByTeacherId(int teacherId) {
+		ArrayList<ClassroomsModel> classrooms = new ArrayList<>();
+		String sql = "SELECT * FROM classrooms WHERE teacherID = ?";
+
+		try (Connection conn = JDBCUtil.getConnection();
+			 PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+			stmt.setInt(1, teacherId);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				ClassroomsModel classroom = new ClassroomsModel();
+				classroom.setClassroomID(rs.getInt("classroomID"));
+				classroom.setTitle(rs.getString("title"));
+				classroom.setTeacherID(rs.getInt("teacherID"));
+				classrooms.add(classroom);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return classrooms;
 	}
 	@Override
 	public int insert(ClassroomsModel t) {

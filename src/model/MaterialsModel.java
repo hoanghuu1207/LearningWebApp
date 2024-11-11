@@ -6,6 +6,8 @@ public class MaterialsModel {
 	private String filePath;
 	private int classroomID;
 
+	public MaterialsModel() {}
+
 	public MaterialsModel(String title, String filePath, int classroomID) {
 		super();
 		this.title = title;
