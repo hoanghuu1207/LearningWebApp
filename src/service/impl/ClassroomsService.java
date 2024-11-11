@@ -18,4 +18,9 @@ public class ClassroomsService implements I_ClassroomsService{
 		return classroomDao.selectById(id);
 	}
 
+	@Override
+	public ArrayList<ClassroomsModel> getClassroomsByTeacherId(int teacherId) {
+		return classroomDao.getClassroomsByTeacherId(teacherId);
+	}
+
 }

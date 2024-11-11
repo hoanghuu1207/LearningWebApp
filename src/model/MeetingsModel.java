@@ -1,24 +1,28 @@
 package model;
 
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class MeetingsModel {
 	private int meetingID;
 	private String title;
-	private LocalDateTime startTime;
-	private LocalDateTime endTime;
+	private Timestamp startTime;
+	private Timestamp endTime;
 	private int classroomID;
-	private LocalTime duration;
+	private Time duration;
+	private int isCancelled;
 
-	public MeetingsModel(String title, LocalDateTime startTime, LocalDateTime endTime, int classroomID,
-			LocalTime duration) {
+	public MeetingsModel() {}
+	public MeetingsModel(String title, Timestamp startTime, Timestamp endTime, int classroomID, Time duration, int isCancelled) {
 		super();
 		this.title = title;
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.classroomID = classroomID;
 		this.duration = duration;
+		this.isCancelled = isCancelled;
 	}
 
 	public int getMeetingID() {
@@ -37,19 +41,19 @@ public class MeetingsModel {
 		this.title = title;
 	}
 
-	public LocalDateTime getStartTime() {
+	public Timestamp getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(LocalDateTime startTime) {
+	public void setStartTime(Timestamp startTime) {
 		this.startTime = startTime;
 	}
 
-	public LocalDateTime getEndTime() {
+	public Timestamp getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(LocalDateTime endTime) {
+	public void setEndTime(Timestamp endTime) {
 		this.endTime = endTime;
 	}
 
@@ -61,11 +65,20 @@ public class MeetingsModel {
 		this.classroomID = classroomID;
 	}
 
-	public LocalTime getDuration() {
+	public Time getDuration() {
 		return duration;
 	}
 
-	public void setDuration(LocalTime duration) {
+	public void setDuration(Time duration) {
 		this.duration = duration;
 	}
+
+	public int getIsCancelled() {
+		return isCancelled;
+	}
+
+	public void setIsCancelled(int isCancelled) {
+		this.isCancelled = isCancelled;
+	}
 }
+

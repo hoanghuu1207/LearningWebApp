@@ -53,15 +53,6 @@
 						<input type="password" class="form-control" id="register-password"
 							name="password" placeholder="Enter your password" required>
 					</div>
-					<div class="form-group">
-						<label class="form-label" for="register-roles">Roles</label>
-						<div class = "m-3" >
-							<input type="radio" id="teacher" name="role" value="teacher" checked> Teacher
-						</div>
-						<div class = "m-3">
-							<input type="radio" id="student" name="role" value="student" > Student
-						</div>
-					</div>
 					<button type="submit" class="btn btn-dark d-block w-100 my-4">Sign
 						Up</button>
 				</form>

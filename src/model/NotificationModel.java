@@ -1,5 +1,6 @@
 package model;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class NotificationModel {
@@ -8,9 +9,9 @@ public class NotificationModel {
 	private boolean status;
 	private String type;
 	private int relatedID;
-	private LocalDateTime createdAt;
+	private Timestamp createdAt;
 
-	public NotificationModel(int userID, boolean status, String type, int relatedID, LocalDateTime createdAt) {
+	public NotificationModel(int userID, boolean status, String type, int relatedID, Timestamp createdAt) {
 		super();
 		this.userID = userID;
 		this.status = status;
@@ -59,11 +60,11 @@ public class NotificationModel {
 		this.relatedID = relatedID;
 	}
 
-	public LocalDateTime getCreatedAt() {
+	public Timestamp getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreatedAt(LocalDateTime createdAt) {
+	public void setCreatedAt(Timestamp createdAt) {
 		this.createdAt = createdAt;
 	}
 }

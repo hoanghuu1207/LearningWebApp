@@ -85,6 +85,10 @@ public class UserService implements I_UserService {
 		System.out.println("Thay doi mat khau that bai");
 		return false;
 	}
+	@Override
+	public ArrayList<UserModel> getTeachersByClassId(int classId) {
+		return userDao.getTeachersByClassId(classId);
+	}
 
 	@Override
 	public ArrayList<UserModel> getAllUsers() {
@@ -138,5 +142,9 @@ public class UserService implements I_UserService {
 			.replaceAll("[ùúụủũưừứựửữ]", "u")
 			.replaceAll("[ỳýỵỷỹ]", "y")
 			.replaceAll("[đ]", "d");
+	}
+	@Override
+	public ArrayList<UserModel> getStudentsByClassId(int classId) {
+		return userDao.getStudentsByClassId(classId);
 	}
 }
