@@ -5,20 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.apt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.apt.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/sitemesh3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/sitemesh3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/layouts/decorator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/layouts/decorator.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_assignments.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_assignments.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/user/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/user/signup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_materials.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_materials.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_meetings.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_meetings.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/clients/ClassDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/ClassDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserRegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserRegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/ClassMeetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/ClassMeetingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/AssignmentsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/AssignmentsModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/MaterialsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/MaterialsModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/MeetingsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/MeetingsModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/NotificationModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/NotificationModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/ScheduleModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ScheduleModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/SubmissionsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SubmissionsModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/I_UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/I_UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/impl/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/impl/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

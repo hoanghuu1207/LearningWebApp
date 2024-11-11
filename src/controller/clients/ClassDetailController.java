@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.ClassroomsModel;
 import service.impl.ClassroomsService;
-@WebServlet(urlPatterns = {"/class/detail   "})
+@WebServlet(urlPatterns = {"/class/detail"})
 public class ClassDetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ClassroomsService classroomsService = new ClassroomsService();
