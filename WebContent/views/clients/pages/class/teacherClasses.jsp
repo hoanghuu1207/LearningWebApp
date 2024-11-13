@@ -7,65 +7,11 @@
 <html lang="en">
 <head>
     <title>Danh Sách Lớp Học</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/views/clients/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="views/clients/assets/css/class.css">
-    <%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons/themify-icons.css">--%>
-    <style>
-
-        .subnav {
-            list-style-type: none;
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #f4f4f4;
-            min-width: 100px;
-            padding: 0;
-            z-index: 10;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            text-align: left;
-        }
-
-        .subnav li {
-            display: block;
-        }
-
-        .subnav a {
-            color: black;
-            padding: 0 12px;
-            line-height: 38px;
-            text-decoration: none;
-        }
-
-        .subnav>li:hover>a {
-            display: block;
-            color: white;
-            background-color: gray;
-        }
-
-        .dropdown {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .dropdown.active .subnav {
-            display: block;
-        }
-
-
-
-        .fixed-box {
-            cursor: pointer;
-        }
-
-        .class-box{
-            margin: 5px;
-        }
-    </style>
 </head>
 <body>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/views/clients/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="/views/clients/assets/css/class.css?v=1.1">
 
 <div class="container-fluid m-5 p-0">
@@ -139,7 +85,7 @@
     classBoxes.forEach(classBox => {
         classBox.addEventListener('click', (event) => {
             if(event.target.matches('img')) return;
-            window.location.href = 'teacher/class/detail?classID=' + classBox.getAttribute("class_id");
+            window.location.href = '/teacher/class/detail?classID=' + classBox.getAttribute("class_id");
         });
     });
 

@@ -1,6 +1,7 @@
 package controller.clients;
 
 import model.ClassroomsModel;
+import model.UserModel;
 import service.impl.ClassroomsService;
 
 import javax.servlet.RequestDispatcher;
@@ -20,7 +21,9 @@ public class Teacher_ClassroomController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //int teacherId = Integer.parseInt(request.getParameter("teacherId"));
-        int teacherId = 7;
+        UserModel user = (UserModel) request.getAttribute("user");
+
+        int teacherId = user.getUserID();
         // Retrieve the list of classes for the teacher
         ArrayList<ClassroomsModel> teacherClasses = classroomsService.getClassroomsByTeacherId(teacherId);
 

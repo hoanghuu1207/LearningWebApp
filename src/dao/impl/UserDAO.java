@@ -159,6 +159,7 @@ public class UserDAO implements DAOInterface<UserModel> {
 			ResultSet rs = pstm.executeQuery();
 
 			while (rs.next()) {
+				int id = rs.getInt("userID");
 				String firstName = rs.getString("firstname");
 				String lastName = rs.getString("lastname");
 				String password = rs.getString("password");
@@ -167,6 +168,7 @@ public class UserDAO implements DAOInterface<UserModel> {
 
 				userModel = new UserModel();
 
+				userModel.setUserID(id);
 				userModel.setFirstName(firstName);
 				userModel.setLastName(lastName);
 				userModel.setPassword(password);

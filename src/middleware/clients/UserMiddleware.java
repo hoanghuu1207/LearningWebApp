@@ -43,9 +43,9 @@ public class UserMiddleware implements Filter {
 		if (!tokenUser.equals("")) {
 
 			UserModel user = userDao.getUserByTokenUser(tokenUser);
+			System.out.println("id: " + user.getUserID());
 
 			if (user != null) {
-				System.out.println("oke");
 				httpRequest.setAttribute("user", user);
 			}
 		}
