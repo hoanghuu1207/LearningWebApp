@@ -73,25 +73,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Smart Tomcat.9.executor": "Run",
-    "Smart Tomcat.Unnamed.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/admin",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/TechCare/eclipse-workspace/LearningWebApp/WebContent/views/admin/pages/user",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Smart Tomcat.9.executor&quot;: &quot;Run&quot;,
+    &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/admin&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/TechCare/eclipse-workspace/LearningWebApp/WebContent/views/admin/pages/user&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\TechCare\eclipse-workspace\LearningWebApp\WebContent\views\admin\pages\user" />
@@ -112,9 +112,6 @@
       <option name="catalinaBase" value="C:\Users\voquy\.SmartTomcat\LearningWebApp\LearningWebApp" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/WebContent" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
