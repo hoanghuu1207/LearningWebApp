@@ -38,7 +38,7 @@
 					<c:if test="${user != null}">
 						<ul class="nav navbar-nav">
 							<li class="nav-item" role="presentation">
-								<a class="nav-link" href="/class">Lớp học
+								<a class="nav-link" href=${user.roleID == 3 ? "/class" : "/teacher/classes"}>Lớp học
 									<div class="slider"></div>
 								</a>
 							</li>

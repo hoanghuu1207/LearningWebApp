@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.impl.ClassroomDAO;
 import model.ClassroomsModel;
+import model.UserModel;
 import service.impl.ClassroomsService;
 
 import java.io.IOException;
@@ -21,8 +22,12 @@ public class ClassroomsController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //int studentId = Integer.parseInt(request.getParameter("studentId")); // Lấy studentId từ request
-		int studentId = 3;
-        
+        UserModel user = (UserModel) request.getAttribute("user");
+
+        int studentId = user.getUserID();
+
+        System.out.println(studentId);
+
         // Lấy danh sách classroom mà học sinh tham gia
         ArrayList<ClassroomsModel> classrooms = classroomsService.getClassroomsByStudentId(studentId);
         

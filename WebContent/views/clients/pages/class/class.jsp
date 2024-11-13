@@ -45,7 +45,6 @@
                                     <img src="/views/clients/assets/img/more_icon.jpg" alt="More" height="20px" width="20px">
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/class/delete">Xóa</a>
                                     <a class="dropdown-item" href="#">Lấy code</a>
                                 </div>
                             </span>

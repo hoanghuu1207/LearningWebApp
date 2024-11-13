@@ -4,155 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="save unversioned files">
+    <list default="true" id="fdb42f9c-cdc8-4146-a00d-030069d41eff" name="Changes" comment="workspace.xml">
+      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/websocket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerEndpoint/NotificationWebSocket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerEndpoint/WS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middleware/clients/TeacherMiddleware.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/middleware/clients/AuthenticationMiddleware.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/ErrorHandleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/ErrorHandleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserLogoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserLogoutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserOtpPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserOtpPasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserResetPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserResetPasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DAOInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DAOInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/ForgotPasswordDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/ForgotPasswordDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/helper/EmailSender$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/EmailSender$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/helper/EmailSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/EmailSender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/helper/Generate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/Generate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/middleware/clients/AuthenticationMiddleware.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClasses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClasses.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/ClassroomsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/ClassroomsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassroomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassroomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/clients/AuthenticationMiddleware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/clients/AuthenticationMiddleware.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/clients/UserMiddleware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/clients/UserMiddleware.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/middleware/clients/UserMiddleware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/middleware/clients/UserMiddleware.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ClassroomsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ClassroomsModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ForgotPasswordModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ForgotPasswordModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/RolesModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/RolesModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/StudentsClassroomsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/StudentsClassroomsModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/UserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/UserModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/JDBCUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/JDBCUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/ForgotPasswordValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/ForgotPasswordValidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/LoginValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/LoginValidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/OtpPasswordValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/OtpPasswordValidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/RegisterValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/RegisterValidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/ResetPasswordValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/ResetPasswordValidate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;nomenoparty&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "Merging feature/admin"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/nomenoparty/LearningWebApp.git&quot;,
-    &quot;accountId&quot;: &quot;0474d934-7cbf-402c-b88a-7495f180690e&quot;
-  }
-}</component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
-}</component>
-  <component name="ProjectId" id="2oKg1wK5aa79TSmU5Y6abmK6nuc" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Smart Tomcat.9.executor&quot;: &quot;Run&quot;,
-    &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/admin&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/TechCare/eclipse-workspace/LearningWebApp/WebContent/views/admin/pages/user&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\TechCare\eclipse-workspace\LearningWebApp\WebContent\views\admin\pages\user" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="9" type="com.poratu.idea.plugins.tomcat">
-      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
-      <predefined_log_file enabled="true" id="Tomcat Access Log" />
-      <predefined_log_file id="Tomcat Catalina Log" />
-      <predefined_log_file id="Tomcat Manager Log" />
-      <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="catalinaBase" value="C:\Users\voquy\.SmartTomcat\LearningWebApp\LearningWebApp" />
-      <option name="contextPath" value="/" />
-      <option name="docBase" value="$PROJECT_DIR$/WebContent" />
-      <option name="extraClassPath" value="" />
-      <option name="tomcatInfo">
-        <TomcatInfo>
-          <option name="name" value="Apache Tomcat/9.0.96" />
-          <option name="path" value="D:/apache-tomcat-9.0.96-windows-x64/apache-tomcat-9.0.96" />
-          <option name="version" value="9.0.96.0" />
-        </TomcatInfo>
-      </option>
-      <option name="vmOptions" value="" />
-      <module name="LearningWebApp" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="" />
-      <created>1730623483180</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1730623483180</updated>
-      <workItem from="1730623484096" duration="7000" />
-      <workItem from="1730624061885" duration="1087000" />
-    </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="save unversioned files" />
-    <option name="LAST_COMMIT_MESSAGE" value="save unversioned files" />
+    <MESSAGE value="workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml" />
   </component>
 </project>
