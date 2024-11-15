@@ -63,8 +63,29 @@ public class ClassroomDAO implements DAOInterface<ClassroomsModel> {
 	}
 	@Override
 	public int insert(ClassroomsModel t) {
-		// TODO Auto-generated method stub
-		return 0;
+		int row = 0;
+		try {
+			Connection con = JDBCUtil.getConnection();
+
+			String query = "INSERT INTO classrooms(title, teacherID) "
+					+ "VALUES (?, ?)";
+
+			PreparedStatement pstm = con.prepareStatement(query);
+
+			pstm.setString(1, t.getTitle());
+			pstm.setInt(2, t.getTeacherID());
+
+			row = pstm.executeUpdate();
+
+			if (row != 0) {
+				System.out.println("Thêm thành công: " + row);
+			}
+
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return row;
 	}
 
 	@Override
@@ -104,6 +125,50 @@ public class ClassroomDAO implements DAOInterface<ClassroomsModel> {
 	            e.printStackTrace();
 	        }	        
 	        return classroom;	
+	}
+	public ClassroomsModel selectByIdAndStudent(int classroomID, int userID) {
+		ClassroomsModel classroom = null;
+		String sql = "SELECT * FROM ((students_classrooms AS sc " +
+				"JOIN classrooms AS cl ON cl.classroomID = sc.classroomID) " +
+				"JOIN users AS us ON us.userID = sc.studentID) " +
+				"WHERE sc.studentID = ? AND cl.classroomID = ?;";
+		try (Connection conn = JDBCUtil.getConnection();
+			 PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setInt(1, userID);
+			ps.setInt(2, classroomID);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				classroom = new ClassroomsModel();
+				classroom.setClassroomID(rs.getInt("classroomID"));
+				classroom.setTitle(rs.getString("title"));
+				classroom.setTeacherID(rs.getInt("teacherID"));
+			}
+			JDBCUtil.closeConnection(conn);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return classroom;
+	}
+	public ClassroomsModel selectByIdAndTeacher(int classroomID, int userID) {
+		ClassroomsModel classroom = null;
+		String sql = "SELECT * FROM classrooms AS cl " +
+				"WHERE cl.classroomID = ? AND cl.teacherID = ?;";
+		try (Connection conn = JDBCUtil.getConnection();
+			 PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setInt(1, classroomID);
+			ps.setInt(2, userID);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				classroom = new ClassroomsModel();
+				classroom.setClassroomID(rs.getInt("classroomID"));
+				classroom.setTitle(rs.getString("title"));
+				classroom.setTeacherID(rs.getInt("teacherID"));
+			}
+			JDBCUtil.closeConnection(conn);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return classroom;
 	}
 	
 	public static void main(String[] args) {

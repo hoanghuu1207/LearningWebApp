@@ -2,17 +2,44 @@ package dao.impl;
 
 import dao.DAOInterface;
 import model.ClassMessageModel;
+import model.UserModel;
 import util.JDBCUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ClassMessageDAO implements DAOInterface<ClassMessageModel> {
+    private UserDAO userDAO = new UserDAO();
     @Override
     public int insert(ClassMessageModel classMessageModel) {
-        return 0;
+        int row = 0;
+        try {
+            Connection con = JDBCUtil.getConnection();
+
+            String query = "INSERT INTO classroom_messages(classroomID, userID, content, parentMessageID, createdAt) "
+                    + "VALUES (?, ?, ?, ?, ?)";
+
+            PreparedStatement pstm = con.prepareStatement(query);
+
+            pstm.setInt(1, classMessageModel.getClassroomID());
+            pstm.setInt(2, classMessageModel.getUserID());
+            pstm.setString(3, classMessageModel.getContent());
+            pstm.setInt(4, classMessageModel.getParentMessageID());
+            Date date = new Date();
+            pstm.setTimestamp(5, new Timestamp(date.getTime()));
+
+            row = pstm.executeUpdate();
+
+            if (row != 0) {
+                System.out.println("Thêm thành công: " + row);
+            }
+
+            JDBCUtil.closeConnection(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return row;
     }
 
     @Override
@@ -36,7 +63,7 @@ public class ClassMessageDAO implements DAOInterface<ClassMessageModel> {
     }
     public ArrayList<ClassMessageModel> selectAllByClassId(int classid) {
         ArrayList<ClassMessageModel> messages = new ArrayList<>();
-        String sql = "SELECT m1.messageID, m1.content, m1.createdAt, m1.userID, m1.parentMessageID, " +
+        String sql = "SELECT m1.messageID, m1.content, m1.createdAt, m1.userID, m1.parentMessageID, m1.classroomID, " +
                 "u.firstname, u.lastname " +
                 "FROM classroom_messages m1 " +
                 "JOIN users u ON m1.userID = u.userID " +
@@ -56,6 +83,7 @@ public class ClassMessageDAO implements DAOInterface<ClassMessageModel> {
                         rs.getTimestamp("createdAt"),
                         rs.getInt("userID"),
                         rs.getInt("parentMessageID"),
+                        rs.getInt("classroomID"),
                         rs.getString("firstname") + " " + rs.getString("lastname")
                 );
                 messages.add(message);
@@ -65,6 +93,51 @@ public class ClassMessageDAO implements DAOInterface<ClassMessageModel> {
             e.printStackTrace();
         }
         return messages;
+    }
+    public ClassMessageModel insertAndGetMessage(ClassMessageModel classMessageModel) {
+        ClassMessageModel insertedMessage = null;
+        try {
+            Connection con = JDBCUtil.getConnection();
+
+            String query = "INSERT INTO classroom_messages(classroomID, userID, content, parentMessageID, createdAt) "
+                    + "VALUES (?, ?, ?, ?, ?)";
+
+            PreparedStatement pstm = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            pstm.setInt(1, classMessageModel.getClassroomID());
+            pstm.setInt(2, classMessageModel.getUserID());
+            pstm.setString(3, classMessageModel.getContent());
+            pstm.setInt(4, classMessageModel.getParentMessageID());
+            Date date = new Date();
+            pstm.setTimestamp(5, new Timestamp(date.getTime()));
+
+            int row = pstm.executeUpdate();
+
+            if (row > 0) {
+                try (ResultSet generatedKeys = pstm.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        int generatedId = generatedKeys.getInt(1);
+                        System.out.println("Thêm thành công: " + row + ", ID: " + generatedId);
+
+                        insertedMessage = new ClassMessageModel();
+                        insertedMessage.setMessageID(generatedId);
+                        insertedMessage.setClassroomID(classMessageModel.getClassroomID());
+                        insertedMessage.setUserID(classMessageModel.getUserID());
+                        insertedMessage.setContent(classMessageModel.getContent());
+                        insertedMessage.setParentMessageID(classMessageModel.getParentMessageID());
+                        insertedMessage.setCreatedAt(new Timestamp(date.getTime()));
+
+                        UserModel user = userDAO.selectById(classMessageModel.getUserID());
+                        insertedMessage.setSenderName(user.getFirstName() + " " + user.getLastName());
+                    }
+                }
+            }
+
+            JDBCUtil.closeConnection(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return insertedMessage;
     }
     public static void main(String[] args) {
         ClassMessageDAO dao = new ClassMessageDAO();

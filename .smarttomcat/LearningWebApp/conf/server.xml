@@ -69,6 +69,7 @@
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
     <Connector port="8080" protocol="HTTP/1.1"
+               URIEncoding="UTF-8"
                connectionTimeout="20000"
                redirectPort="8443"
                maxParameterCount="1000"

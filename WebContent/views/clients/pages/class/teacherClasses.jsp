@@ -1,6 +1,5 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
@@ -13,8 +12,25 @@
 <link rel="stylesheet" href="/views/clients/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="/views/clients/assets/css/class.css?v=1.1">
+<link rel="stylesheet" href="/views/clients/assets/css/popup.css?v=1.2">
 
+<div id="popupBackground" onclick="closePopup()">
+  <div id="popupForm" onclick="event.stopPropagation()">
+    <h3>Thêm lớp học</h3>
+    <form action='/teacher/class' method='POST'>
+      <div class="inputbox">
+        <input type="text" required="required" name="title"/>
+        <span>Tên lớp</span>
+      </div>
+      <button class="btn btn-dark">Submit</button>
+    </form>
+    <span class="close-btn" onclick="closePopup()">×</span>
+  </div>
+</div>
 <div class="container-fluid m-5 p-0">
+    <div class="d-flex flex-row justify-content-end">
+        <a type='button' class='btn btn-secondary btn-lg' style='margin-right:200px;' onclick="showPopup()">Thêm</a>
+    </div>
     <div class="d-flex flex-wrap">
         <!-- Lặp qua danh sách classroom -->
         <c:forEach var="classroom" items="${teacherClasses}">
@@ -40,14 +56,14 @@
                         </div>
 
                         <span class="dropdown">
-								<a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
-									<img src="/views/clients/assets/img/more_icon.jpg" alt="More"
-                                         height="20px" width="20px"> </a>
-                                <div class="dropdown-menu" role="menu">
-                                    <a class="dropdown-item" role="presentation" href="/class/delete">Xóa</a>
-                                    <a class="dropdown-item" role="presentation" href="#">Lấy code</a>
-                                </div>
-                            </span>
+                            <a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
+                                <img src="/views/clients/assets/img/more_icon.jpg" alt="More"
+                                     height="20px" width="20px"> </a>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item" role="presentation" href="/class/delete">Xóa</a>
+                                <a id="get-code" class="dropdown-item" role="presentation">Lấy code</a>
+                            </div>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -84,11 +100,25 @@
     const classBoxes = document.querySelectorAll('[class_id]');
     classBoxes.forEach(classBox => {
         classBox.addEventListener('click', (event) => {
-            if(event.target.matches('img')) return;
-            window.location.href = '/teacher/class/detail?classID=' + classBox.getAttribute("class_id");
+            if(event.target.matches('#get-code') || event.target.matches('img')){
+                navigator.clipboard.writeText(classBox.getAttribute("class_id"))
+                            .then(() => alert("Đã sao chép mã lớp"))
+                            .catch(err => alert("Lỗi khi sao chép: " + err));
+                return;
+            }
+            window.location.href = 'class/detail?classID=' + classBox.getAttribute("class_id");
         });
     });
+</script>
 
+<script>
+    function showPopup() {
+        document.getElementById('popupBackground').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popupBackground').style.display = 'none';
+    }
 </script>
 
 </body>

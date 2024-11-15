@@ -106,6 +106,10 @@
 .header-dark .dropdown-menu {
   background-color: rgba(60, 56, 56);
   padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+   top: 35px;
+  position: absolute;
 }
 
 .header-dark .navbar .navbar-nav > li > .dropdown-menu {
@@ -117,6 +121,10 @@
   line-height:2;
   font-size:14px;
   color:white;
+  white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+    max-width: 300px;
 }
 
 .header-dark .navbar .dropdown-menu .dropdown-item:focus, .header-dark .navbar .dropdown-menu .dropdown-item:hover {

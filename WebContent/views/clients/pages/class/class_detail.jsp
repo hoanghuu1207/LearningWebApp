@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Detail</title>
 
-    <link rel="stylesheet" href="../../assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
     <style>
         .container-class{
             display: flex;
@@ -25,14 +25,20 @@
         .main-content-class {
             flex-grow: 1;
             padding: 20px;
-            overflow-y: auto;
-            height: 100vh;
         }
+        #postContainer {
+            height: 100vh;          /* Chiều cao của container */
+            overflow-y: auto;       /* Cho phép cuộn dọc */
+        }
+
+        .message-box { border: 1px solid rgba(221, 221, 221, 0.51); border-radius: 8px; padding: 10px; margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.47); }
+        .reply-box { margin-left: 40px; display: none; }
     </style>
 </head>
 
 <body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/views/clients/assets/css/popup.css">
 <!-- Sidebar -->
 <div class = "container-class">
     <div class="sidebar">
@@ -41,7 +47,7 @@
                 <h5 id="class_name">${classroom.title}</h5>
             </div>
             <div class="list-group">
-                <a href="/class_post?classroomID=${classroom.classroomID}"
+                <a href="/class/detail?classID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Trang chủ</a>
                 <a href="/class_assignments?classroomID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Bài tập</a>
@@ -62,10 +68,20 @@
 
     <!-- Main Content -->
     <div class="main-content-class">
-        <div class="welcome-image">
-            <img src="/views/clients/assets/img/welcome-to-our-class2.jpg" alt="Welcome to the Classroom" class="img-fluid">
+        <div id="popupBackground" onclick="closePopup()">
+          <div id="popupForm" onclick="event.stopPropagation()">
+            <h3>Thêm bài đăng</h3>
+            <form action='/class_post' method='POST'>
+              <div class="inputbox">
+                <input type="text" required="required" name="post"/>
+                <span>Nội dung</span>
+              </div>
+              <button class="btn btn-dark">Submit</button>
+            </form>
+            <span class="close-btn" onclick="closePopup()">×</span>
           </div>
-
+        </div>
+        <div class="container" id="postContainer">
           <h2>Bài đăng</h2><br>
 
           <c:forEach var="message" items="${messages}">
@@ -93,7 +109,6 @@
                 <div class="message-box reply-box reply-${message.parentMessageID}">
                   <div class="message-header">
                     <strong>${message.senderName}</strong> - <fmt:formatDate value="${message.createdAt}" pattern="dd/MM/yyyy HH:mm" />
-
                   </div>
                   <div class="message-body">
                     <p>${message.content}</p>
@@ -102,40 +117,39 @@
               </c:otherwise>
             </c:choose>
           </c:forEach>
-          <div class="mb-3">
-            <button class="btn btn-primary">Bắt đầu một bài đăng</button>
+          <div id="start-post" class="mb-3">
+            <button class="btn btn-primary" onclick="showPopup()">Bắt đầu một bài đăng</button>
           </div>
+        </div>
     </div>
-<%--    <div class="col-md-9 col-lg-10">--%>
-<%--        <iframe name="main-content-class" src="/class_post?classroomID=${classroom.classroomID}"></iframe>--%>
-<%--    </div>--%>
-
 </div>
-<!-- JavaScript -->
-<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
-<!--<script>
-    $(document).ready(function() {
-        // Lắng nghe sự kiện click vào các link trong sidebar--%>
-        $('.list-group a').click(function(event) {
-            event.preventDefault(); // Ngăn không cho trang tải lại
 
-            // Lấy URL của Servlet từ thuộc tính href của link được nhấn
-            const url = $(this).attr('href');
+<script>
+    function showPopup() {
+        document.getElementById('popupBackground').style.display = 'block';
+    }
 
-            // Gửi yêu cầu AJAX đến Servlet và tải nội dung vào main-content-class
-            $.ajax({
-                url: url,
-                method: 'GET',
-                success: function(data) {
-                    // Thay thế nội dung của main-content-class bằng nội dung từ Servlet--%>
-                    $('.main-content-class').html(data);
-                },
-                error: function() {
-                    alert('Lỗi khi tải nội dung. Vui lòng thử lại sau.');
-                }
-            });
-        });
-    });
-</script>-->
+    function closePopup() {
+        document.getElementById('popupBackground').style.display = 'none';
+    }
+</script>
+
+<script>
+    window.onload = function() {
+        const container = document.getElementById("postContainer");
+        container.scrollTop = container.scrollHeight;
+    };
+</script>
+
+<%
+    String classID = (String) session.getAttribute("classID");
+%>
+
+<script>
+    const classID = "<%= classID %>";
+</script>
+
+<script src="/views/clients/assets/js/PostArticleWebsocket.js?v=1.2"></script>
+
 </body>
 </html>
