@@ -17,7 +17,6 @@
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
       display: flex;
-      justify-content: center;
       align-items: center;
       height: 100vh;
       color: #333;
@@ -26,16 +25,16 @@
 
     .account-container {
       width: 100%;
-      padding: 40px;
       text-align: center;
       font-size: 1.2em;
+      padding: 50px;
     }
 
     .profile-pic {
       width: 140px;
       height: 140px;
       border-radius: 50%;
-      margin: 0 auto 20px;
+      margin: 10px auto 20px;
       border: 3px solid #827c7c;
       position: relative;
     }
@@ -50,8 +49,8 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      height: 36px;
-      width: 36px;
+      height: 30px;
+      width: 30px;
       background-color: #333;
       color: #fff;
       border: none;
@@ -74,7 +73,7 @@
     }
 
     .account-info {
-      margin: 10px calc(30%);
+      margin: 3% 20%;
       text-align: left;
     }
 

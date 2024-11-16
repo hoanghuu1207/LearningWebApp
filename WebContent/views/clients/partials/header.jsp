@@ -5,11 +5,9 @@
 <html>
 
 <head>
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-	<link rel="stylesheet"
-		href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
 	<link rel="stylesheet" href="/views/clients/assets/css/header.css?v=1.2">
 
 	<style>
@@ -73,16 +71,25 @@
 
 						</c:when>
 						<c:otherwise>
-						    <span><i class="fa-regular fa-bell me-5" id="notice" style="transform: scale(1.6);"></i></span>
-							<span class="dropdown"> <a class="nav-link"
-								data-toggle="dropdown" aria-expanded="false" href="#"><img
-									src="/views/clients/assets/img/user_icon.png" alt="User"
-									height="35px" width="35px"></a>
+							<span class="dropdown">
+								<i class="fa-regular fa-bell me-5" id="notice" style="transform: scale(1.6);" data-toggle="dropdown" aria-expanded="false"></i>
+								<div class="dropdown-menu" role="menu">
+									<a class="dropdown-item" role="presentation" href="#">Thông báo 1</a>
+									<a class="dropdown-item" role="presentation" href="#">Thông báo 2</a>
+									<a class="dropdown-item" role="presentation" href="#">Thông báo 3</a>
+								</div>
+							</span>
+
+							<span class="dropdown">
+								<a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
+									<img src="/views/clients/assets/img/user_icon.png" alt="User" height="35px" width="35px">
+								</a>
 								<div class="dropdown-menu" role="menu">
 									<a class="dropdown-item" role="presentation" href="/user/account">Tài khoản</a>
 									<a class="dropdown-item" role="presentation" href="/user/logout">Đăng xuất</a>
 								</div>
 							</span>
+
 						</c:otherwise>
 					</c:choose>
 
