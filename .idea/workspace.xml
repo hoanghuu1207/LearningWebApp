@@ -4,42 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="">
+    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merge feature/post_article into feature/admin">
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/class.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/class.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/websocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/websocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/messages.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/messages.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClasses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClasses.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/ClassDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/ClassDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/ClassroomsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/ClassroomsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassroomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassroomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserForgotPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserForgotPasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserOtpPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserOtpPasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserRegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserResetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserResetPasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/ClassMessageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/ClassMessageDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/ClassroomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/ClassroomDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ClassMessageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ClassMessageModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/I_ClassMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/I_ClassMessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/I_ClassroomsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/I_ClassroomsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/impl/ClassMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/ClassMessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/impl/ClassroomsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/ClassroomsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserOtpPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserOtpPasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserRegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserResetPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserResetPasswordController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,23 +55,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/teacher&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/TechCare/eclipse-workspace/LearningWebApp/WebContent/views/admin/pages/user&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Smart Tomcat.Unnamed.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "feature/admin",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/TechCare/eclipse-workspace/LearningWebApp/WebContent/views/admin/pages/user",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\TechCare\eclipse-workspace\LearningWebApp\WebContent\views\admin\pages\user" />
@@ -121,18 +90,21 @@
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="catalinaBase" value="C:\Users\TechCare\.SmartTomcat\LearningWebApp\LearningWebApp" />
+      <option name="catalinaBase" value="C:\Users\voquy\.SmartTomcat\LearningWebApp\LearningWebApp" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/WebContent" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
-          <option name="name" value="Apache Tomcat/9.0.93" />
-          <option name="path" value="D:/apache-tomcat-9.0.93" />
-          <option name="version" value="9.0.93.0" />
+          <option name="name" value="Apache Tomcat/9.0.96" />
+          <option name="path" value="D:/apache-tomcat-9.0.96-windows-x64/apache-tomcat-9.0.96" />
+          <option name="version" value="9.0.96.0" />
         </TomcatInfo>
       </option>
-      <option name="vmOptions" value="-Dfile.encoding=UTF-8" />
+      <option name="vmOptions" value="" />
       <module name="LearningWebApp" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -150,6 +122,15 @@
       <workItem from="1730623484096" duration="7000" />
       <workItem from="1730624061885" duration="1087000" />
     </task>
+    <task id="LOCAL-00001" summary="merge feature/post_article into feature/admin">
+      <option name="closed" value="true" />
+      <created>1731732849549</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731732849549</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,5 +143,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="save workspace.xml" />
+    <MESSAGE value="merge feature/post_article into feature/admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge feature/post_article into feature/admin" />
   </component>
 </project>

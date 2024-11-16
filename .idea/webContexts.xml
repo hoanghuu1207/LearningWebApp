@@ -6,6 +6,7 @@
         <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
         <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
         <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/class_materials.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
+        <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
         <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/meetingDetail.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
         <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/messages.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
         <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/home" />

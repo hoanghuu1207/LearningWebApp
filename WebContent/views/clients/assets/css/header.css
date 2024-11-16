@@ -104,8 +104,7 @@
 }
 
 .header-dark .dropdown-menu {
-  background-color: whitesmoke;
-  padding: 0;
+  background-color: rgba(60, 56, 56);  padding: 0;
   overflow-y: auto;
   overflow-x: hidden;
    top: 35px;
