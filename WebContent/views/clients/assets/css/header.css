@@ -104,8 +104,7 @@
 }
 
 .header-dark .dropdown-menu {
-  background-color: rgba(60, 56, 56);
-  padding: 0;
+  background-color: rgba(60, 56, 56);  padding: 0;
   overflow-y: auto;
   overflow-x: hidden;
   max-height: calc(5 * 2em);
@@ -129,8 +128,8 @@
 }
 
 .header-dark .navbar .dropdown-menu .dropdown-item:focus, .header-dark .navbar .dropdown-menu .dropdown-item:hover {
-  background:gray;
-  /*color: black;*/
+  background: rgba(159, 156, 156, 0.5);
+  border-radius: 5px;
 }
 
 #notice{

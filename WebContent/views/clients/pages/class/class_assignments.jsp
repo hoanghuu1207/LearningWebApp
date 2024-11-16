@@ -46,9 +46,19 @@
             color: red;
         }
 
-        .nav-link.active {
-            background-color: #d3d3d3;
-            color: #343a40;
+        .main-content-class .nav-link {
+            margin-right: 20px;
+            background-color: transparent !important;
+        }
+
+        .main-content-class .nav-link.active,
+        .main-content-class .nav-link:hover {
+            border-end-end-radius: unset !important;
+            border-end-start-radius: unset !important;
+            border-bottom: 2px solid #156cc1;
+            transform: scale(1.05);
+            color: black !important;
+            background-color: rgba(88, 171, 251, 0.5) !important;
         }
 
         .assignment-card {
