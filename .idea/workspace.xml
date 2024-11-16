@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdb42f9c-cdc8-4146-a00d-030069d41eff" name="Changes" comment="merge feature/teacher into feature/admin">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/fonts/remixicon.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_assignments.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_assignments.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_meetings.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_meetings.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/user/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/user/account.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/user/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/user/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/user/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/user/signup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="fdb42f9c-cdc8-4146-a00d-030069d41eff" name="Changes" comment="them mot so giao dien chuc nang co ban" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,9 +92,17 @@
       <updated>1731570142986</updated>
       <workItem from="1731570145095" duration="2451000" />
       <workItem from="1731677033671" duration="11847000" />
-      <workItem from="1731725615344" duration="4873000" />
+      <workItem from="1731725615344" duration="5187000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="them mot so giao dien chuc nang co ban">
+      <option name="closed" value="true" />
+      <created>1731732274860</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731732274860</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +111,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="workspace.xml" />
     <MESSAGE value="merge feature/teacher into feature/admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge feature/teacher into feature/admin" />
+    <MESSAGE value="them mot so giao dien chuc nang co ban" />
+    <option name="LAST_COMMIT_MESSAGE" value="them mot so giao dien chuc nang co ban" />
   </component>
 </project>
