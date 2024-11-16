@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merge feature/post_article into feature/admin">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="change background color of deopdown menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/admin" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -37,7 +40,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/nomenoparty/LearningWebApp.git&quot;,
-    &quot;accountId&quot;: &quot;0474d934-7cbf-402c-b88a-7495f180690e&quot;
+    &quot;accountId&quot;: &quot;ec523c62-2b87-4b77-b1b3-14b414ba0895&quot;
   }
 }</component>
   <component name="LogFilters">
@@ -61,9 +64,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Smart Tomcat.Unnamed.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/admin",
+    "git-widget-placeholder": "fe",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/TechCare/eclipse-workspace/LearningWebApp/WebContent/views/admin/pages/user",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
@@ -93,9 +98,6 @@
       <option name="catalinaBase" value="C:\Users\voquy\.SmartTomcat\LearningWebApp\LearningWebApp" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/WebContent" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
@@ -111,6 +113,14 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -121,6 +131,7 @@
       <updated>1730623483180</updated>
       <workItem from="1730623484096" duration="7000" />
       <workItem from="1730624061885" duration="1087000" />
+      <workItem from="1731740498298" duration="2133000" />
     </task>
     <task id="LOCAL-00001" summary="merge feature/post_article into feature/admin">
       <option name="closed" value="true" />
@@ -130,8 +141,19 @@
       <option name="project" value="LOCAL" />
       <updated>1731732849549</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="change background color of deopdown menu">
+      <option name="closed" value="true" />
+      <created>1731733265151</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731733265151</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -147,6 +169,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="save workspace.xml" />
     <MESSAGE value="merge feature/post_article into feature/admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge feature/post_article into feature/admin" />
+    <MESSAGE value="change background color of deopdown menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="change background color of deopdown menu" />
   </component>
 </project>

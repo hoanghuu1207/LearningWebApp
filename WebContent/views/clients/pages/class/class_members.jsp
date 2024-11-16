@@ -7,88 +7,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Detail</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .container-class {
-            display: flex;
-            width: 100%;
-            height: 100%;
-        }
 
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            overflow-y: auto;
-            background-color: #f8f9fa;
-        }
-
-        .main-content-class {
-            flex-grow: 1;
-            padding: 20px;
-            overflow-y: auto;
-            height: 100vh;
-        }
-
-        .member-list-container {
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-
-        .member-table th,
-        .member-table td {
-            padding: 10px;
-            vertical-align: middle;
-        }
-
-        .member-table img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .action-buttons i {
-            font-size: 18px;
-            margin-right: 10px;
-            cursor: pointer;
-            color: #6c757d;
-        }
-
-        .action-buttons i:hover {
-            color: #495057;
-        }
-
-        .search-wrapper {
-            width: 40%;
-            position: relative;
-            display: inline-block;
-        }
-
-        .form-control {
-            width: 100%;
-            padding-right: 40px;
-        }
-
-        .search-icon {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 18px;
-            color: #888;
-            cursor: pointer;
-        }
-
-        .btn-add{
-            background-color: #5c62d1;
-            color: whitesmoke;
-        }
-
-    </style>
 </head>
 
 <body>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    .container-class {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        overflow-y: auto;
+        background-color: #f8f9fa;
+    }
+
+    .main-content-class {
+        flex-grow: 1;
+        padding: 20px;
+        overflow-y: auto;
+        height: 100vh;
+    }
+
+    .member-list-container {
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    .member-table th,
+    .member-table td {
+        padding: 10px;
+        vertical-align: middle;
+    }
+
+    .member-table img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .action-buttons i {
+        font-size: 18px;
+        margin-right: 10px;
+        cursor: pointer;
+        color: #6c757d;
+    }
+
+    .action-buttons i:hover {
+        color: #495057;
+    }
+
+    .search-wrapper {
+        width: 40%;
+        position: relative;
+        display: inline-block;
+    }
+
+    .form-control {
+        width: 100%;
+        padding-right: 40px;
+    }
+
+    .search-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #888;
+        cursor: pointer;
+    }
+
+    .btn-add{
+        background-color: #5c62d1;
+        color: whitesmoke;
+    }
+
+</style>
 
 <div class="container-class">
     <div class="sidebar">
