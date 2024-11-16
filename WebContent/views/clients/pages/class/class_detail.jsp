@@ -59,7 +59,7 @@
                 <a href="/meetings?classroomID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Cuộc họp</a>
                 <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
-                <a href="/views/clients/pages/class/prepare_meeting.jsp" target="_parent" class="list-group-item list-group-item-action">
+                <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
                     Tạo cuộc họp
                     <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
                 </a>
