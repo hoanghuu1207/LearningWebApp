@@ -39,6 +39,7 @@
 <body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="/views/clients/assets/css/popup.css">
+<link rel="stylesheet" href="/views/clients/assets/css/class_detail.css">
 <!-- Sidebar -->
 <div class = "container-class">
     <div class="sidebar">
@@ -58,7 +59,7 @@
                 <a href="/meetings?classroomID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Cuộc họp</a>
                 <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
-                <a href="/views/clients/pages/class/prepare_meeting.jsp" target="_parent" class="list-group-item list-group-item-action">
+                <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
                     Tạo cuộc họp
                     <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
                 </a>
