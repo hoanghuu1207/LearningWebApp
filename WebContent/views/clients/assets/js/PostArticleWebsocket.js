@@ -1,4 +1,4 @@
-const socket = new WebSocket("ws://localhost:8080/postArticle/" + classID);
+const socket = new WebSocket("wss://192.168.158.200:8443/postArticle/" + classID);
 
 socket.onmessage = function(event) {
     const data = JSON.parse(event.data);

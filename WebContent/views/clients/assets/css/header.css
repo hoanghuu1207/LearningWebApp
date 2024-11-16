@@ -108,6 +108,7 @@
   padding: 0;
   overflow-y: auto;
   overflow-x: hidden;
+  max-height: calc(5 * 2em);
    top: 35px;
   position: absolute;
 }
@@ -139,5 +140,23 @@
   color: black;
 }
 
+.header-dark .dropdown-menu::-webkit-scrollbar {
+  width: 10px;
+  background-color: #2b2b2b;
+}
+
+.header-dark .dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid #2b2b2b;
+}
+
+.header-dark .dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #7B7B7B;
+}
+
+.header-dark .dropdown-menu::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
 
 

@@ -87,8 +87,12 @@
                                         </div>
                                     </span>
                                     <div class="dropdown-menu" role="menu" style="left: 30%; transform: translateX(-60%);">
-                                        <a class="dropdown-item" role="presentation" href="/user/account" style="font-size:12px;">Tài khoản Tài khoản Tài khoản </a>
-                                        <a class="dropdown-item" role="presentation" href="/user/logout" style="font-size:12px;">Đăng xuất</a>
+                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;" data-bs-toggle="tooltip" title="Hoang Huu thêm bài viết mới trong Công nghệ Web">Hoang Huu thêm bài viết mới trong Công nghệ Web</a>
+                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
+                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
+                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
+                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
+                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
                                     </div>
                                 </span>
                                 <span class="dropdown">
