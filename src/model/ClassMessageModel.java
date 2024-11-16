@@ -7,18 +7,22 @@ public class ClassMessageModel {
     private String content;
     private Timestamp createdAt;
     private int userID;
-    private Integer parentMessageID;  // nullable for root messages
+    private int parentMessageID;  // nullable for root messages
+    private int classroomID;
     private String senderName;
 
     // Constructor, getters, and setters
-    public ClassMessageModel(int messageID, String content, Timestamp createdAt, int userID, Integer parentMessageID, String senderName) {
+    public ClassMessageModel(int messageID, String content, Timestamp createdAt, int userID, int parentMessageID, int classroomID, String senderName) {
         this.messageID = messageID;
         this.content = content;
         this.createdAt = createdAt;
         this.userID = userID;
         this.parentMessageID = parentMessageID;
+        this.classroomID = classroomID;
         this.senderName = senderName;
     }
+
+    public ClassMessageModel(){}
 
     public Integer getParentMessageID() {
         return parentMessageID;
@@ -50,6 +54,18 @@ public class ClassMessageModel {
 
     public void setUserID(int userID) {
         this.userID = userID;
+    }
+
+    public void setParentMessageID(int parentMessageID) {
+        this.parentMessageID = parentMessageID;
+    }
+
+    public int getClassroomID() {
+        return classroomID;
+    }
+
+    public void setClassroomID(int classroomID) {
+        this.classroomID = classroomID;
     }
 
     public int getMessageID() {

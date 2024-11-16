@@ -21,6 +21,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/class.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/class.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/websocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/websocket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/catalina.policy" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/catalina.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/context.xml" beforeDir="false" />
@@ -58,11 +63,42 @@
       <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/messages.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/messages.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClasses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClasses.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/ClassDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/ClassDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/ClassroomsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/ClassroomsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassroomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassroomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserForgotPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserForgotPasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserOtpPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserOtpPasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserRegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserResetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserResetPasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/impl/ClassMessageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/ClassMessageDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/impl/ClassroomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/ClassroomDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ClassMessageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ClassMessageModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/I_ClassMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/I_ClassMessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/I_ClassroomsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/I_ClassroomsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/impl/ClassMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/ClassMessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/impl/ClassroomsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/ClassroomsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserLoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserOtpPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserOtpPasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserRegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserResetPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserResetPasswordController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -116,6 +152,7 @@
     &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat 9.0.95.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/teacher&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feature/admin&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -129,7 +166,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -145,7 +182,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat" type="com.poratu.idea.plugins.tomcat">
+    <configuration name="Unnamed" type="com.poratu.idea.plugins.tomcat" nameIsGenerated="true">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
@@ -163,7 +200,7 @@
           <option name="version" value="9.0.95.0" />
         </TomcatInfo>
       </option>
-      <option name="vmOptions" value="" />
+      <option name="vmOptions" value="-Dfile.encoding=UTF-8" />
       <module name="LearningWebApp" />
       <method v="2">
         <option name="Make" enabled="true" />

@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Bitter:400,700">
-	<link rel="stylesheet" href="/views/clients/assets/css/header.css?v=1.2">
+	<link rel="stylesheet" href="/views/clients/assets/css/header.css?v=1.3">
+	<link rel="stylesheet" href="/views/clients/assets/css/notification.css?v=1.1">
 
 	<style>
 		.header-dark .navbar-nav .nav-item:hover{
@@ -38,7 +39,7 @@
 					<c:if test="${user != null}">
 						<ul class="nav navbar-nav">
 							<li class="nav-item" role="presentation">
-								<a class="nav-link" href="/class">Lớp học
+								<a class="nav-link" href=${user.roleID == 3 ? "/class" : "/teacher/class"}>Lớp học
 									<div class="slider"></div>
 								</a>
 							</li>
@@ -73,16 +74,34 @@
 
 						</c:when>
 						<c:otherwise>
-						    <span><i class="fa-regular fa-bell me-5" id="notice" style="transform: scale(1.6);"></i></span>
-							<span class="dropdown"> <a class="nav-link"
-								data-toggle="dropdown" aria-expanded="false" href="#"><img
-									src="/views/clients/assets/img/user_icon.png" alt="User"
-									height="35px" width="35px"></a>
-								<div class="dropdown-menu" role="menu">
-									<a class="dropdown-item" role="presentation" href="/user/account">Tài khoản</a>
-									<a class="dropdown-item" role="presentation" href="/user/logout">Đăng xuất</a>
-								</div>
-							</span>
+						    <!--<span><i class="fa-regular fa-bell me-5" id="notice" style="transform: scale(1.6);"></i></span>-->
+						    <div class='notification-container'>
+                                <span class="dropdown">
+                                    <span class="notification-box nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
+                                        <span class="notification-count" style="display: none;"></span>
+                                        <div class="notification-bell">
+                                            <span class="bell-top"></span>
+                                            <span class="bell-middle"></span>
+                                            <span class="bell-bottom"></span>
+                                            <span class="bell-rad"></span>
+                                        </div>
+                                    </span>
+                                    <div class="dropdown-menu" role="menu" style="left: 30%; transform: translateX(-60%);">
+                                        <a class="dropdown-item" role="presentation" href="/user/account" style="font-size:12px;">Tài khoản Tài khoản Tài khoản </a>
+                                        <a class="dropdown-item" role="presentation" href="/user/logout" style="font-size:12px;">Đăng xuất</a>
+                                    </div>
+                                </span>
+                                <span class="dropdown">
+                                    <a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><img
+                                        src="/views/clients/assets/img/user_icon.png" alt="User"
+                                        height="35px" width="35px">
+                                    </a>
+                                    <div class="dropdown-menu" role="menu" style="left: 50%; transform: translateX(-40%);">
+                                        <a class="dropdown-item" role="presentation" href="/user/account">Tài khoản</a>
+                                        <a class="dropdown-item" role="presentation" href="/user/logout">Đăng xuất</a>
+                                    </div>
+                                </span>
+						    </div>
 						</c:otherwise>
 					</c:choose>
 

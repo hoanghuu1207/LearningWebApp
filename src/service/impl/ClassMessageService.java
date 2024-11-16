@@ -12,4 +12,9 @@ public class ClassMessageService implements I_ClassMessageService {
     public ArrayList<ClassMessageModel> selectByClassId(int classid) {
         return messageDAO.selectAllByClassId(classid);
     }
+
+    @Override
+    public ClassMessageModel insertAndGetMessage(ClassMessageModel classMessageModel) {
+        return messageDAO.insertAndGetMessage(classMessageModel);
+    }
 }

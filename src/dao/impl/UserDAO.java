@@ -102,8 +102,45 @@ public class UserDAO implements DAOInterface<UserModel> {
 
 	@Override
 	public UserModel selectById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		UserModel userModel = null;
+		try {
+			Connection con = JDBCUtil.getConnection();
+
+			String query = "SELECT * FROM users WHERE userID = ?";
+
+			PreparedStatement pstm = con.prepareStatement(query);
+
+			pstm.setInt(1, id);
+
+			ResultSet rs = pstm.executeQuery();
+
+			while (rs.next()) {
+				int userID = rs.getInt("userID");
+				String firstName = rs.getString("firstname");
+				String lastName = rs.getString("lastname");
+				String email = rs.getString("email");
+				String password = rs.getString("password");
+				int roleID = rs.getInt("roleID");
+				String avatar = rs.getString("avatar");
+				String tokenUser = rs.getString("tokenUser");
+
+				userModel = new UserModel();
+
+				userModel.setUserID(userID);
+				userModel.setFirstName(firstName);
+				userModel.setLastName(lastName);
+				userModel.setEmail(email);
+				userModel.setPassword(password);
+				userModel.setRoleID(roleID);
+				userModel.setAvatar(avatar);
+				userModel.setTokenUser(tokenUser);
+			}
+
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return userModel;
 	}
 
 	public UserModel getUserByEmail(String email) {
@@ -159,6 +196,7 @@ public class UserDAO implements DAOInterface<UserModel> {
 			ResultSet rs = pstm.executeQuery();
 
 			while (rs.next()) {
+				int id = rs.getInt("userID");
 				String firstName = rs.getString("firstname");
 				String lastName = rs.getString("lastname");
 				String password = rs.getString("password");
@@ -167,6 +205,7 @@ public class UserDAO implements DAOInterface<UserModel> {
 
 				userModel = new UserModel();
 
+				userModel.setUserID(id);
 				userModel.setFirstName(firstName);
 				userModel.setLastName(lastName);
 				userModel.setPassword(password);

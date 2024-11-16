@@ -1,74 +1,36 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Danh Sách Lớp Học</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/views/clients/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="views/clients/assets/css/class.css">
-    <%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons/themify-icons.css">--%>
-    <style>
-
-        .subnav {
-            list-style-type: none;
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #f4f4f4;
-            min-width: 100px;
-            padding: 0;
-            z-index: 10;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            text-align: left;
-        }
-
-        .subnav li {
-            display: block;
-        }
-
-        .subnav a {
-            color: black;
-            padding: 0 12px;
-            line-height: 38px;
-            text-decoration: none;
-        }
-
-        .subnav>li:hover>a {
-            display: block;
-            color: white;
-            background-color: gray;
-        }
-
-        .dropdown {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .dropdown.active .subnav {
-            display: block;
-        }
-
-
-
-        .fixed-box {
-            cursor: pointer;
-        }
-
-        .class-box{
-            margin: 5px;
-        }
-    </style>
 </head>
 <body>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/views/clients/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="/views/clients/assets/css/class.css?v=1.1">
+<link rel="stylesheet" href="/views/clients/assets/css/popup.css?v=1.2">
 
+<div id="popupBackground" onclick="closePopup()">
+  <div id="popupForm" onclick="event.stopPropagation()">
+    <h3>Thêm lớp học</h3>
+    <form action='/teacher/class' method='POST'>
+      <div class="inputbox">
+        <input type="text" required="required" name="title"/>
+        <span>Tên lớp</span>
+      </div>
+      <button class="btn btn-dark">Submit</button>
+    </form>
+    <span class="close-btn" onclick="closePopup()">×</span>
+  </div>
+</div>
 <div class="container-fluid m-5 p-0">
+    <div class="d-flex flex-row justify-content-end">
+        <a type='button' class='btn btn-secondary btn-lg' style='margin-right:200px;' onclick="showPopup()">Thêm</a>
+    </div>
     <div class="d-flex flex-wrap">
         <!-- Lặp qua danh sách classroom -->
         <c:forEach var="classroom" items="${teacherClasses}">
@@ -94,14 +56,14 @@
                         </div>
 
                         <span class="dropdown">
-								<a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
-									<img src="/views/clients/assets/img/more_icon.jpg" alt="More"
-                                         height="20px" width="20px"> </a>
-                                <div class="dropdown-menu" role="menu">
-                                    <a class="dropdown-item" role="presentation" href="/class/delete">Xóa</a>
-                                    <a class="dropdown-item" role="presentation" href="#">Lấy code</a>
-                                </div>
-                            </span>
+                            <a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
+                                <img src="/views/clients/assets/img/more_icon.jpg" alt="More"
+                                     height="20px" width="20px"> </a>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item" role="presentation" href="/class/delete">Xóa</a>
+                                <a id="get-code" class="dropdown-item" role="presentation">Lấy code</a>
+                            </div>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -138,11 +100,25 @@
     const classBoxes = document.querySelectorAll('[class_id]');
     classBoxes.forEach(classBox => {
         classBox.addEventListener('click', (event) => {
-            if(event.target.matches('img')) return;
-            window.location.href = 'teacher/class/detail?classID=' + classBox.getAttribute("class_id");
+            if(event.target.matches('#get-code') || event.target.matches('img')){
+                navigator.clipboard.writeText(classBox.getAttribute("class_id"))
+                            .then(() => alert("Đã sao chép mã lớp"))
+                            .catch(err => alert("Lỗi khi sao chép: " + err));
+                return;
+            }
+            window.location.href = 'class/detail?classID=' + classBox.getAttribute("class_id");
         });
     });
+</script>
 
+<script>
+    function showPopup() {
+        document.getElementById('popupBackground').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popupBackground').style.display = 'none';
+    }
 </script>
 
 </body>

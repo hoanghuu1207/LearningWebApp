@@ -23,4 +23,16 @@ public class ClassroomsService implements I_ClassroomsService{
 		return classroomDao.getClassroomsByTeacherId(teacherId);
 	}
 
+	@Override
+	public int insertClassroom(ClassroomsModel classroomsModel) {
+		return classroomDao.insert(classroomsModel);
+	}
+
+	public ClassroomsModel selectByIdAndStudentID(int classroomID, int userID) {
+		return classroomDao.selectByIdAndStudent(classroomID, userID);
+	}
+
+	public ClassroomsModel selectByIdAndTeacherID(int classroomID, int userID) {
+		return classroomDao.selectByIdAndTeacher(classroomID, userID);
+	}
 }
