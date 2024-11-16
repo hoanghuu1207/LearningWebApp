@@ -69,7 +69,6 @@
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
     <Connector port="8080" protocol="HTTP/1.1"
-               URIEncoding="UTF-8"
                connectionTimeout="20000"
                redirectPort="8443"
                maxParameterCount="1000"
@@ -92,13 +91,14 @@
     -->
     <!--
     <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
-           maxThreads="150" SSLEnabled="true">
-    <SSLHostConfig>
-        <Certificate certificateKeystoreFile="conf/server.crt"
-                     certificateKeyFile="conf/server.key"
-                     type="RSA" />
-    </SSLHostConfig>
-</Connector>
+               maxThreads="150" SSLEnabled="true"
+               maxParameterCount="1000"
+               >
+        <SSLHostConfig>
+            <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
+                         certificateKeystorePassword="changeit" type="RSA" />
+        </SSLHostConfig>
+    </Connector>
     -->
     <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443 with HTTP/2
          This connector uses the APR/native implementation which always uses
