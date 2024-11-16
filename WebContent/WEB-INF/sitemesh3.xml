@@ -12,4 +12,5 @@
 <!--	<mapping path="/meetingDetail" exclude="true" />-->
 	<mapping path="/teacher/schedules" exclude="true" />
 	<mapping path="/admin/*" exclude="true" />
+	<mapping path="/StartMeeting" exclude="true" />
 </sitemesh>
