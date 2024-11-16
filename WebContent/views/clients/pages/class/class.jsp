@@ -45,7 +45,7 @@
                                     <img src="/views/clients/assets/img/more_icon.jpg" alt="More" height="20px" width="20px">
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Lấy code</a>
+                                    <a id="get-code" class="dropdown-item" role="presentation">Lấy code</a>
                                 </div>
                             </span>
 						</div>
@@ -84,7 +84,12 @@
         const classBoxes = document.querySelectorAll('[class_id]');
         classBoxes.forEach(classBox => {
             classBox.addEventListener('click', (event) => {
-                if(event.target.matches('img')) return;
+                if(event.target.matches('#get-code') || event.target.matches('img')){
+                    navigator.clipboard.writeText(classBox.getAttribute("class_id"))
+                                .then(() => alert("Đã sao chép mã lớp"))
+                                .catch(err => alert("Lỗi khi sao chép: " + err));
+                    return;
+                }
                 window.location.href = 'class/detail?classID=' + classBox.getAttribute("class_id");
             });
         });

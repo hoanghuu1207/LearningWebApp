@@ -31,11 +31,11 @@ public class ClassroomsController extends HttpServlet {
         // Lấy danh sách classroom mà học sinh tham gia
         ArrayList<ClassroomsModel> classrooms = classroomsService.getClassroomsByStudentId(studentId);
         
-        for (ClassroomsModel classroom : classrooms) {
-            System.out.println("Classroom ID: " + classroom.getClassroomID());
-            System.out.println("Title: " + classroom.getTitle());
-            System.out.println("Teacher ID: " + classroom.getTeacherID());
-        }
+//        for (ClassroomsModel classroom : classrooms) {
+//            System.out.println("Classroom ID: " + classroom.getClassroomID());
+//            System.out.println("Title: " + classroom.getTitle());
+//            System.out.println("Teacher ID: " + classroom.getTeacherID());
+//        }
         // Gửi danh sách classroom tới JSP
         request.setAttribute("classrooms", classrooms);
         

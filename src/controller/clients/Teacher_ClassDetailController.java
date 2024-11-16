@@ -1,6 +1,9 @@
 package controller.clients;
 
+import model.ClassMessageModel;
 import model.ClassroomsModel;
+import model.UserModel;
+import service.impl.ClassMessageService;
 import service.impl.ClassroomsService;
 
 import javax.servlet.ServletException;
@@ -9,21 +12,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet(urlPatterns = {"/teacher/class/detail"})
 public class Teacher_ClassDetailController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ClassroomsService classroomsService = new ClassroomsService();
+    private ClassMessageService messageService = new ClassMessageService();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String classID = request.getParameter("classID");
-        ClassroomsModel classroom = classroomsService.selectById(Integer.parseInt(classID));
+
+        UserModel user = (UserModel) request.getAttribute("user");
+
+        int teacherId = user.getUserID();
+
+        ClassroomsModel classroom = classroomsService.selectByIdAndTeacherID(Integer.parseInt(classID), teacherId);
 
         if (classroom != null) {
             request.setAttribute("classroom", classroom);
-            request.getRequestDispatcher("/views/clients/pages/class/teacherClass_detail.jsp").forward(request, response);
+            request.getSession().setAttribute("classID", classID);
+
+            ArrayList<ClassMessageModel> messages = messageService.selectByClassId(Integer.parseInt(classID));
+
+            request.setAttribute("messages", messages);
+
+            request.getRequestDispatcher("/views/clients/pages/class/class_detail.jsp").forward(request, response);
         } else {
-            response.sendRedirect("/views/clients/pages/class/teacherClasses.jsp");
+            response.sendRedirect("/teacher/class");
         }
     }
 }

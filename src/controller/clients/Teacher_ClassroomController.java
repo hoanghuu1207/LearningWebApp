@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(urlPatterns = {"/teacher/classes"})
+@WebServlet(urlPatterns = {"/teacher/class"})
 public class Teacher_ClassroomController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ClassroomsService classroomsService = new ClassroomsService();
@@ -34,5 +34,22 @@ public class Teacher_ClassroomController extends HttpServlet {
         // Forward to the JSP page
         RequestDispatcher dispatcher = request.getRequestDispatcher("/views/clients/pages/class/teacherClasses.jsp");
         dispatcher.forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html; charset=UTF-8");
+        String title = req.getParameter("title");
+        UserModel user = (UserModel) req.getAttribute("user");
+        int teacherId = user.getUserID();
+
+        ClassroomsModel classroomsModel = new ClassroomsModel();
+        classroomsModel.setTitle(title);
+        classroomsModel.setTeacherID(teacherId);
+
+        classroomsService.insertClassroom(classroomsModel);
+
+        resp.sendRedirect("/teacher/class");
     }
 }

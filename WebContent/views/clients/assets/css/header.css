@@ -106,20 +106,25 @@
 .header-dark .dropdown-menu {
   background-color: whitesmoke;
   padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+   top: 35px;
   position: absolute;
-  /*top: 100%;*/
-  /*left: -200%;*/
 }
 
 .header-dark .navbar .navbar-nav > li > .dropdown-menu {
-  margin-top:5px;
+  margin-top:-5px;
   background-color:white;
 }
 
 .header-dark .navbar .dropdown-menu .dropdown-item:focus, .header-dark .navbar .dropdown-menu .dropdown-item {
   line-height:2;
   font-size:14px;
-  color:black;
+  color:white;
+  white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+    max-width: 300px;
 }
 
 .header-dark .navbar .dropdown-menu .dropdown-item:focus, .header-dark .navbar .dropdown-menu .dropdown-item:hover {

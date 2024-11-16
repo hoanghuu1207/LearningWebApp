@@ -97,11 +97,21 @@
                 <h5 id="class_name">${classroom.title}</h5>
             </div>
             <div class="list-group">
-                <a href="/class_post?classroomID=${classroom.classroomID}" class="list-group-item list-group-item-action">Trang chủ</a>
-                <a href="/class_assignments?classroomID=${classroom.classroomID}" class="list-group-item list-group-item-action">Bài tập</a>
-                <a href="/materials?classroomID=${classroom.classroomID}" class="list-group-item list-group-item-action">Tài liệu</a>
-                <a href="/class_members?classId=${classroom.classroomID}" class="list-group-item list-group-item-action">Danh sách</a>
-                <a href="/meetings?classroomID=${classroom.classroomID}" class="list-group-item list-group-item-action">Cuộc họp</a>
+                <a href="/class_post?classroomID=${classroom.classroomID}"
+                   class="list-group-item list-group-item-action">Trang chủ</a>
+                <a href="/class_assignments?classroomID=${classroom.classroomID}"
+                   class="list-group-item list-group-item-action">Bài tập</a>
+                <a href="/materials?classroomID=${classroom.classroomID}"
+                   class="list-group-item list-group-item-action">Tài liệu</a>
+                <a href="/class_members?classId=${classroom.classroomID}"
+                   class="list-group-item list-group-item-action">Danh sách</a>
+                <a href="/meetings?classroomID=${classroom.classroomID}"
+                   class="list-group-item list-group-item-action">Cuộc họp</a>
+                <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
+                <a href="/views/clients/pages/class/prepare_meeting.jsp" target="_parent" class="list-group-item list-group-item-action">
+                    Tạo cuộc họp
+                    <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
+                </a>
             </div>
         </div>
     </div>

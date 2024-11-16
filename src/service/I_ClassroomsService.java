@@ -11,4 +11,6 @@ public interface I_ClassroomsService {
 	ClassroomsModel selectById(int id);
 
 	public ArrayList<ClassroomsModel> getClassroomsByTeacherId(int teacherId);
+
+	public int insertClassroom(ClassroomsModel classroomsModel);
 }
