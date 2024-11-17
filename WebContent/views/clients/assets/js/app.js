@@ -275,37 +275,40 @@ window.onload = startMediaStream;
 function toggleParticipants() {
     const chatSection = document.getElementById('chatSection');
     const participantsList = document.getElementById('participantsList');
-    const mainScreen = document.getElementById('mainScreen');
-    if (!chatSection.classList.contains('hidden')) {
-        chatSection.classList.add('hidden');
-    }
-    participantsList.classList.toggle('hidden');
+    const container = document.getElementById('container');
+    const secondaryContainer = document.getElementById('secondary-container');
 
-    // Adjust the main screen layout
-    if (participantsList.classList.contains('hidden')) {
-        mainScreen.style.width = '100%';
+    if (!participantsList.classList.contains('hidden')) {
+        participantsList.classList.add('hidden');
+        container.style.marginRight = '0';
+        secondaryContainer.style.right = '-25%';
     } else {
-        mainScreen.style.width = '70%'; // Adjust width to show participants on the right
+        chatSection.classList.add('hidden');
+        participantsList.classList.remove('hidden');
+        container.style.marginRight = '25%';
+        secondaryContainer.style.right = '0';
     }
 }
 function toggleChat() {
     const participantsList = document.getElementById('participantsList');
     const chatSection = document.getElementById('chatSection');
-    const mainScreen = document.getElementById('mainScreen');
-    if (!participantsList.classList.contains('hidden')) {
-        participantsList.classList.add('hidden');
-    }
-    chatSection.classList.toggle('hidden');
+    const container = document.getElementById('container');
+    const secondaryContainer = document.getElementById('secondary-container');
 
-    // Adjust the main screen layout
-    if (chatSection.classList.contains('hidden')) {
-        mainScreen.style.width = '100%';
+    if (!chatSection.classList.contains('hidden')) {
+        chatSection.classList.add('hidden');
+        container.style.marginRight = '0';
+        secondaryContainer.style.right = '-25%';
     } else {
-        mainScreen.style.width = '70%'; // Adjust width to show chat on the right
+        participantsList.classList.add('hidden');
+        chatSection.classList.remove('hidden');
+        container.style.marginRight = '25%';
+        secondaryContainer.style.right = '0';
     }
 }
+
 function cancelMeeting() {
-    if (confirm("Bạn muốn rời khỏi cuộc hop ?")) {
+    if (confirm("Bạn muốn rời khỏi cuộc họp?")) {
         socket.close(); // Close the WebSocket connection
         window.location.href = "/views/clients/pages/class/aftermeeting.jsp"; // Redirect to the desired page after cancel
     }
