@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="model.UserModel" %>
 
 <html>
 
@@ -78,7 +79,7 @@
 						    <div class='notification-container'>
                                 <span class="dropdown">
                                     <span class="notification-box nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
-                                        <span class="notification-count" style="display: none;"></span>
+                                        <span class="notification-count" style="display: ${status == 'true' ? 'block' : 'none'};"></span>
                                         <div class="notification-bell">
                                             <span class="bell-top"></span>
                                             <span class="bell-middle"></span>
@@ -86,13 +87,10 @@
                                             <span class="bell-rad"></span>
                                         </div>
                                     </span>
-                                    <div class="dropdown-menu" role="menu" style="left: 30%; transform: translateX(-60%);">
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;" data-bs-toggle="tooltip" title="Hoang Huu thêm bài viết mới trong Công nghệ Web">Hoang Huu thêm bài viết mới trong Công nghệ Web</a>
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
+                                    <div id="notification-content" class="dropdown-menu" role="menu" style="left: 30%; transform: translateX(-60%);">
+                                        <c:forEach var="notification" items="${notifications}">
+                                            <a class="dropdown-item" role="presentation" href="${notification.url}" style="font-size:12px;" data-bs-toggle="tooltip" title="${notification.content}">${notification.content}</a>
+                                        </c:forEach>
                                     </div>
                                 </span>
                                 <span class="dropdown">
@@ -113,6 +111,7 @@
 			</div>
 		</nav>
 	</div>
+	<button style="display: none;" id="volume-button"></button>
 
 
 <script
@@ -129,6 +128,19 @@
 			}
 		});
 	</script>
+
+<%
+    UserModel user = (UserModel) request.getAttribute("user");
+    int roleID = user.getRoleID();
+    int userID = user.getUserID();
+%>
+
+<script>
+    const userID = "<%= userID %>";
+    const roleID = "<%= roleID %>";
+</script>
+
+<script src="/views/clients/assets/js/NotificationWebsocket.js"></script>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 package middleware.clients;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -13,12 +14,15 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.impl.NotificationDAO;
 import dao.impl.UserDAO;
+import model.SubNotificationModel;
 import model.UserModel;
 
 @WebFilter(urlPatterns = { "/*" })
 public class UserMiddleware implements Filter {
 	private UserDAO userDao = new UserDAO();
+	private NotificationDAO notificationDAO = new NotificationDAO();
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -47,6 +51,27 @@ public class UserMiddleware implements Filter {
 
 			if (user != null) {
 				httpRequest.setAttribute("user", user);
+
+				ArrayList<SubNotificationModel> notificationModels = notificationDAO.selectNotificationWithUserid(user.getUserID());
+
+				boolean status = false;
+
+				String tmp = "";
+
+				if(user.getRoleID() == 2){
+					tmp = "/teacher";
+				}
+
+				for(int i = 0 ; i < notificationModels.size() ; i++){
+					if(notificationModels.get(i).getStatus() == 0){
+						status = true;
+					}
+
+					notificationModels.get(i).setUrl(tmp + notificationModels.get(i).getUrl());
+				}
+
+				httpRequest.setAttribute("notifications", notificationModels);
+				httpRequest.setAttribute("status", status);
 			}
 		}
 

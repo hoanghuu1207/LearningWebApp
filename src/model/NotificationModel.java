@@ -9,15 +9,13 @@ public class NotificationModel {
 	private boolean status;
 	private String type;
 	private int relatedID;
-	private Timestamp createdAt;
 
-	public NotificationModel(int userID, boolean status, String type, int relatedID, Timestamp createdAt) {
+	public NotificationModel(int userID, boolean status, String type, int relatedID) {
 		super();
 		this.userID = userID;
 		this.status = status;
 		this.type = type;
 		this.relatedID = relatedID;
-		this.createdAt = createdAt;
 	}
 
 	public int getNotificationID() {
@@ -58,13 +56,5 @@ public class NotificationModel {
 
 	public void setRelatedID(int relatedID) {
 		this.relatedID = relatedID;
-	}
-
-	public Timestamp getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Timestamp createdAt) {
-		this.createdAt = createdAt;
 	}
 }

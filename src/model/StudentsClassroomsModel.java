@@ -10,6 +10,8 @@ public class StudentsClassroomsModel {
 		this.classroomID = classroomID;
 	}
 
+	public StudentsClassroomsModel(){}
+
 	public int getStudentID() {
 		return studentID;
 	}

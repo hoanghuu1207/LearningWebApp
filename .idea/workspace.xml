@@ -6,7 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merge feature/post_article into feature/admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/PostArticleWebsocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/PostArticleWebsocket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerEndpoint/NotificationEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerEndpoint/NotificationEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/impl/ClassMessageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/ClassMessageDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/clients/UserMiddleware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/clients/UserMiddleware.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/NotificationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/NotificationModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/StudentsClassroomsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/StudentsClassroomsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/impl/ClassroomsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/ClassroomsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/middleware/clients/AuthenticationMiddleware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/middleware/clients/AuthenticationMiddleware.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/middleware/clients/UserMiddleware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/middleware/clients/UserMiddleware.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/NotificationModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/NotificationModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/StudentsClassroomsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/StudentsClassroomsModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/impl/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/impl/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,11 +34,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -68,7 +83,7 @@
     &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat 9.0.95.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/post__article&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/notification&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/PBL4_Git1/LearningWebApp/WebContent/views/clients/assets/fonts/myself-icons&quot;,
@@ -120,14 +135,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

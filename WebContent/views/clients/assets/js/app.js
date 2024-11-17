@@ -1,5 +1,5 @@
 // Khởi tạo kết nối WebSocket tới địa chỉ server
-const socket = new WebSocket("wss://192.168.158.200:8080/chat/"+ meetingId);
+const socket = new WebSocket("wss://192.168.158.200:8443/chat/"+ meetingId);
 
 let localStream ;
 let screenStream;

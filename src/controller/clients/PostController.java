@@ -1,9 +1,12 @@
 package controller.clients;
 
+import ServerEndpoint.NotificationEndpoint;
 import ServerEndpoint.PostEndpoint;
+import dao.impl.ClassroomDAO;
 import model.ClassMessageModel;
 import model.UserModel;
 import service.impl.ClassMessageService;
+import service.impl.NotificationService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,6 +21,8 @@ import java.util.ArrayList;
 public class PostController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ClassMessageService messageService = new ClassMessageService();
+    private NotificationService notificationService = new NotificationService();
+    private ClassroomDAO classroomDAO = new ClassroomDAO();
 
 //    @Override
 //    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -60,6 +65,10 @@ public class PostController extends HttpServlet {
         ClassMessageModel insertedMessage = messageService.insertAndGetMessage(classMessageModel);
 
         PostEndpoint.sendMessageToClass(String.valueOf(classroomID), insertedMessage);
+
+        String title = classroomDAO.selectById(classroomID).getTitle();
+
+        notificationService.sendNotificationPostArticle(classroomID, userId, insertedMessage.getSenderName() + " thêm bài viết mới trong " + title);
 
         String referer = req.getHeader("Referer");
         resp.sendRedirect(referer);
