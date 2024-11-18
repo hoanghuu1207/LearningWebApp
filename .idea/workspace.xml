@@ -6,18 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merge feature/post_article into feature/admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/NotificationWebsocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/NotificationWebsocket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerEndpoint/NotificationEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerEndpoint/NotificationEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/NotificationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/NotificationDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware/clients/UserMiddleware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/clients/UserMiddleware.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/NotificationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/NotificationModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/SubNotificationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SubNotificationModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/I_NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/I_NotificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/impl/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/HomeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/middleware/clients/UserMiddleware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/middleware/clients/UserMiddleware.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/NotificationModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/NotificationModel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +108,9 @@
       <option name="catalinaBase" value="C:\Users\TechCare\.SmartTomcat\LearningWebApp\LearningWebApp" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/WebContent" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="extraClassPath" value="" />
       <option name="sslPort" value="8443" />
       <option name="tomcatInfo">
@@ -125,7 +120,7 @@
           <option name="version" value="9.0.93.0" />
         </TomcatInfo>
       </option>
-      <option name="vmOptions" value="-Dfile.encoding=UTF-8" />
+      <option name="vmOptions" value="" />
       <module name="LearningWebApp" />
       <method v="2">
         <option name="Make" enabled="true" />

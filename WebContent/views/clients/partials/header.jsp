@@ -131,12 +131,12 @@
 	</script>
 
 <%
-    int roleID = 0;
     int userID = 0;
+    int roleID = 0;
     UserModel user = (UserModel) request.getAttribute("user");
     if(user != null){
-        roleID = user.getRoleID();
         userID = user.getUserID();
+        roleID = user.getRoleID();
     }
 %>
 

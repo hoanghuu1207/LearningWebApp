@@ -73,6 +73,8 @@ public class UserMiddleware implements Filter {
 
 				httpRequest.setAttribute("notifications", notificationModels);
 				httpRequest.setAttribute("status", status);
+
+				System.out.println("middleware");
 			}
 		}
 
