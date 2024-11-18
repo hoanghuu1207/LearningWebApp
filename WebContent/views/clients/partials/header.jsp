@@ -70,7 +70,6 @@
 									<a class="btn action-button signup" role="button" href="/user/register">Sign Up
 									<div class="slider"></div>
 									</a>
-
 							</span>
 
 						</c:when>
@@ -79,7 +78,7 @@
 						    <div class='notification-container'>
                                 <span class="dropdown">
                                     <span class="notification-box nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
-                                        <span class="notification-count" style="display: ${status == 'true' ? 'block' : 'none'};"></span>
+                                        <!--<span class="notification-count" style="display: ${status == 'true' ? 'block' : 'none'};"></span>-->
                                         <div class="notification-bell">
                                             <span class="bell-top"></span>
                                             <span class="bell-middle"></span>
@@ -88,9 +87,11 @@
                                         </div>
                                     </span>
                                     <div id="notification-content" class="dropdown-menu" role="menu" style="left: 30%; transform: translateX(-60%);">
-                                        <c:forEach var="notification" items="${notifications}">
-                                            <a class="dropdown-item" role="presentation" href="${notification.url}" style="font-size:12px;" data-bs-toggle="tooltip" title="${notification.content}">${notification.content}</a>
-                                        </c:forEach>
+                                        <!--<c:if test="${notifications != null}">
+                                            <c:forEach var="notification" items="${notifications}">
+                                                <a class="dropdown-item" role="presentation" href="${notification.url}" style="font-size:12px;" data-bs-toggle="tooltip" title="${notification.content}">${notification.content}</a>
+                                            </c:forEach>
+                                        </c:if>-->
                                     </div>
                                 </span>
                                 <span class="dropdown">

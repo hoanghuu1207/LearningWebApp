@@ -47,31 +47,32 @@ public class UserMiddleware implements Filter {
 		if (!tokenUser.equals("")) {
 
 			UserModel user = userDao.getUserByTokenUser(tokenUser);
+			System.out.println(user == null);
 			System.out.println("id: " + user.getUserID());
 
 			if (user != null) {
 				httpRequest.setAttribute("user", user);
 
-				ArrayList<SubNotificationModel> notificationModels = notificationDAO.selectNotificationWithUserid(user.getUserID());
-
-				boolean status = false;
-
-				String tmp = "";
-
-				if(user.getRoleID() == 2){
-					tmp = "/teacher";
-				}
-
-				for(int i = 0 ; i < notificationModels.size() ; i++){
-					if(notificationModels.get(i).getStatus() == 0){
-						status = true;
-					}
-
-					notificationModels.get(i).setUrl(tmp + notificationModels.get(i).getUrl());
-				}
-
-				httpRequest.setAttribute("notifications", notificationModels);
-				httpRequest.setAttribute("status", status);
+//				ArrayList<SubNotificationModel> notificationModels = notificationDAO.selectNotificationWithUserid(user.getUserID());
+//
+//				boolean status = false;
+//
+//				String tmp = "";
+//
+//				if(user.getRoleID() == 2){
+//					tmp = "/teacher";
+//				}
+//
+//				for(int i = 0 ; i < notificationModels.size() ; i++){
+//					if(notificationModels.get(i).getStatus() == 0){
+//						status = true;
+//					}
+//
+//					notificationModels.get(i).setUrl(tmp + notificationModels.get(i).getUrl());
+//				}
+//
+//				httpRequest.setAttribute("notifications", notificationModels);
+//				httpRequest.setAttribute("status", status);
 			}
 		}
 
