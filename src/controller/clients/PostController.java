@@ -68,7 +68,7 @@ public class PostController extends HttpServlet {
 
         String title = classroomDAO.selectById(classroomID).getTitle();
 
-        notificationService.sendNotificationPostArticle(classroomID, userId, insertedMessage.getSenderName() + " thêm bài viết mới trong " + title);
+        notificationService.sendNotificationPostArticle(classroomID, userId, insertedMessage.getSenderName() + " thêm bài viết mới trong " + title, insertedMessage.getMessageID());
 
         String referer = req.getHeader("Referer");
         resp.sendRedirect(referer);

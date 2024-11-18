@@ -1,11 +1,20 @@
 package model;
 
 public class SubNotificationModel {
+    private int notificationID;
     private String url;
     private String content;
     private int status;
 
     public SubNotificationModel(){}
+
+    public int getNotificationID() {
+        return notificationID;
+    }
+
+    public void setNotificationID(int notificationID) {
+        this.notificationID = notificationID;
+    }
 
     public String getUrl() {
         return url;

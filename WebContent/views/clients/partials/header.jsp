@@ -52,13 +52,13 @@
 						</ul>
                     </c:if>
 					<form class="form-inline mr-auto" target="_self">
-						<c:if test="${user != null}">
+						<!--<c:if test="${user != null}">
 							<div class="form-group">
 								<label for="search-field"><i class="fa fa-search"></i></label><input
 									class="form-control search-field" type="search" name="search"
 									id="search-field">
 							</div>
-						</c:if>
+						</c:if>-->
 					</form>
 
 					<c:choose>
@@ -78,7 +78,7 @@
 						    <div class='notification-container'>
                                 <span class="dropdown">
                                     <span class="notification-box nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
-                                        <!--<span class="notification-count" style="display: ${status == 'true' ? 'block' : 'none'};"></span>-->
+                                        <span class="notification-count" style="display: ${status == 'true' ? 'block' : 'none'};"></span>
                                         <div class="notification-bell">
                                             <span class="bell-top"></span>
                                             <span class="bell-middle"></span>
@@ -87,11 +87,11 @@
                                         </div>
                                     </span>
                                     <div id="notification-content" class="dropdown-menu" role="menu" style="left: 30%; transform: translateX(-60%);">
-                                        <!--<c:if test="${notifications != null}">
+                                        <c:if test="${notifications != null}">
                                             <c:forEach var="notification" items="${notifications}">
-                                                <a class="dropdown-item" role="presentation" href="${notification.url}" style="font-size:12px;" data-bs-toggle="tooltip" title="${notification.content}">${notification.content}</a>
+                                                <a class="dropdown-item" noti_id="${notification.notificationID}" role="presentation" href="${notification.url}" style="font-size:12px;" data-bs-toggle="tooltip" title="${notification.content}">${notification.content}</a>
                                             </c:forEach>
-                                        </c:if>-->
+                                        </c:if>
                                     </div>
                                 </span>
                                 <span class="dropdown">
@@ -131,9 +131,13 @@
 	</script>
 
 <%
+    int roleID = 0;
+    int userID = 0;
     UserModel user = (UserModel) request.getAttribute("user");
-    int roleID = user.getRoleID();
-    int userID = user.getUserID();
+    if(user != null){
+        roleID = user.getRoleID();
+        userID = user.getUserID();
+    }
 %>
 
 <script>

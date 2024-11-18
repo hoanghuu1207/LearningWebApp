@@ -1,38 +1,101 @@
 package dao.impl;
 
 import dao.DAOInterface;
+import model.ClassMessageModel;
+import model.NotificationModel;
 import model.SubNotificationModel;
 import model.UserModel;
 import util.JDBCUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 
-public class NotificationDAO implements DAOInterface<NotificationDAO> {
+public class NotificationDAO implements DAOInterface<NotificationModel> {
     @Override
-    public int insert(NotificationDAO notificationDAO) {
+    public int insert(NotificationModel notificationModel) {
+        int row = 0;
+        try {
+            Connection con = JDBCUtil.getConnection();
+
+            String query = "INSERT INTO notification(status, type, relatedID, informedUser) "
+                    + "VALUES (?, ?, ?, ?)";
+
+            PreparedStatement pstm = con.prepareStatement(query);
+
+            pstm.setInt(1, notificationModel.getStatus());
+            pstm.setString(2, notificationModel.getType());
+            pstm.setInt(3, notificationModel.getRelatedID());
+            pstm.setInt(4, notificationModel.getInformedID());
+
+            row = pstm.executeUpdate();
+
+            if (row != 0) {
+                System.out.println("Thêm thành công: " + row);
+            }
+
+            JDBCUtil.closeConnection(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return row;
+    }
+    public NotificationModel insertAndGetNotification(NotificationModel notificationModel) {
+        NotificationModel insertedNotification = null;
+        try {
+            Connection con = JDBCUtil.getConnection();
+
+            String query = "INSERT INTO notification(status, type, relatedID, informedUser) "
+                    + "VALUES (?, ?, ?, ?)";
+
+            PreparedStatement pstm = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            pstm.setInt(1, notificationModel.getStatus());
+            pstm.setString(2, notificationModel.getType());
+            pstm.setInt(3, notificationModel.getRelatedID());
+            pstm.setInt(4, notificationModel.getInformedID());
+
+            int row = pstm.executeUpdate();
+
+            if (row > 0) {
+                try (ResultSet generatedKeys = pstm.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        int generatedId = generatedKeys.getInt(1);
+                        System.out.println("Thêm thành công: " + row + ", ID: " + generatedId);
+
+                        insertedNotification = new NotificationModel();
+                        insertedNotification.setNotificationID(generatedId);
+                        insertedNotification.setStatus(notificationModel.getStatus());
+                        insertedNotification.setType(notificationModel.getType());
+                        insertedNotification.setRelatedID(notificationModel.getRelatedID());
+                        insertedNotification.setInformedID(notificationModel.getInformedID());
+                    }
+                }
+            }
+
+            JDBCUtil.closeConnection(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return insertedNotification;
+    }
+    @Override
+    public int update(NotificationModel notificationModel) {
         return 0;
     }
 
     @Override
-    public int update(NotificationDAO notificationDAO) {
+    public int delete(NotificationModel notificationModel) {
         return 0;
     }
 
     @Override
-    public int delete(NotificationDAO notificationDAO) {
-        return 0;
-    }
-
-    @Override
-    public ArrayList<NotificationDAO> selectAll() {
+    public ArrayList<NotificationModel> selectAll() {
         return null;
     }
 
     @Override
-    public NotificationDAO selectById(int id) {
+    public NotificationModel selectById(int id) {
         return null;
     }
 
@@ -43,7 +106,7 @@ public class NotificationDAO implements DAOInterface<NotificationDAO> {
                 "JOIN classroom_messages AS cm ON n.relatedID = cm.messageID " +
                 "JOIN classrooms AS c ON cm.classroomID = c.classroomID " +
                 "JOIN users AS u ON u.userID = cm.userID " +
-                "WHERE informedUser = ? AND u.userID != ? " +
+                "WHERE n.informedUser = ? AND u.userID != ? " +
                 "ORDER BY cm.createdAt DESC;";
 
         try (Connection conn = JDBCUtil.getConnection();
@@ -56,6 +119,7 @@ public class NotificationDAO implements DAOInterface<NotificationDAO> {
             while (rs.next()) {
                 SubNotificationModel subNotificationModel = new SubNotificationModel();
 
+                int notificationID = rs.getInt("notificationID");
                 String type = rs.getString("type");
                 int status = rs.getInt("status");
                 int classroomID = rs.getInt("classroomID");
@@ -72,6 +136,7 @@ public class NotificationDAO implements DAOInterface<NotificationDAO> {
                 }
                 // assignment, schedule
 
+                subNotificationModel.setNotificationID(notificationID);
                 subNotificationModel.setUrl(url);
                 subNotificationModel.setContent(content);
                 subNotificationModel.setStatus(status);
@@ -82,5 +147,29 @@ public class NotificationDAO implements DAOInterface<NotificationDAO> {
             e.printStackTrace();
         }
         return notificationModels;
+    }
+    public int updateStatusToSeen(int userID) {
+        int row = 0;
+        try {
+            Connection con = JDBCUtil.getConnection();
+
+            String query = "UPDATE notification SET status = ? WHERE informedUser = ?;";
+
+            PreparedStatement pstm = con.prepareStatement(query);
+
+            pstm.setInt(1, 1);
+            pstm.setInt(2, userID);
+
+            row = pstm.executeUpdate();
+
+            if (row != 0) {
+                System.out.println("Thêm thành công: " + row);
+            }
+
+            JDBCUtil.closeConnection(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return row;
     }
 }

@@ -10,7 +10,7 @@ socketNotification.onmessage = function(event) {
     const notificationContent = document.getElementById("notification-content");
     const notificationCount = document.querySelector(".notification-container .notification-count");
 
-    const innerHTML = `<a class="dropdown-item" role="presentation" href="${data.url}" style="font-size:12px;" data-bs-toggle="tooltip" title="${data.content}">${data.content}</a>`;
+    const innerHTML = `<a class="dropdown-item" noti_id="${data.notificationID}" role="presentation" href="${data.url}" style="font-size:12px;" data-bs-toggle="tooltip" title="${data.content}">${data.content}</a>`;
 
     notificationContent.innerHTML = innerHTML + notificationContent.innerHTML;
     notificationCount.style.display = 'block';
@@ -24,3 +24,11 @@ socketNotification.onmessage = function(event) {
     buttonVolume.click();
 
 };
+
+const notificationContainer = document.querySelector(".notification-container");
+notificationContainer.addEventListener("click", () => {
+    const notificationCount = notificationContainer.querySelector(".notification-count");
+    notificationCount.style.display = 'none';
+
+    socketNotification.send(userID);
+});

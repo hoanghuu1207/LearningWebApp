@@ -1,5 +1,6 @@
 package ServerEndpoint;
 
+import dao.impl.NotificationDAO;
 import model.ClassMessageModel;
 import model.NotificationModel;
 import model.UserModel;
@@ -22,6 +23,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @ServerEndpoint("/notification/{userID}")
 public class NotificationEndpoint {
     private static Map<String, Set<Session>> userSessions = new ConcurrentHashMap<>();
+    private NotificationDAO notificationDAO = new NotificationDAO();
 
     @OnOpen
     public void onOpen(Session session, @PathParam("userID") String userID) {
@@ -38,15 +40,18 @@ public class NotificationEndpoint {
 
     @OnMessage
     public void onMessage(String message, Session session) {
+        System.out.println("Userid: " + message);
+        notificationDAO.updateStatusToSeen(Integer.parseInt(message));
     }
 
-    public static void sendNotificationToUser(String userID, String url, String content) {
+    public static void sendNotificationToUser(String userID, String url, String content, int notificationID) {
         Set<Session> sessions = userSessions.get(userID);
         if (sessions != null) {
             for (Session session : sessions) {
                 if (session.isOpen()) {
                     JSONObject obj = new JSONObject();
                     obj.put("userID", userID);
+                    obj.put("notificationID", notificationID);
                     obj.put("url", url);
                     obj.put("content", content);
 

@@ -3,7 +3,7 @@ package service;
 import model.UserModel;
 
 public interface I_NotificationService {
-    void sendNotificationPostArticle(int classroomID, int userID, String content);
+    void sendNotificationPostArticle(int classroomID, int userID, String content, int messageID);
 
     void loadNotification(UserModel userModel);
 }
