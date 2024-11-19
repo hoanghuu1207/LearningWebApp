@@ -18,8 +18,8 @@
       background-color: #f5f5f5;
       display: flex;
       align-items: center;
-      height: 100vh;
       color: #333;
+      height: 90vh;
       overflow: hidden;
     }
 
@@ -27,7 +27,7 @@
       width: 100%;
       text-align: center;
       font-size: 1.2em;
-      padding: 50px;
+      margin: 20px;
     }
 
     .profile-pic {
@@ -40,9 +40,10 @@
     }
 
     .profile-pic img {
-      width: 90%;
-      height: 92%;
-      object-fit: fill;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     .upload-btn {
@@ -58,7 +59,16 @@
       border-radius: 50%;
       cursor: pointer;
       font-size: 1.5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       transition: background 0.3s;
+    }
+
+    .fa-camera{
+      object-fit: cover;
+      border-radius: 50%;
+      font-size: 1em;
     }
 
     .upload-btn:hover {
@@ -126,14 +136,18 @@
   </style>
 </head>
 <body>
+
+<div class="account-img">
+  <div class="profile-pic">
+    <img src="<%= request.getContextPath() %>/views/clients/assets/img/default-avatar.png" alt="Profile Picture">
+    <label for="avatar-upload" class="upload-btn"><i class="fas fa-camera"></i></label>
+    <input type="file" id="avatar-upload" name="avatar" accept="image/*" style="display:none;">
+  </div>
+</div>
+
 <div class="account-container">
   <form action="<%= request.getContextPath() %>/user/update" method="post" enctype="multipart/form-data">
-    <!-- Profile Picture -->
-    <div class="profile-pic">
-      <img src="<%= request.getContextPath() %>/views/clients/assets/img/default-avatar.png" alt="Profile Picture">
-      <label for="avatar-upload" class="upload-btn"><i class="fas fa-camera"></i></label>
-      <input type="file" id="avatar-upload" name="avatar" accept="image/*" style="display:none;">
-    </div>
+
     <div class="account-info">
       <label for="firstName">First Name</label>
       <input type="text" id="firstName" name="firstName" value="<%= request.getAttribute("firstName") %>" required>

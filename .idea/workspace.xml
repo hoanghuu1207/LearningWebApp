@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merge feature/post_article into feature/admin">
-      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/user.png" afterDir="false" />
+    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="change fe of prepare_meeting and meeting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style_meeting.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style_meeting.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/aftermeeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/aftermeeting.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meeting.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/prepare_meeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/prepare_meeting.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,18 +29,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "nomenoparty"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nomenoparty&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/nomenoparty/LearningWebApp.git",
-    "accountId": "ec523c62-2b87-4b77-b1b3-14b414ba0895"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nomenoparty/LearningWebApp.git&quot;,
+    &quot;accountId&quot;: &quot;ec523c62-2b87-4b77-b1b3-14b414ba0895&quot;
   }
-}]]></component>
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -146,7 +138,11 @@
       <updated>1730623483180</updated>
       <workItem from="1730623484096" duration="7000" />
       <workItem from="1730624061885" duration="1087000" />
-      <workItem from="1731847523754" duration="10742000" />
+      <workItem from="1731847523754" duration="10932000" />
+      <workItem from="1731946896818" duration="351000" />
+      <workItem from="1731975643476" duration="603000" />
+      <workItem from="1731979300428" duration="2000" />
+      <workItem from="1731979945970" duration="448000" />
     </task>
     <task id="LOCAL-00001" summary="merge feature/post_article into feature/admin">
       <option name="closed" value="true" />
@@ -156,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731732849549</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="change fe of prepare_meeting and meeting">
+      <option name="closed" value="true" />
+      <created>1731861317919</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731861317919</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +180,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="merge feature/post_article into feature/admin" />
     <MESSAGE value="save workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="save workspace.xml" />
+    <MESSAGE value="change fe of prepare_meeting and meeting" />
+    <option name="LAST_COMMIT_MESSAGE" value="change fe of prepare_meeting and meeting" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
