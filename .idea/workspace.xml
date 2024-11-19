@@ -7,6 +7,23 @@
     <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merge feature/post_article into feature/admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/NotificationWebsocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/NotificationWebsocket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/UserLogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/UserLogoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/clients/UserMiddleware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/clients/UserMiddleware.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserForgotPasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserLoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserLogoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserLogoutController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserOtpPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserOtpPasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserRegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/UserResetPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/UserResetPasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/middleware/clients/UserMiddleware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/middleware/clients/UserMiddleware.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/AssignmentsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/AssignmentsModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/MaterialsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/MaterialsModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/MeetingsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/MeetingsModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/ScheduleModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ScheduleModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/SubmissionsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SubmissionsModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/I_UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/I_UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +45,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/post_article" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -71,16 +93,16 @@
     &quot;git-widget-placeholder&quot;: &quot;feature/notification&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PBL4_Git1/LearningWebApp/WebContent/views/clients/assets/fonts/myself-icons&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/TechCare/eclipse-workspace/LearningWebApp/WebContent/WEB-INF&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.17011495&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }

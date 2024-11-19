@@ -44,6 +44,9 @@ public class UserMiddleware implements Filter {
 			}
 		}
 
+		int userID = 0;
+		int roleID = 0;
+
 		if (!tokenUser.equals("")) {
 
 			UserModel user = userDao.getUserByTokenUser(tokenUser);
@@ -52,6 +55,9 @@ public class UserMiddleware implements Filter {
 
 			if (user != null) {
 				httpRequest.setAttribute("user", user);
+
+				userID = user.getUserID();
+				roleID = user.getRoleID();
 
 				ArrayList<SubNotificationModel> notificationModels = notificationDAO.selectNotificationWithUserid(user.getUserID());
 
@@ -77,6 +83,9 @@ public class UserMiddleware implements Filter {
 				System.out.println("middleware");
 			}
 		}
+
+		httpRequest.setAttribute("userID", userID);
+		httpRequest.setAttribute("roleID", roleID);
 
 		System.out.println("Filter User");
 

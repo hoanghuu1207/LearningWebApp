@@ -40,7 +40,7 @@
 					<c:if test="${user != null}">
 						<ul class="nav navbar-nav">
 							<li class="nav-item" role="presentation">
-								<a class="nav-link" href=${user.roleID == 3 ? "/class" : "/teacher/class"}>Lớp học
+								<a class="nav-link" href=${user.roleID == "3" ? "/class" : "/teacher/class"}>Lớp học
 									<div class="slider"></div>
 								</a>
 							</li>
@@ -78,7 +78,9 @@
 						    <div class='notification-container'>
                                 <span class="dropdown">
                                     <span class="notification-box nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
-                                        <span class="notification-count" style="display: ${status == 'true' ? 'block' : 'none'};"></span>
+                                        <c:if test="${status != null}">
+                                            <span class="notification-count" style="display: ${status == 'true' ? 'block' : 'none'};"></span>
+                                        </c:if>
                                         <div class="notification-bell">
                                             <span class="bell-top"></span>
                                             <span class="bell-middle"></span>
@@ -131,18 +133,15 @@
 	</script>
 
 <%
-    int userID = 0;
-    int roleID = 0;
-    UserModel user = (UserModel) request.getAttribute("user");
-    if(user != null){
-        userID = user.getUserID();
-        roleID = user.getRoleID();
-    }
+    String userID = String.valueOf(request.getAttribute("userID"));
+    String roleID = String.valueOf(request.getAttribute("roleID"));
 %>
 
 <script>
     const userID = "<%= userID %>";
     const roleID = "<%= roleID %>";
+    console.log(userID);
+    console.log(roleID);
 </script>
 
 <script src="/views/clients/assets/js/NotificationWebsocket.js"></script>
