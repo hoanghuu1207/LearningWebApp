@@ -314,6 +314,7 @@ public class UserDAO implements DAOInterface<UserModel> {
 				int userid = rs.getInt("userID");
 				String firstName = rs.getString("firstname");
 				String lastName = rs.getString("lastname");
+				String email = rs.getString("email");
 				String password = rs.getString("password");
 				int roleID = rs.getInt("roleID");
 				String avatar = rs.getString("avatar");
@@ -323,6 +324,7 @@ public class UserDAO implements DAOInterface<UserModel> {
 				userModel.setUserID(userid);
 				userModel.setFirstName(firstName);
 				userModel.setLastName(lastName);
+				userModel.setEmail(email);
 				userModel.setPassword(password);
 				userModel.setRoleID(roleID);
 				userModel.setAvatar(avatar);
@@ -349,10 +351,11 @@ public class UserDAO implements DAOInterface<UserModel> {
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				UserModel userModel= new UserModel();
+				UserModel userModel = new UserModel();
 				int userid = rs.getInt("userID");
 				String firstName = rs.getString("firstname");
 				String lastName = rs.getString("lastname");
+				String email = rs.getString("email");
 				String password = rs.getString("password");
 				int roleID = rs.getInt("roleID");
 				String avatar = rs.getString("avatar");
@@ -361,6 +364,48 @@ public class UserDAO implements DAOInterface<UserModel> {
 				userModel.setUserID(userid);
 				userModel.setFirstName(firstName);
 				userModel.setLastName(lastName);
+				userModel.setEmail(email);
+				userModel.setPassword(password);
+				userModel.setRoleID(roleID);
+				userModel.setAvatar(avatar);
+				userModel.setTokenUser(tokenUser);
+				students.add(userModel);
+			}
+			JDBCUtil.closeConnection(conn);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return students;
+	}
+	public ArrayList<UserModel> getStudentsOutOfClassAndExceptTeacher(int classID) {
+		ArrayList<UserModel> students = new ArrayList<>();
+		String sql = "SELECT * FROM " +
+				"users AS u " +
+				"LEFT JOIN students_classrooms sc " +
+				"ON u.userID = sc.studentID AND sc.classroomID = ? " +
+				"WHERE sc.classroomID IS NULL AND u.roleID = 3;";
+
+		try (Connection conn = JDBCUtil.getConnection();
+			 PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+			stmt.setInt(1, classID);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				UserModel userModel = new UserModel();
+				int userid = rs.getInt("userID");
+				String firstName = rs.getString("firstname");
+				String lastName = rs.getString("lastname");
+				String email = rs.getString("email");
+				String password = rs.getString("password");
+				int roleID = rs.getInt("roleID");
+				String avatar = rs.getString("avatar");
+				String tokenUser = rs.getString("tokenUser");
+
+				userModel.setUserID(userid);
+				userModel.setFirstName(firstName);
+				userModel.setLastName(lastName);
+				userModel.setEmail(email);
 				userModel.setPassword(password);
 				userModel.setRoleID(roleID);
 				userModel.setAvatar(avatar);

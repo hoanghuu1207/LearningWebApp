@@ -1,10 +1,8 @@
 package dao.impl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 import dao.DAOInterface;
 import model.ClassroomsModel;
@@ -67,13 +65,16 @@ public class ClassroomDAO implements DAOInterface<ClassroomsModel> {
 		try {
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "INSERT INTO classrooms(title, teacherID) "
-					+ "VALUES (?, ?)";
+			String query = "INSERT INTO classrooms(title, teacherID, createdAt) "
+					+ "VALUES (?, ?, ?)";
 
 			PreparedStatement pstm = con.prepareStatement(query);
 
 			pstm.setString(1, t.getTitle());
 			pstm.setInt(2, t.getTeacherID());
+
+			Date date = new Date();
+			pstm.setTimestamp(3, new Timestamp(date.getTime()));
 
 			row = pstm.executeUpdate();
 
@@ -170,14 +171,4 @@ public class ClassroomDAO implements DAOInterface<ClassroomsModel> {
 		}
 		return classroom;
 	}
-	
-	public static void main(String[] args) {
-        ClassroomDAO dao = new ClassroomDAO();
-        ArrayList<ClassroomsModel> classrooms = dao.getClassroomsByStudentId(3); // studentID = 1 là ví dụ
-        for (ClassroomsModel classroom : classrooms) {
-            System.out.println("Classroom ID: " + classroom.getClassroomID());
-            System.out.println("Title: " + classroom.getTitle());
-            System.out.println("Teacher ID: " + classroom.getTeacherID());
-        }
-    }
 }

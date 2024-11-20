@@ -40,7 +40,7 @@
 					<c:if test="${user != null}">
 						<ul class="nav navbar-nav">
 							<li class="nav-item" role="presentation">
-								<a class="nav-link" href=${user.roleID == "3" ? "/class" : "/teacher/class"}>Lớp học
+								<a class="nav-link" href=${user.roleID == 3 ? "/class" : "/teacher/class"}>Lớp học
 									<div class="slider"></div>
 								</a>
 							</li>
@@ -52,13 +52,13 @@
 						</ul>
                     </c:if>
 					<form class="form-inline mr-auto" target="_self">
-						<!--<c:if test="${user != null}">
+						<%--<c:if test="${user != null}">
 							<div class="form-group">
 								<label for="search-field"><i class="fa fa-search"></i></label><input
 									class="form-control search-field" type="search" name="search"
 									id="search-field">
 							</div>
-						</c:if>-->
+						</c:if>--%>
 					</form>
 
 					<c:choose>
@@ -140,8 +140,6 @@
 <script>
     const userID = "<%= userID %>";
     const roleID = "<%= roleID %>";
-    console.log(userID);
-    console.log(roleID);
 </script>
 
 <script src="/views/clients/assets/js/NotificationWebsocket.js"></script>

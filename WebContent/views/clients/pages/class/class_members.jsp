@@ -12,6 +12,7 @@
 
 <body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/views/clients/assets/css/class_member.css">
 <style>
     .container-class {
         display: flex;
@@ -29,66 +30,8 @@
     .main-content-class {
         flex-grow: 1;
         padding: 20px;
-        overflow-y: auto;
-        height: 100vh;
     }
-
-    .member-list-container {
-        padding: 20px;
-        background-color: #f4f4f4;
-    }
-
-    .member-table th,
-    .member-table td {
-        padding: 10px;
-        vertical-align: middle;
-    }
-
-    .member-table img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-
-    .action-buttons i {
-        font-size: 18px;
-        margin-right: 10px;
-        cursor: pointer;
-        color: #6c757d;
-    }
-
-    .action-buttons i:hover {
-        color: #495057;
-    }
-
-    .search-wrapper {
-        width: 40%;
-        position: relative;
-        display: inline-block;
-    }
-
-    .form-control {
-        width: 100%;
-        padding-right: 40px;
-    }
-
-    .search-icon {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 18px;
-        color: #888;
-        cursor: pointer;
-    }
-
-    .btn-add{
-        background-color: #5c62d1;
-        color: whitesmoke;
-    }
-
-    </style>
+</style>
 
 <div class="container-class">
     <div class="sidebar">
@@ -97,85 +40,83 @@
                 <h5 id="class_name">${classroom.title}</h5>
             </div>
             <div class="list-group">
-                <a href="/class_post?classroomID=${classroom.classroomID}"
+               <a href="${user.roleID == 2 ? '/teacher' : ''}/class/detail?classID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Trang chủ</a>
-                <a href="/class_assignments?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Bài tập</a>
-                <a href="/materials?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Tài liệu</a>
-                <a href="/class_members?classId=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Danh sách</a>
-                <a href="/meetings?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Cuộc họp</a>
-                <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
-                <a href="/views/clients/pages/class/prepare_meeting.jsp" target="_parent" class="list-group-item list-group-item-action">
+               <a href="${user.roleID == 2 ? '/teacher' : ''}/class_assignments?classroomID=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Bài tập</a>
+               <a href="/materials?classroomID=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Tài liệu</a>
+               <a href="${user.roleID == 2 ? '/teacher' : ''}/class_members?classId=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Danh sách</a>
+               <a href="/meetings?classroomID=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Cuộc họp</a>
+               <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
+               <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
                     Tạo cuộc họp
-                    <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
-                </a>
+                  <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
+               </a>
             </div>
         </div>
     </div>
 
     <div class="main-content-class">
         <div class="container member-list-container">
-
-
             <div class="mb-3 d-flex justify-content-end position-relative">
-
-<%--                Role admin or teacher--%>
-                <!-- Nút Thêm thành viên -->
-                <button class="btn btn-add mr-5 border-dark" data-bs-toggle="modal" data-bs-target="#addMemberModal">
-                    <i class="fas fa-plus"></i> Thêm thành viên
-                </button>
-                <!-- Modal Thêm Thành Viên -->
-                <div class="modal fade" id="addMemberModal" tabindex="-1" aria-labelledby="addMemberModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="addMemberModalLabel">Thêm thành viên mới</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="addMemberForm">
-                                    <div class="mb-3">
-                                        <label for="firstName" class="form-label">Họ tên</label>
-                                        <input type="text" class="form-control" id="firstName" placeholder="Nhập tên">
+                <c:if test="${user.roleID == 2}">
+                    <button class="btn btn-add mr-5 border-dark" data-bs-toggle="modal" data-bs-target="#addMemberModal">
+                        <i class="fas fa-plus"></i> Thêm thành viên
+                    </button>
+                    <div class="modal fade" id="addMemberModal" tabindex="-1" aria-labelledby="addMemberModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addMemberModalLabel">Thêm thành viên mới</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" class="dropdown">
+                                    <div class="input-box" data-toggle="dropdown" href="#">
+                                        <input id="dropdown-search" type="text" class="form-control" onkeyup="dropdownSearch()">
+                                        <i class="fa fa-search"></i>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Nhập email">
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-<%--                                Gui yeu cau qua mail--%>
-                                <button type="button" class="btn btn-primary" onclick="addMember()">Gửi yêu cầu</button>
-
+                                    <form action="/teacher/class_members" method="POST" id="form-search">
+                                        <div class="dropdown-menu" id="search-box">
+                                            <c:if test="${studentsSearch != null}">
+                                                <c:forEach var="studentSearch" items="${studentsSearch}">
+                                                    <div class="list border-bottom dropdown-item">
+                                                        <input class="checkbox" type="checkbox" name="checkbox" value="${studentSearch.userID}">
+                                                        <div class="d-flex flex-column ml-3">
+                                                            <span id="name-search">${studentSearch.firstName} ${studentSearch.lastName}</span>
+                                                            <small id="email-search">#<u>${studentSearch.email}</u></small>
+                                                        </div>
+                                                    </div>
+                                                </c:forEach>
+                                            </c:if>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" onclick="uncheckCheckox()">Hủy</button>
+                                    <button type="button" class="btn btn-primary" onclick="submitForm()">Thêm</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Thanh tìm kiếm -->
+                </c:if>
                 <div class="search-wrapper position-relative">
-                    <input type="text" id="searchMember" class="form-control" placeholder="Tìm kiếm" onkeypress="handleEnter(event)">
-                    <i class="fas fa-search position-absolute search-icon" onclick="performSearch()"></i>
+                    <input type="text" id="searchMember" class="form-control" placeholder="Tìm kiếm" onkeyup="performSearch()">
+                    <i class="fas fa-search position-absolute search-icon"></i>
                 </div>
             </div>
 
-
-            <!-- Giáo viên -->
             <div class="mb-4">
                 <div class="d-flex align-items-center">
                     <c:forEach var="teacher" items="${teachers}">
-                        <img src="/views/clients/assets/img/i1.jpg" alt="${teacher.firstName}" class="rounded-circle bg-dark" style="width: 48px; height: 48px; margin-right: 15px; object-fit: contain;">
+                        <img src="${teacher.avatar}" alt="${teacher.firstName}" class="rounded-circle bg-dark" style="width: 48px; height: 48px; margin-right: 15px; object-fit: contain;">
                         <span class="fs-5">${teacher.firstName} ${teacher.lastName}</span>
                     </c:forEach>
                 </div>
             </div>
 
-            <!-- Học viên -->
             <div class="member-group">
                 <table class="table table-striped member-table">
                     <thead>
@@ -183,7 +124,6 @@
                         <th>STT</th>
                         <th>Học viên</th>
                         <th></th>
-
                     </tr>
                     </thead>
                     <tbody>
@@ -191,30 +131,30 @@
                         <tr>
                             <td>${status.index + 1}</td>
                             <td>
-                                <img src="/views/clients/assets/img/user_icon.png" alt="${student.firstName}">
+                                <img src="${student.avatar}" alt="${student.firstName}" data-bs-toggle="tooltip" title="Email: ${student.email}">
                                     ${student.firstName} ${student.lastName}
                             </td>
-<%--                            Role Admin or Teacher--%>
                             <td>
-                                <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#deleteModal" style="cursor: pointer; color: rgb(90,87,87);"></i>
-                                <!-- Modal Xác Nhận Xóa -->
-                                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="deleteModalLabel">Xác Nhận Xóa</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                Bạn có chắc chắn muốn xóa?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                                <button type="button" class="btn btn-danger" onclick="confirmDelete()">Xóa</button>
+                                <c:if test="${user.roleID == 2}">
+                                    <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#deleteModal" style="cursor: pointer; color: rgb(90,87,87);"></i>
+                                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deleteModalLabel">Xác Nhận Xóa</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Bạn có chắc chắn muốn xóa?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                                    <button type="button" class="btn btn-danger" onclick="confirmDelete()">Xóa</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </c:if>
                             </td>
                         </tr>
                     </c:forEach>
@@ -233,42 +173,20 @@
     }
 
     function performSearch() {
-        const searchValue = document.getElementById('searchMember').value.toLowerCase();
+        const searchValue = document.getElementById('searchMember').value.toLowerCase().trim();
         const rows = document.querySelectorAll('.member-table tbody tr');
 
         rows.forEach(row => {
             const name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-            row.style.display = name.includes(searchValue) ? '' : 'none';
+            const email = row.querySelector('td:nth-child(2)').querySelector('[title]').getAttribute('title');
+            row.style.display = name.includes(searchValue) || email.includes(searchValue) ? '' : 'none';
         });
-    }
-
-    function addMember() {
-        // Lấy dữ liệu từ form
-        const firstName = document.getElementById('firstName').value;
-        const email = document.getElementById('email').value;
-        const role = document.getElementById('role').value;
-
-        // Kiểm tra dữ liệu
-        if (!firstName || !email || !role) {
-            alert("Vui lòng điền đầy đủ thông tin!");
-            return;
-        }
-
-        // Xử lý thêm thành viên (gửi dữ liệu tới server, cập nhật danh sách, v.v.)
-        alert(`Thêm thành viên: ${firstName}, Email: ${email}, Vai trò: ${role}`);
-
-        // Đóng modal
-        const modal = document.getElementById('addMemberModal');
-        const bootstrapModal = bootstrap.Modal.getInstance(modal);
-        bootstrapModal.hide();
-
-        // Xóa form để reset
-        document.getElementById('addMemberForm').reset();
     }
 
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/views/clients/assets/js/ClassMemberSearch.js"></script>
 </body>
 
 </html>

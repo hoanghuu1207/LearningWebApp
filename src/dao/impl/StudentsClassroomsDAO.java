@@ -1,20 +1,42 @@
 package dao.impl;
 
 import dao.DAOInterface;
-import model.ClassMessageModel;
-import model.StudentsClassroomsModel;
+import model.*;
 import util.JDBCUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Timestamp;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class StudentsClassroomsDAO implements DAOInterface<StudentsClassroomsModel> {
     @Override
     public int insert(StudentsClassroomsModel studentsClassroomsModel) {
-        return 0;
+        int row = 0;
+        try {
+            Connection con = JDBCUtil.getConnection();
+
+            String query = "INSERT INTO students_classrooms(studentID, classroomID, createdAt) "
+                    + "VALUES (?, ?, ?)";
+
+            PreparedStatement pstm = con.prepareStatement(query);
+
+            pstm.setInt(1, studentsClassroomsModel.getStudentID());
+            pstm.setInt(2, studentsClassroomsModel.getClassroomID());
+
+            java.util.Date date = new Date();
+            pstm.setTimestamp(3, new Timestamp(date.getTime()));
+
+            row = pstm.executeUpdate();
+
+            if (row != 0) {
+                System.out.println("Thêm thành công: " + row);
+            }
+
+            JDBCUtil.closeConnection(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return row;
     }
 
     @Override
@@ -90,5 +112,40 @@ public class StudentsClassroomsDAO implements DAOInterface<StudentsClassroomsMod
             e.printStackTrace();
         }
         return studentsClassroomsModel;
+    }
+    public int getIdAfterInsert(StudentsClassroomsModel studentsClassroomsModel) {
+        int id = 0;
+        try {
+            Connection con = JDBCUtil.getConnection();
+
+            String query = "INSERT INTO students_classrooms(studentID, classroomID, createdAt) "
+                    + "VALUES (?, ?, ?)";
+
+            PreparedStatement pstm = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            pstm.setInt(1, studentsClassroomsModel.getStudentID());
+            pstm.setInt(2, studentsClassroomsModel.getClassroomID());
+
+            java.util.Date date = new Date();
+            pstm.setTimestamp(3, new Timestamp(date.getTime()));
+
+            int row = pstm.executeUpdate();
+
+            if (row > 0) {
+                try (ResultSet generatedKeys = pstm.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        int generatedId = generatedKeys.getInt(1);
+                        System.out.println("Thêm thành công: " + row + ", ID: " + generatedId);
+
+                        id = generatedId;
+                    }
+                }
+            }
+
+            JDBCUtil.closeConnection(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
     }
 }

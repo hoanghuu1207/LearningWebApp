@@ -41,4 +41,17 @@ public class NotificationService implements I_NotificationService {
     public void loadNotification(UserModel userModel) {
 
     }
+
+    @Override
+    public void sendNotificationAddStudentIntoClass(int classroomID, int studentID, String url, String content, int student_classroomId) {
+        NotificationModel notification = new NotificationModel();
+        notification.setStatus(0);
+        notification.setType("add_to_class");
+        notification.setRelatedID(student_classroomId);
+        notification.setInformedID(studentID);
+
+        NotificationModel insertedNotification = notificationDAO.insertAndGetNotification(notification);
+
+        NotificationEndpoint.sendNotificationToUser(String.valueOf(studentID), url, content, insertedNotification.getNotificationID());
+    }
 }
