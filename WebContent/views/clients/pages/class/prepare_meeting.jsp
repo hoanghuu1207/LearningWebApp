@@ -7,62 +7,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meeting Interface</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
 
-        .meeting-container {
-            background-color: #2b2b2b;
-            color: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 50px;
-            width: 800px;
-            height: 530px;
-            position: relative;
-            overflow: hidden;
-        }
-        #videoElement {
-            width: 100%;
-            height: 280px;
-            background-color: black;
-            border-radius: 8px;
-            margin-top: 0px;
-            max-height: 300px;
-        }
+</head>
 
-        .btn-custom {
-            background-color: #1a73e8;
-            border: none;
-        }
+<body>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
 
-        .btn-custom:hover {
-            background-color: #1667c9;
-        }
+    .meeting-container {
+        background-color: #2b2b2b;
+        color: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 50px;
+        width: 800px;
+        height: 530px;
+        position: relative;
+        overflow: hidden;
+    }
+    #videoElement {
+        width: 100%;
+        height: 360px;
+        background-color: black;
+        border-radius: 8px;
+        margin-top: 0;
+    }
 
-        .icon-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0px 40px 5px;
-            padding: 10px;
-            cursor: pointer;
-            color: black;
-            overflow: visible;
-        }
+    .icon-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 40px 5px;
+        padding: 10px;
+        cursor: pointer;
+        overflow: visible;
+    }
 
-        .icon-muted {
-            background-color: rgb(234, 22, 22);
-        }
-        .icon-active {
-            background-color: #1a73e8;
-        }
+    .icon-muted {
+        background-color: rgb(234, 22, 22);
+    }
+    .icon-active {
+        background-color: rgba(50, 130, 236, 0.92);
+    }
 
         .join-section {
             margin-top: 20px;

@@ -8,36 +8,18 @@
     <title>Video Meeting with Chat</title>
     <link rel="stylesheet" href="/views/clients/assets/css/style_meeting.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
 </head>
 <body>
-<div class="container">
-    <h1>Video Meeting Application</h1>
-
+<div class="container" id = "container">
     <div class="main-content">
         <!-- Màn hình lớn để hiển thị video hoặc chia sẻ màn hình -->
         <div id="mainScreen" class="expanded">
             <video id="mainVideo" autoplay="autoplay" ></video>
         </div>
 
-        <!-- Khung trò chuyện -->
-        <div  id="chatSection" class="hidden">
-            <div id="chatWindow">
-                <!-- Tin nhắn sẽ hiển thị tại đây -->
-            </div>
-            <div class="input-area">
-                <input type="text" id="messageInput" placeholder="Nhập tin nhắn..." onkeypress="if(event.key === 'Enter') sendMessage()"/>
-                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i>Gửi</button>
-            </div>
-        </div>
-    </div>
 
-    <div class="sidebar hidden" id="participantsList">
-        <h3>Participants</h3>
-        <ul id="participants">
-            <!-- Danh sách các thành viên sẽ được thêm vào đây -->
-        </ul>
     </div>
-    <!-- Các nút điều khiển -->
     <div class="controls">
         <img src="/views/clients/assets/fonts/myself-icons/ic_mute.png" alt="Mute Mic" id="ic_mute"
              class="icon-btn icon-muted" onclick="toggleMute()">
@@ -53,6 +35,24 @@
              class="icon-btn icon-muted" onclick="cancelMeeting()">
     </div>
 
+</div>
+
+<div class = "secondary-container"  id = 'secondary-container'>
+    <div class="sidebar hidden" id="participantsList">
+        <h3>Participants</h3>
+        <ul id="participants">
+        </ul>
+
+    </div>
+    <!-- Khung trò chuyện -->
+    <div  id="chatSection" class="hidden">
+        <div id="chatWindow">
+        </div>
+        <div class="input-area">
+            <input type="text" id="messageInput" placeholder="Nhập tin nhắn..." onkeydown="if(event.key === 'Enter') sendMessage()"/>
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
 </div>
 
 <script>

@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="fix meeting feature" />
+    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="save unversioned files in feature/notification in Hoa's local branch">
+      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/account_background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/default-avatar2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style_meeting.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style_meeting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/aftermeeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/aftermeeting.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meeting.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/prepare_meeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/prepare_meeting.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/user/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/user/account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,9 +33,9 @@
       <list>
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="Jsp File" />
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -54,36 +69,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.MeetingDAO.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Smart Tomcat.Tomcat.executor&quot;: &quot;Run&quot;,
-    &quot;Smart Tomcat.Tomcat2.executor&quot;: &quot;Run&quot;,
-    &quot;Smart Tomcat.Tomcat9.executor&quot;: &quot;Run&quot;,
-    &quot;Smart Tomcat.Tomcat: LearningWebApp.executor&quot;: &quot;Run&quot;,
-    &quot;Smart Tomcat.TomcatSSL.executor&quot;: &quot;Run&quot;,
-    &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Tomcat Server.Tomcat 9.0.95.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/notification&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ProjectPBL4-Clone16_11/LearningWebApp&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MeetingDAO.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Smart Tomcat.Tomcat.executor": "Run",
+    "Smart Tomcat.Tomcat2.executor": "Run",
+    "Smart Tomcat.Tomcat9.executor": "Run",
+    "Smart Tomcat.Tomcat: LearningWebApp.executor": "Run",
+    "Smart Tomcat.TomcatSSL.executor": "Run",
+    "Smart Tomcat.Unnamed.executor": "Run",
+    "Tomcat Server.Tomcat 9.0.95.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Merging feature/notification",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/ProjectPBL4-Clone16_11/LearningWebApp",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\TechCare\eclipse-workspace\LearningWebApp\WebContent\views\admin\pages\user" />
@@ -162,13 +177,21 @@
       <option name="project" value="LOCAL" />
       <updated>1731732849549</updated>
     </task>
-    <task id="LOCAL-00002" summary="fix meeting feature">
+    <task id="LOCAL-00002" summary="change fe of prepare_meeting and meeting">
       <option name="closed" value="true" />
-      <created>1732177318396</created>
+      <created>1731861317919</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1732177318396</updated>
+      <updated>1731861317919</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix ui account">
+      <option name="closed" value="true" />
+      <created>1731984329845</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731984329845</updated>
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
@@ -191,7 +214,11 @@
     <MESSAGE value="save workspace.xml" />
     <MESSAGE value="merge feature/post_article into feature/admin" />
     <MESSAGE value="fix meeting feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix meeting feature" />
+    <MESSAGE value="save workspace.xml" />
+    <MESSAGE value="change fe of prepare_meeting and meeting" />
+    <MESSAGE value="fix ui account" />
+    <MESSAGE value="save unversioned files in feature/notification in Hoa's local branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="save unversioned files in feature/notification in Hoa's local branch" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
