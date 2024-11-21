@@ -61,8 +61,10 @@
     const videoEnabled =  <%= request.getAttribute("videoEnabled") %> ;
     const audioEnabled = <%= request.getAttribute("audioEnabled") %> ;
     const meetingId = '<%= request.getAttribute("meetingId") %>';
+    const classroomID = '<%= request.getAttribute("classroomID") %>';
+    const userId = '<%= request.getAttribute("userId") %>';
 </script>
-<script src="/views/clients/assets/js/app.js"></script>
+<script src="/views/clients/assets/js/app2.js"></script>
 
 </body>
 </html>

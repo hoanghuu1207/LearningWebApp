@@ -373,4 +373,23 @@ public class UserDAO implements DAOInterface<UserModel> {
 		}
 		return students;
 	}
+
+	public String getUserNameById(int userId) {
+		String userName = "Unknown User";
+		String sql = "SELECT * FROM users WHERE userID = ?";
+
+		try (Connection conn = JDBCUtil.getConnection();
+			 PreparedStatement stmt = conn.prepareStatement(sql)) {
+			stmt.setInt(1, userId);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				userName = rs.getString("firstname") + " " + rs.getString("lastname");
+			}
+			JDBCUtil.closeConnection(conn);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return userName;
+	}
+
 }

@@ -17,4 +17,9 @@ public class ScheduleService implements I_ScheduleService {
     public ArrayList<ScheduleModel> getUpcomingSchedules(int classroomID) {
         return dao.getUpcomingSchedules(classroomID);
     }
+
+    @Override
+    public void createSchedule(ScheduleModel schedule) {
+        dao.createSchedule(schedule);
+    }
 }

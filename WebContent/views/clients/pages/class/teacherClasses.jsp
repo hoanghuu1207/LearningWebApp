@@ -106,7 +106,7 @@
                             .catch(err => alert("Lỗi khi sao chép: " + err));
                 return;
             }
-            window.location.href = 'class/detail?classID=' + classBox.getAttribute("class_id");
+            window.location.href = '/teacher/class/detail?classID=' + classBox.getAttribute("class_id");
         });
     });
 </script>

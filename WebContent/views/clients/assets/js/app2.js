@@ -1,9 +1,10 @@
 // Khởi tạo kết nối WebSocket tới địa chỉ server
-const socket = new WebSocket("wss://192.168.158.180:8443/chat/"+ meetingId);
+const socket = new WebSocket("wss://192.168.158.180:8443/meet/"+ meetingId);
 
 let localStream ;
 let screenStream;
 let peerConnections = {};
+//let currentParticipantId = null;
 
 // Danh sách người tham gia
 let participants = [];
@@ -28,6 +29,7 @@ socket.onmessage = function(event) {
             console.log(data.sender, data.message);
             break;
         case "offer":
+            console.log("part2");
             handleOffer(data.offer, data.id);
             break;
         case "answer":
@@ -48,13 +50,7 @@ async function handleOffer(offer, senderId) {
     const answer = await pc.createAnswer();
     await pc.setLocalDescription(answer);
 
-    socket.send(
-        JSON.stringify({
-            type: "answer",
-            answer: pc.localDescription,
-            id: senderId,
-        })
-    );
+    socket.send(JSON.stringify({ type: "answer", answer: pc.localDescription, id: senderId }));
 }
 
 async function handleAnswer(answer, senderId) {
@@ -64,10 +60,10 @@ async function handleAnswer(answer, senderId) {
     }
 }
 
-async function handleNewICECandidate(candidate, senderId) {
+function handleNewICECandidate(candidate, senderId) {
     const pc = peerConnections[senderId];
     if (pc) {
-        await pc.addIceCandidate(new RTCIceCandidate(candidate));
+        pc.addIceCandidate(new RTCIceCandidate(candidate));
     }
 }
 
@@ -81,112 +77,17 @@ socket.onclose = function(event) {
 socket.onerror = function(error) {
     console.log("WebSocket error: ", error);
 };
-function sendMessage() {
-    const messageInput = document.getElementById('messageInput');
-    const message = messageInput.value.trim();
-
-    if (message !== "") {
-        // Gửi tin nhắn qua WebSocket
-        //socket.send(message);
-        socket.send(JSON.stringify({ type: "message", message : message, classroomID }));
-        messageInput.value = "";
-    }
-}
-//socket.send(JSON.stringify({type: "offer", offer: pc.localDescription, id,}));
-// Hàm hiển thị tin nhắn trong khung chat
-function displayMessage(sender, message) {
-    const chatWindow = document.getElementById('chatWindow');
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('message');
-    messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
-
-    chatWindow.appendChild(messageElement);
-    chatWindow.scrollTop = chatWindow.scrollHeight;  // Cuộn xuống dưới cùng để xem tin nhắn mới nhất
-}
-
-// Chọn người tham gia để hiển thị video
-function selectParticipant(id) {
-    const selectedPeerConnection = peerConnections[id];
-    if (selectedPeerConnection && selectedPeerConnection.remoteStream) {
-        const mainVideo = document.getElementById('mainVideo');
-        mainVideo.srcObject = selectedPeerConnection.remoteStream;
-    } else {
-        console.error("No video stream available for id:", id);
-    }
-}
-
-// Hàm thêm người tham gia vào danh sách
-function addParticipant(id, name) {
-    if (!participants.some(p => p.id === id)) {
-        participants.push({ id, name });
-
-        const participantsList = document.getElementById("participants");
-        const participantItem = document.createElement("li");
-
-        participantItem.innerHTML = `${name}
-            <button onclick="selectParticipant('${id}')">Xem Video</button> `;
-        participantsList.appendChild(participantItem);
-
-        if (!localStream) {
-            startMediaStream().then(() => {
-                createPeerConnection(id);
-                createOffer(id); // Gửi SDP Offer
-            }).catch(error => {
-                console.error("Error initializing media stream: ", error);
-            });
-        } else {
-            createPeerConnection(id);
-            createOffer(id); // Gửi SDP Offer
-        }
-    }
-}
-
-async function createOffer(id) {
-    const pc = peerConnections[id];
-    if (pc) {
-        const offer = await pc.createOffer();
-        await pc.setLocalDescription(offer);
-
-        socket.send(
-            JSON.stringify({
-                type: "offer",
-                offer: pc.localDescription,
-                id,
-            })
-        );
-    }
-}
-
-
-// Hàm xóa người tham gia khỏi danh sách
-function removeParticipant(id) {
-    if (peerConnections[id]) {
-        peerConnections[id].close();
-        delete peerConnections[id];
-    }
-    participants = participants.filter(p => p.id !== id);
-    const participantsList = document.getElementById('participants');
-    participantsList.innerHTML = ''; // Xóa danh sách hiện tại
-    // Thêm lại tất cả những người còn trong danh sách
-    participants.forEach(p => console.log(p.id, p.name));
-    participants.forEach(p => {
-        const participantItem = document.createElement('li');
-        participantItem.innerHTML = `${p.name}
-            <button onclick="selectParticipant('${p.id}')">Xem Video</button> `;
-        participantsList.appendChild(participantItem);
-    }  );
-}
 const configuration = {
     iceServers: [
         { urls: "stun:stun.l.google.com:19302" } // Máy chủ STUN miễn phí
     ]
 };
 // Khởi tạo Peer Connection cho mỗi người tham gia
-async function createPeerConnection(id) {
+function createPeerConnection(id) {
     const pc = new RTCPeerConnection(configuration); // Sử dụng cấu hình ICE servers
     peerConnections[id] = pc;
     localStream.getTracks().forEach(track => pc.addTrack(track, localStream));
-
+    console.log("Khoi tao Peer cho " , id);
     // Set up event listener for when remote track arrives
     pc.ontrack = event => {
         if (!pc.remoteStream) {
@@ -211,6 +112,125 @@ async function createPeerConnection(id) {
     };
     return pc;
 }
+function sendMessage() {
+    const messageInput = document.getElementById('messageInput');
+    const message = messageInput.value.trim();
+
+    if (message !== "") {
+        // Gửi tin nhắn qua WebSocket
+        //socket.send( message);
+        socket.send(JSON.stringify({ type: "message", message : message, classroomID }));
+        messageInput.value = "";
+    }
+}
+// Hàm hiển thị tin nhắn trong khung chat
+function displayMessage(sender, message) {
+    const chatWindow = document.getElementById('chatWindow');
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+
+    chatWindow.appendChild(messageElement);
+    chatWindow.scrollTop = chatWindow.scrollHeight;  // Cuộn xuống dưới cùng để xem tin nhắn mới nhất
+}
+
+// Chọn người tham gia để hiển thị video
+function selectParticipant(id) {
+    const selectedPeerConnection = peerConnections[id];
+    if (selectedPeerConnection && selectedPeerConnection.remoteStream) {
+        const mainVideo = document.getElementById('mainVideo');
+        mainVideo.srcObject = selectedPeerConnection.remoteStream;
+    } else {
+        console.error("No video stream available for id:", id);
+    }
+    // const pc = peerConnections[id];
+    // if (pc && pc.remoteStream) {
+    //     const mainVideo = document.getElementById("mainVideo");
+    //     const screenTrack = pc.remoteStream.getVideoTracks().find(track => track.label.includes("screen"));
+    //     const cameraTrack = pc.remoteStream.getVideoTracks().find(track => track.label.includes("camera"));
+    //
+    //     if (screenTrack) {
+    //         console.log("screen");
+    //         mainVideo.srcObject = new MediaStream([screenTrack]);
+    //     } else if (cameraTrack) {
+    //         console.log("camera");
+    //         mainVideo.srcObject = new MediaStream([cameraTrack]);
+    //     } else {
+    //         console.log("ddefault");
+    //         mainVideo.srcObject = null; // Clear the video
+    //     }
+    // } else {
+    //     console.error("No video stream available for id:", id);
+    // }
+}
+
+// Hàm thêm người tham gia vào danh sách
+function addParticipant(id, name) {
+    if (!participants.some(p => p.id === id)) {
+        participants.push({ id, name });
+
+        const participantsList = document.getElementById("participants");
+        const participantItem = document.createElement("li");
+
+        participantItem.innerHTML = `${name}
+            <button onclick="selectParticipant('${id}')">Xem Video</button> `;
+        participantsList.appendChild(participantItem);
+
+        if (!localStream) {
+            startMediaStream().then(() => {
+                createPeerConnection(id);
+                console.log("on1");
+                createOffer(id); // Gửi SDP Offer
+                console.log("part1");
+            }).catch(error => {
+                console.error("Error initializing media stream: ", error);
+            });
+        } else {
+            createPeerConnection(id);
+            console.log("on2");
+            createOffer(id); // Gửi SDP Offer
+            console.log("part2");
+        }
+    }
+}
+
+async function createOffer(id) {
+    const pc = peerConnections[id];
+    if (pc) {
+        const offer = await pc.createOffer();
+        await pc.setLocalDescription(offer);
+
+        socket.send(
+            JSON.stringify({
+                type: "offer",
+                offer: pc.localDescription,
+                id,
+            })
+        );
+        console.log("offer1");
+    }
+}
+
+
+// Hàm xóa người tham gia khỏi danh sách
+function removeParticipant(id) {
+    if (peerConnections[id]) {
+        peerConnections[id].close();
+        delete peerConnections[id];
+    }
+    participants = participants.filter(p => p.id !== id);
+    const participantsList = document.getElementById('participants');
+    participantsList.innerHTML = ''; // Xóa danh sách hiện tại
+    // Thêm lại tất cả những người còn trong danh sách
+    participants.forEach(p => console.log(p.id, p.name));
+    participants.forEach(p => {
+        const participantItem = document.createElement('li');
+        participantItem.innerHTML = `${p.name}
+            <button onclick="selectParticipant('${p.id}')">Xem Video</button> `;
+        participantsList.appendChild(participantItem);
+    }  );
+}
+
 
 
 const mainVideo = document.getElementById('mainVideo');
@@ -247,7 +267,7 @@ async function startScreenShare() {
 }
 
 // Dừng chia sẻ màn hình
-function stopScreenShare() {
+async function stopScreenShare() {
     if (screenStream) {
         screenStream.getTracks().forEach(track => track.stop()); // Dừng track chia sẻ màn hình
     }
@@ -256,7 +276,7 @@ function stopScreenShare() {
     for (let id in peerConnections) {
         const sender = peerConnections[id].getSenders().find(s => s.track.kind === 'video');
         if (sender) {
-            sender.replaceTrack(videoTrack);
+            await sender.replaceTrack(videoTrack);
         }
     }
     // Hiển thị lại video từ camera lên video chính
@@ -309,7 +329,7 @@ async function startMediaStream() {
 }
 
 // Bật/tắt micro
- function toggleMute() {
+function toggleMute() {
     if (localStream && localStream.getAudioTracks().length > 0) {
         const audioTrack = localStream.getAudioTracks()[0];
         audioTrack.enabled = !audioTrack.enabled; // Đảo trạng thái của track
@@ -328,7 +348,7 @@ async function startMediaStream() {
 }
 
 // Bật/tắt camera
- function toggleVideo() {
+function toggleVideo() {
     if (localStream && localStream.getVideoTracks().length > 0) {
         const videoTrack = localStream.getVideoTracks()[0];
         videoTrack.enabled = !videoTrack.enabled; // Đảo trạng thái của track

@@ -147,4 +147,9 @@ public class UserService implements I_UserService {
 	public ArrayList<UserModel> getStudentsByClassId(int classId) {
 		return userDao.getStudentsByClassId(classId);
 	}
+
+	@Override
+	public String getUserNameById(int userId) {
+		return userDao.getUserNameById(userId);
+	}
 }

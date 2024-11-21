@@ -69,6 +69,14 @@
             padding: 30px;
             margin-left: 40px;
         }
+        .title-input {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .title-input.active {
+            display: block;
+        }
     </style>
 
 </head>
@@ -87,12 +95,15 @@
                 <img src="/views/clients/assets/fonts/myself-icons/ic_mute_camera.png" alt="Mute Camera" id="ic_mute_cam"
                      class="icon-btn icon-muted" onclick="toggleCam()">
             </div>
-
         </div>
 
         <div class="col-md-4 join-section">
             <h3>Sẵn sàng tham gia?</h3>
             <p>Không có người nào khác ở đây</p>
+            <div class="title-input" id="titleInputContainer">
+                <label for="meetingTitle" class="form-label">Nhập tiêu đề cuộc họp:</label>
+                <input type="text" id="meetingTitle" class="form-control" placeholder="Tiêu đề cuộc họp">
+            </div>
             <div class="btn btn-primary mb-4" onclick="joinMeeting()">Tham gia ngay</div>
         </div>
     </div>
@@ -104,6 +115,13 @@
         let audioEnabled = false;
         let isPermittedvideo = false;
         let isPermittedaudio = false;
+        const meetingId = '<%= request.getAttribute("meetingId") %>';
+        const classroomID = '<%= request.getAttribute("classroomID") %>';
+        const userId = '<%= request.getAttribute("userId") %>';
+        if (meetingId === "0") {
+            document.getElementById("titleInputContainer").classList.add("active");
+        }
+
         function enableDevices() {
             navigator.mediaDevices.getUserMedia({ video: true, audio: true })
                 .then(s => {
@@ -153,10 +171,19 @@
         }
 
         function joinMeeting() {
-            const meetingId = '<%= request.getAttribute("meetingId") %>';
-            window.location.href = "/StartMeeting?meetingId=" + meetingId
-            +"&videoEnabled=" + videoEnabled + "&audioEnabled=" + audioEnabled
-            + "&isPermittedvideo=" + isPermittedvideo + "&isPermittedaudio=" + isPermittedaudio;
+            const meetingTitle = document.getElementById("meetingTitle")?.value || "";
+            if (meetingId === "0" && meetingTitle.trim() === "") {
+                alert("Vui lòng nhập tiêu đề cho cuộc họp mới!");
+                return;
+            }
+            window.location.href = "/StartMeeting?meetingId=" + meetingId +
+                "&classroomID=" + classroomID +
+                "&userId=" + userId +
+                "&videoEnabled=" + videoEnabled +
+                "&audioEnabled=" + audioEnabled +
+                "&isPermittedvideo=" + isPermittedvideo +
+                "&isPermittedaudio=" + isPermittedaudio +
+                "&meetingTitle=" + encodeURIComponent(meetingTitle);
         }
     </script>
 </body>

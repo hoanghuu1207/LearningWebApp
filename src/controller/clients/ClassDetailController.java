@@ -26,7 +26,7 @@ public class ClassDetailController extends HttpServlet {
         UserModel user = (UserModel) request.getAttribute("user");
 
         int studentId = user.getUserID();
-
+        int userRoleID = user.getRoleID();
         ClassroomsModel classroom = classroomsService.selectByIdAndStudentID(Integer.parseInt(classID), studentId);
 
         if (classroom != null) {
@@ -36,6 +36,7 @@ public class ClassDetailController extends HttpServlet {
             ArrayList<ClassMessageModel> messages = messageService.selectByClassId(Integer.parseInt(classID));
 
             request.setAttribute("messages", messages);
+            request.setAttribute("roleID", userRoleID);
             request.getRequestDispatcher("/views/clients/pages/class/class_detail.jsp").forward(request, response);
         } else {
             response.sendRedirect("/class");

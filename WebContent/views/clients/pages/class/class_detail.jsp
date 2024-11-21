@@ -48,21 +48,43 @@
                 <h5 id="class_name">${classroom.title}</h5>
             </div>
             <div class="list-group">
-                <a href="/class/detail?classID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Trang chủ</a>
-                <a href="/class_assignments?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Bài tập</a>
-                <a href="/materials?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Tài liệu</a>
-                <a href="/class_members?classId=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Danh sách</a>
-                <a href="/meetings?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Cuộc họp</a>
-                <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
-                <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
-                    Tạo cuộc họp
-                    <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
-                </a>
+                <c:choose>
+                    <c:when test="${roleID == 2}">
+                        <a href="/teacher/class/detail?classID=${classroom.classroomID}"
+                           class="list-group-item list-group-item-action">Trang chủ</a>
+                        <a href="/class_assignments?classroomID=${classroom.classroomID}"
+                           class="list-group-item list-group-item-action">Bài tập</a>
+                        <a href="/materials?classroomID=${classroom.classroomID}"
+                           class="list-group-item list-group-item-action">Tài liệu</a>
+                        <a href="/class_members?classId=${classroom.classroomID}"
+                           class="list-group-item list-group-item-action">Danh sách</a>
+                        <a href="/meetings?classroomID=${classroom.classroomID}"
+                           class="list-group-item list-group-item-action">Cuộc họp</a>
+                        <a href="/teacher/schedules?classroomID=${classroom.classroomID}"
+                           class="list-group-item list-group-item-action">Lên lịch hẹn</a>
+                        <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
+                            Tạo cuộc họp
+                            <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
+                        </a>
+                    </c:when>
+                    <c:when test="${roleID == 3}">
+                        <a href="/class/detail?classID=${classroom.classroomID}"
+                           class="list-group-item list-group-item-action">Trang chủ</a>
+                        <a href="/class_assignments?classroomID=${classroom.classroomID}"
+                           class="list-group-item list-group-item-action">Bài tập</a>
+                        <a href="/materials?classroomID=${classroom.classroomID}"
+                           class="list-group-item list-group-item-action">Tài liệu</a>
+                        <a href="/class_members?classId=${classroom.classroomID}"
+                           class="list-group-item list-group-item-action">Danh sách</a>
+                        <a href="/meetings?classroomID=${classroom.classroomID}"
+                           class="list-group-item list-group-item-action">Cuộc họp</a>
+                        <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
+                            Tạo cuộc họp
+                            <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
+                        </a>
+                    </c:when>
+                </c:choose>
+
             </div>
         </div>
     </div>

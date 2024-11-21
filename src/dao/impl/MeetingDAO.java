@@ -6,10 +6,7 @@ import model.MaterialsModel;
 import model.MeetingsModel;
 import util.JDBCUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class MeetingDAO implements DAOInterface<MeetingsModel> {
@@ -134,8 +131,114 @@ public class MeetingDAO implements DAOInterface<MeetingsModel> {
         }
         return meetings;
     }
-    public static void main()
-    {
+    public ArrayList<MeetingsModel> getOngoingMeetings(int id) {
+        ArrayList<MeetingsModel> meetings = new ArrayList<>();
+        String sql = "SELECT * FROM meetings WHERE startTime <= NOW() AND endTime IS NULL AND isCancelled = 0" +
+                " AND classroomID = ?";
 
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement statement = conn.prepareStatement(sql)) {
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                MeetingsModel meeting = new MeetingsModel();
+                meeting.setMeetingID(resultSet.getInt("meetingID"));
+                meeting.setTitle(resultSet.getString("title"));
+                meeting.setStartTime(resultSet.getTimestamp("startTime"));
+                meeting.setEndTime(resultSet.getTimestamp("endTime"));
+                meeting.setClassroomID(resultSet.getInt("classroomID"));
+                meeting.setDuration(resultSet.getTime("duration"));
+                meeting.setIsCancelled(resultSet.getInt("isCancelled"));
+                meetings.add(meeting);
+            }
+            JDBCUtil.closeConnection(conn);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return meetings;
     }
+
+    public int createNewMeeting(String title, int classroomID) {
+        int meetingID = -1;
+        String sql = "INSERT INTO meetings (title, startTime, endTime, classroomID, duration, isCancelled) " +
+                "VALUES (?, current_timestamp(), NULL, ?, '00:00:00', '0')";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+            ps.setString(1, title);
+            ps.setInt(2, classroomID);
+            ps.executeUpdate(); // Execute the insertion
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                meetingID = rs.getInt(1); // Lấy giá trị meetingID
+            }
+            JDBCUtil.closeConnection(conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return meetingID;
+    }
+    public int createNewSchedule_Meeting(String title, Timestamp startTime, int classroomID ) {
+        int meetingID = -1;
+        String sql = "INSERT INTO meetings (title, startTime, endTime, classroomID, duration, isCancelled) " +
+                "VALUES (?, ?, NULL, ?, '00:00:00', '0')";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+            ps.setString(1, title);
+            ps.setTimestamp(2, startTime);
+            ps.setInt(3, classroomID);
+            ps.executeUpdate(); // Execute the insertion
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                meetingID = rs.getInt(1); // Lấy giá trị meetingID
+            }
+            JDBCUtil.closeConnection(conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return meetingID;
+    }
+
+    public void ModifierEndMeeting(int meetingID) {
+        String sql = "UPDATE meetings " +
+                "SET endTime = current_timestamp(), " +
+                "duration = TIMEDIFF(current_timestamp(), startTime) " +
+                "WHERE meetingID = ?";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, meetingID);
+            ps.executeUpdate();
+            JDBCUtil.closeConnection(conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void cancelMeeting(int meetingID) {
+        String sql = "UPDATE meetings " +
+                "SET endTime = CURRENT_TIMESTAMP(), isCancelled = 1 " +
+                "WHERE meetingID = ?";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, meetingID);
+            ps.executeUpdate();
+            JDBCUtil.closeConnection(conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+//        MeetingDAO meetingDAO = new MeetingDAO();
+//        int meetingID = 14;
+//        meetingDAO.cancelMeeting(meetingID);
+//        if (success) {
+//            System.out.println("Cuộc họp đã bị hủy thành công!");
+//        } else {
+//            System.out.println("Hủy cuộc họp thất bại! Vui lòng kiểm tra lại meetingID.");
+//        }
+    }
+
 }
