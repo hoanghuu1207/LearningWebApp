@@ -128,7 +128,7 @@
                     </thead>
                     <tbody>
                     <c:forEach var="student" items="${students}" varStatus="status">
-                        <tr>
+                        <tr studentId="${student.userID}">
                             <td>${status.index + 1}</td>
                             <td>
                                 <img src="${student.avatar}" alt="${student.firstName}" data-bs-toggle="tooltip" title="Email: ${student.email}">
@@ -136,29 +136,29 @@
                             </td>
                             <td>
                                 <c:if test="${user.roleID == 2}">
-                                    <i class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#deleteModal" style="cursor: pointer; color: rgb(90,87,87);"></i>
-                                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="deleteModalLabel">Xác Nhận Xóa</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Bạn có chắc chắn muốn xóa?
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                                    <button type="button" class="btn btn-danger" onclick="confirmDelete()">Xóa</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <i id="delete-student" class="fas fa-trash" data-bs-toggle="modal" data-bs-target="#deleteModal" style="cursor: pointer; color: rgb(90,87,87);"></i>
                                 </c:if>
                             </td>
                         </tr>
                     </c:forEach>
                     </tbody>
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel">Xác Nhận Xóa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn có chắc chắn muốn xóa?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="button" class="btn btn-danger" onclick="confirmDelete()" data-bs-dismiss="modal">Xóa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </table>
             </div>
         </div>
@@ -185,8 +185,17 @@
 
 </script>
 
+<%
+    String classID = (String) session.getAttribute("classID");
+%>
+
+<script>
+    const classID = "<%= classID %>";
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/views/clients/assets/js/ClassMemberSearch.js"></script>
+<script src="/views/clients/assets/js/DeleteClassMemberWebSocket.js"></script>
 </body>
 
 </html>

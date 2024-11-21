@@ -46,7 +46,29 @@ public class StudentsClassroomsDAO implements DAOInterface<StudentsClassroomsMod
 
     @Override
     public int delete(StudentsClassroomsModel studentsClassroomsModel) {
-        return 0;
+        int row = 0;
+        try {
+            Connection con = JDBCUtil.getConnection();
+
+            String query = "DELETE FROM students_classrooms " +
+                    " WHERE studentID = ? AND classroomID = ?";
+
+            PreparedStatement pstm = con.prepareStatement(query);
+
+            pstm.setInt(1, studentsClassroomsModel.getStudentID());
+            pstm.setInt(2, studentsClassroomsModel.getClassroomID());
+
+            row = pstm.executeUpdate();
+
+            if (row != 0) {
+                System.out.println("Xóa thành công: " + row);
+            }
+
+            JDBCUtil.closeConnection(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return row;
     }
 
     @Override

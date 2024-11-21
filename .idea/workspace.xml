@@ -6,27 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merge feature/post_article into feature/admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/NotificationWebsocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/NotificationWebsocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClasses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClasses.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/clients/ClassMemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/ClassMemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/ClassroomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/ClassroomDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/impl/NotificationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/NotificationDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/impl/StudentsClassroomsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/StudentsClassroomsDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ClassroomsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ClassroomsModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/StudentsClassroomsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/StudentsClassroomsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/NotificationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/NotificationModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/I_ClassMemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/I_ClassMemberService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/I_NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/I_NotificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/I_UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/I_UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/impl/ClassMemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/ClassMemberService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/impl/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/NotificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/I_UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/I_UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/impl/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/impl/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

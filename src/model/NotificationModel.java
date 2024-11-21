@@ -9,6 +9,15 @@ public class NotificationModel {
 	private int status;
 	private String type;
 	private int relatedID;
+	private Timestamp createdAt;
+
+	public Timestamp getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Timestamp createdAt) {
+		this.createdAt = createdAt;
+	}
 
 	public NotificationModel(){}
 

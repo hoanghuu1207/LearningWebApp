@@ -76,6 +76,49 @@ public class NotificationDAO implements DAOInterface<NotificationModel> {
         }
         return insertedNotification;
     }
+    public NotificationModel insertAndGetNotificationOfRemoveStudentFromClass(NotificationModel notificationModel) {
+        NotificationModel insertedNotification = null;
+        try {
+            Connection con = JDBCUtil.getConnection();
+
+            String query = "INSERT INTO notification(status, type, relatedID, informedUser, createdAt) "
+                    + "VALUES (?, ?, ?, ?, ?)";
+
+            PreparedStatement pstm = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            pstm.setInt(1, notificationModel.getStatus());
+            pstm.setString(2, notificationModel.getType());
+            pstm.setInt(3, notificationModel.getRelatedID());
+            pstm.setInt(4, notificationModel.getInformedID());
+
+            java.util.Date date = new Date();
+            pstm.setTimestamp(5, new Timestamp(date.getTime()));
+
+            int row = pstm.executeUpdate();
+
+            if (row > 0) {
+                try (ResultSet generatedKeys = pstm.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        int generatedId = generatedKeys.getInt(1);
+                        System.out.println("Thêm thành công: " + row + ", ID: " + generatedId);
+
+                        insertedNotification = new NotificationModel();
+                        insertedNotification.setNotificationID(generatedId);
+                        insertedNotification.setStatus(notificationModel.getStatus());
+                        insertedNotification.setType(notificationModel.getType());
+                        insertedNotification.setRelatedID(notificationModel.getRelatedID());
+                        insertedNotification.setInformedID(notificationModel.getInformedID());
+                        insertedNotification.setCreatedAt(notificationModel.getCreatedAt());
+                    }
+                }
+            }
+
+            JDBCUtil.closeConnection(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return insertedNotification;
+    }
     @Override
     public int update(NotificationModel notificationModel) {
         return 0;
@@ -107,25 +150,29 @@ public class NotificationDAO implements DAOInterface<NotificationModel> {
                 "   CASE " +
                 "      WHEN n.type = 'add_to_class' THEN c.title " +
                 "      WHEN n.type = 'post' THEN class.title " +
+                "      WHEN n.type = 'remove_from_class' THEN class1.title " +
                 "      ELSE NULL " +
                 "   END AS title, " +
                 "   CASE " +
                 "      WHEN n.type = 'add_to_class' THEN c.classroomID " +
                 "      WHEN n.type = 'post' THEN cm.classroomID " +
+                "      WHEN n.type = 'remove_from_class' THEN class1.classroomID " +
                 "      ELSE NULL " +
                 "   END AS classroomID, " +
                 "   CASE " +
                 "      WHEN n.type = 'add_to_class' THEN us.firstname " +
                 "      WHEN n.type = 'post' THEN u.firstname " +
+                "      WHEN n.type = 'remove_from_class' THEN u1.firstname " +
                 "      ELSE NULL " +
                 "   END AS firstname, " +
                 "   CASE " +
                 "      WHEN n.type = 'add_to_class' THEN us.lastname " +
                 "      WHEN n.type = 'post' THEN u.lastname " +
+                "      WHEN n.type = 'remove_from_class' THEN u1.lastname " +
                 "      ELSE NULL " +
                 "   END AS lastname, " +
-                "   COALESCE(sc.createdAt, cm.createdAt) AS createdAt " +
-                "FROM" +
+                "   COALESCE(sc.createdAt, cm.createdAt, n.createdAt) AS createdAt " +
+                "FROM " +
                 "   notification AS n " +
                 "LEFT JOIN " +
                 "   students_classrooms AS sc " +
@@ -139,12 +186,18 @@ public class NotificationDAO implements DAOInterface<NotificationModel> {
                 "LEFT JOIN " +
                 "   classroom_messages AS cm " +
                 "   ON n.type = 'post' AND n.relatedID = cm.messageID " +
-                "LEFT JOIN" +
+                "LEFT JOIN " +
                 "   classrooms AS class " +
                 "   ON class.classroomID = cm.classroomID " +
                 "LEFT JOIN " +
                 "   users AS u " +
                 "   ON cm.userID = u.userID " +
+                "LEFT JOIN " +
+                "   classrooms AS class1 " +
+                "   ON n.type = 'remove_from_class' AND n.relatedID = class1.classroomID " +
+                "LEFT JOIN " +
+                "   users AS u1 " +
+                "   ON u1.userID = class1.teacherID " +
                 "WHERE " +
                 "   n.informedUser = ? " +
                 "   AND (u.userID IS NULL OR u.userID != ?) " +
@@ -178,6 +231,9 @@ public class NotificationDAO implements DAOInterface<NotificationModel> {
                 }else if(type.equals("add_to_class")){
                     url = "/class/detail?classID=" + classroomID;
                     content = firstName + " " + lastName + " đã thêm bạn vào " + title;
+                }else if(type.equals("remove_from_class")){
+                    url = "#";
+                    content = firstName + " " + lastName + " đã xóa bạn khỏi " + title;
                 }
                 // assignment, schedule
 

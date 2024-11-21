@@ -8,4 +8,6 @@ public interface I_NotificationService {
     void loadNotification(UserModel userModel);
 
     void sendNotificationAddStudentIntoClass(int classroomID, int studentID, String url, String content, int student_classroomId);
+
+    void sendNotificationRemoveStudentFromClass(int classroomID, int studentID, String url, String content);
 }

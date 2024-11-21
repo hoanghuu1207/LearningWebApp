@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import dao.DAOInterface;
+import model.SubNotificationModel;
 import model.UserModel;
 import util.JDBCUtil;
 
@@ -417,5 +418,39 @@ public class UserDAO implements DAOInterface<UserModel> {
 			e.printStackTrace();
 		}
 		return students;
+	}
+	public SubNotificationModel getSubNotificationWithClassroom(int classroomID){
+		SubNotificationModel subNotificationModel = null;
+
+		try {
+			Connection con = JDBCUtil.getConnection();
+
+			String query = "SELECT * FROM classrooms AS c " +
+					"JOIN users AS u ON c.teacherID = u.userID " +
+					"WHERE c.classroomID = ?";
+
+			PreparedStatement pstm = con.prepareStatement(query);
+
+			pstm.setInt(1, classroomID);
+
+			ResultSet rs = pstm.executeQuery();
+
+			while (rs.next()) {
+				String url = "#";
+				String title = rs.getString("title");
+				String firstname = rs.getString("firstname");
+				String lastname = rs.getString("lastname");
+
+				subNotificationModel = new SubNotificationModel();
+
+				subNotificationModel.setUrl(url);
+				subNotificationModel.setContent(firstname + " " + lastname + " đã xóa bạn khỏi " + title);
+			}
+
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return subNotificationModel;
 	}
 }

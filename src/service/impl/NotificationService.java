@@ -54,4 +54,17 @@ public class NotificationService implements I_NotificationService {
 
         NotificationEndpoint.sendNotificationToUser(String.valueOf(studentID), url, content, insertedNotification.getNotificationID());
     }
+
+    @Override
+    public void sendNotificationRemoveStudentFromClass(int classroomID, int studentID, String url, String content) {
+        NotificationModel notification = new NotificationModel();
+        notification.setStatus(0);
+        notification.setType("remove_from_class");
+        notification.setRelatedID(classroomID);
+        notification.setInformedID(studentID);
+
+        NotificationModel insertedNotification = notificationDAO.insertAndGetNotificationOfRemoveStudentFromClass(notification);
+
+        NotificationEndpoint.sendNotificationToUser(String.valueOf(studentID), url, content, insertedNotification.getNotificationID());
+    }
 }
