@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="save unversioned files in feature/notification in Hoa's local branch">
-      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/account_background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/default-avatar2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/user.png" afterDir="false" />
+    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merge fe into Hoa's local branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style_meeting.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style_meeting.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/aftermeeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/aftermeeting.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meeting.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/prepare_meeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/prepare_meeting.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/user/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/user/account.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +70,7 @@
     "Smart Tomcat.Unnamed.executor": "Run",
     "Tomcat Server.Tomcat 9.0.95.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging feature/notification",
+    "git-widget-placeholder": "feature/notification",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/ProjectPBL4-Clone16_11/LearningWebApp",
@@ -185,15 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731861317919</updated>
     </task>
-    <task id="LOCAL-00003" summary="fix ui account">
+    <task id="LOCAL-00003" summary="merge fe into Hoa's local branch">
       <option name="closed" value="true" />
-      <created>1731984329845</created>
+      <created>1732178423967</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1731984329845</updated>
+      <updated>1732178423967</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +206,8 @@
     <MESSAGE value="change fe of prepare_meeting and meeting" />
     <MESSAGE value="fix ui account" />
     <MESSAGE value="save unversioned files in feature/notification in Hoa's local branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="save unversioned files in feature/notification in Hoa's local branch" />
+    <MESSAGE value="merge fe into Hoa's local branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge fe into Hoa's local branch" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

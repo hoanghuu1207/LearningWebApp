@@ -72,12 +72,8 @@
         }
     </style>
 
-</head>
-
-<body>
     <div class="container d-flex justify-content-start">
         <div class="meeting-container text-center">
-            <h5 class="mb-4">Bạn có muốn người khác nhìn thấy và nghe thấy bạn trong cuộc họp không?</h5>
             <button class="btn btn-primary mb-4" onclick="enableDevices()">Cho phép sử dụng micrô và máy ảnh</button>
             <div id="videoContainer">
                 <video id="videoElement" autoplay muted></video>
