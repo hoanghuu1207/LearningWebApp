@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="change fe of prepare_meeting and meeting">
+    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="fix ui account">
+      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/account_background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/default-avatar2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/user/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/user/account.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +111,7 @@
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/WebContent" />
       <option name="extraClassPath" value="" />
+      <option name="port" value="8088" />
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/9.0.96" />
@@ -143,6 +149,10 @@
       <workItem from="1731975643476" duration="603000" />
       <workItem from="1731979300428" duration="2000" />
       <workItem from="1731979945970" duration="448000" />
+      <workItem from="1731983385238" duration="955000" />
+      <workItem from="1731986324025" duration="13000" />
+      <workItem from="1732078560665" duration="279000" />
+      <workItem from="1732159832401" duration="7215000" />
     </task>
     <task id="LOCAL-00001" summary="merge feature/post_article into feature/admin">
       <option name="closed" value="true" />
@@ -160,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731861317919</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix ui account">
+      <option name="closed" value="true" />
+      <created>1731984329845</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731984329845</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +199,8 @@
     <MESSAGE value="merge feature/post_article into feature/admin" />
     <MESSAGE value="save workspace.xml" />
     <MESSAGE value="change fe of prepare_meeting and meeting" />
-    <option name="LAST_COMMIT_MESSAGE" value="change fe of prepare_meeting and meeting" />
+    <MESSAGE value="fix ui account" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ui account" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
