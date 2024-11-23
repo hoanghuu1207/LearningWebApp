@@ -8,31 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Detail</title>
     <link rel="stylesheet" href="../../assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
-    <style>
-        .container-class{
-            display: flex;
-            width: 100%;
-            height:100%;
-        }
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            overflow-y: auto;
-            background-color: #f8f9fa;
-        }
-
-        .main-content-class {
-            flex-grow: 1;
-            padding: 20px;
-            overflow-y: auto;
-            height: 100vh;
-        }
-    </style>
 </head>
 
 <body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-<!-- Sidebar -->
+<style>
+    .container-class {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        overflow-y: auto;
+        background-color: #f8f9fa;
+    }
+
+    .main-content-class {
+        flex-grow: 1;
+        padding: 20px;
+    }
+</style>
+
 <div class = "container-class">
     <div class="sidebar">
         <div class="d-flex flex-column">
@@ -40,19 +39,19 @@
                 <h5 id="class_name">${classroom.title}</h5>
             </div>
             <div class="list-group">
-                <a href="/class_post?classroomID=${classroom.classroomID}"
+                <a href="${user.roleID == 2 ? '/teacher' : ''}/class/detail?classID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Trang chủ</a>
-                <a href="/class_assignments?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Bài tập</a>
+                <a href="${user.roleID == 2 ? '/teacher' : ''}/class_assignments?classroomID=${classroom.classroomID}"
+                    class="list-group-item list-group-item-action">Bài tập</a>
                 <a href="/materials?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Tài liệu</a>
-                <a href="/class_members?classId=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Danh sách</a>
+                    class="list-group-item list-group-item-action">Tài liệu</a>
+                <a href="${user.roleID == 2 ? '/teacher' : ''}/class_members?classId=${classroom.classroomID}"
+                    class="list-group-item list-group-item-action">Danh sách</a>
                 <a href="/meetings?classroomID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Cuộc họp</a>
                 <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
-                <a href="/views/clients/pages/class/prepare_meeting.jsp" target="_parent" class="list-group-item list-group-item-action">
-                    Tạo cuộc họp
+                <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
+                        Tạo cuộc họp
                     <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
                 </a>
             </div>
@@ -61,9 +60,8 @@
 
     <div class="main-content-class">
        <div class="container mt-5">
-         <h1>Tài liệu học tập của lớp ${classroom.title}</h1> </br>
+         <h1>Tài liệu học tập</h1> </br>
 
-         <!-- Materials List -->
          <div class="materials-container">
            <table class="table table-striped">
              <thead>
@@ -87,7 +85,7 @@
          </div>
 
          <div class="upload-section">
-           <h4>Tải lên Tài liệu</h4>
+           <h4>Tải lên</h4>
            <form action="materials" method="post" enctype="multipart/form-data">
              <input type="hidden" name="classroomID" value="${classroom.classroomID}" />
              <div class="mb-3">

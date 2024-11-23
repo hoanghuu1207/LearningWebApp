@@ -23,4 +23,14 @@ public class AssignmentService implements I_AssignmentService {
     public ArrayList<AssignmentsModel> getOverdueAssignments(int userID, int classroomID) {
         return assignmentDAO.getOverdueAssignments(userID, classroomID);
     }
+
+    @Override
+    public ArrayList<AssignmentsModel> teacherGetAssignments(int classroomID) {
+        return assignmentDAO.teacherGetAssignments(classroomID);
+    }
+
+    @Override
+    public int getIdInsertAssignment(AssignmentsModel assignmentsModel) {
+        return assignmentDAO.getIdAfterInsertAssignment(assignmentsModel);
+    }
 }

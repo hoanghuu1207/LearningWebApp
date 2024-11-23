@@ -1,4 +1,4 @@
-const socketNotification = new WebSocket("wss://192.168.158.200:8443/notification/" + userID);
+const socketNotification = new WebSocket("wss://192.168.1.27:8443/notification/" + userID);
 
 socketNotification.onmessage = function(event) {
     const data = JSON.parse(event.data);

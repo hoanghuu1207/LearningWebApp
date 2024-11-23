@@ -44,11 +44,13 @@
 									<div class="slider"></div>
 								</a>
 							</li>
-                            <li class="nav-item" role="presentation">
-								<a class="nav-link" href="/assignments">Bài tập
-									<div class="slider"></div>
-								</a>
-							</li>
+							<c:if test="${user.roleID == 3}">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href="/assignments">Bài tập
+                                        <div class="slider"></div>
+                                    </a>
+                                </li>
+							</c:if>
 						</ul>
                     </c:if>
 					<form class="form-inline mr-auto" target="_self">

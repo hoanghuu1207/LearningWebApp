@@ -10,6 +10,15 @@ public class AssignmentsModel {
 	private Timestamp startTime;
 	private Timestamp endTime;
 	private int classroomID;
+	private int materialID;
+
+	public int getMaterialID() {
+		return materialID;
+	}
+
+	public void setMaterialID(int materialID) {
+		this.materialID = materialID;
+	}
 
 	public AssignmentsModel() {}
 

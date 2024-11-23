@@ -10,4 +10,8 @@ public interface I_AssignmentService {
     public ArrayList<AssignmentsModel> getSubmittedAssignments(int userID, int classroomID);
 
     public ArrayList<AssignmentsModel> getOverdueAssignments(int userID, int classroomID);
+
+    public ArrayList<AssignmentsModel> teacherGetAssignments(int classroomID);
+
+    public int getIdInsertAssignment(AssignmentsModel assignmentsModel);
 }

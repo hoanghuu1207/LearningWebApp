@@ -17,4 +17,9 @@ public class MaterialService implements I_MaterialService {
     public void uploadFile(int classroomID, String fileName, String filePath) {
         dao.uploadFile(classroomID, fileName, filePath);
     }
+
+    @Override
+    public int getMaterialAfterUploadFileAssignment(String fileName, String filePath) {
+        return dao.getMaterialAfterUploadFileAssignment(fileName, filePath);
+    }
 }

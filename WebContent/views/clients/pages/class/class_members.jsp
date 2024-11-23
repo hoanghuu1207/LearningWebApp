@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -185,13 +184,13 @@
 
 </script>
 
-<%
-    String classID = (String) session.getAttribute("classID");
-%>
+    <%
+        String classID = (String) session.getAttribute("classID");
+    %>
 
-<script>
-    const classID = "<%= classID %>";
-</script>
+    <script>
+        const classID = "<%= classID %>";
+    </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/views/clients/assets/js/ClassMemberSearch.js"></script>

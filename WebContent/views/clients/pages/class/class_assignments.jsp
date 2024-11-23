@@ -8,76 +8,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Detail</title>
-    <!--<link rel="stylesheet" href="../../assets/fonts/themify-icons-font/themify-icons/themify-icons.css">-->
-    <!--<link rel="stylesheet" href="/views/clients/assets/css/style.css">-->
-    <style>
-        .container-class{
-            display: flex;
-            width: 100%;
-            height:100%;
-        }
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            overflow-y: auto;
-            background-color: #f8f9fa;
-        }
-
-        .main-content-class {
-            flex-grow: 1;
-            padding: 20px;
-            overflow-y: auto;
-            height: 100vh;
-        }
-
-        body {
-            background-color: #f4f4f4;
-        }
-
-        h2 {
-            color: #343a40;
-        }
-
-        .assignment-table {
-            margin-top: 30px;
-        }
-
-        .overdue {
-            color: red;
-        }
-
-        .main-content-class .nav-link {
-            margin-right: 20px;
-            background-color: transparent !important;
-        }
-
-        .main-content-class .nav-link.active,
-        .main-content-class .nav-link:hover {
-            border-end-end-radius: unset !important;
-            border-end-start-radius: unset !important;
-            border-bottom: 2px solid #156cc1;
-            transform: scale(1.05);
-            color: black !important;
-            background-color: rgba(88, 171, 251, 0.5) !important;
-        }
-
-        .assignment-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #fafafa;
-        }
-
-        .list-group-item {
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-<!-- Sidebar -->
+<style>
+    .container-class{
+        display: flex;
+        width: 100%;
+        height:100%;
+    }
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        overflow-y: auto;
+        background-color: #f8f9fa;
+    }
+
+    .main-content-class {
+        flex-grow: 1;
+        padding: 20px;
+    }
+
+    .assignment-table {
+        margin-top: 30px;
+    }
+
+    .overdue {
+        color: red;
+    }
+
+    .main-content-class .nav-link {
+        margin-right: 20px;
+        background-color: transparent !important;
+    }
+
+    .main-content-class .nav-link.active,
+    .main-content-class .nav-link:hover {
+        border-end-end-radius: unset !important;
+        border-end-start-radius: unset !important;
+        border-bottom: 2px solid #156cc1;
+        transform: scale(1.05);
+        color: black !important;
+        background-color: rgba(88, 171, 251, 0.5) !important;
+    }
+
+    .assignment-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 5px 0;
+        background-color: #fafafa;
+    }
+
+    .list-group-item {
+        cursor: pointer;
+    }
+</style>
 <div class = "container-class">
     <div class="sidebar">
         <div class="d-flex flex-column">
@@ -85,21 +72,21 @@
                 <h5 id="class_name">${classroom.title}</h5>
             </div>
             <div class="list-group">
-                <a href="/class_post?classroomID=${classroom.classroomID}"
+               <a href="${user.roleID == 2 ? '/teacher' : ''}/class/detail?classID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Trang chủ</a>
-                <a href="/class_assignments?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Bài tập</a>
-                <a href="/materials?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Tài liệu</a>
-                <a href="/class_members?classId=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Danh sách</a>
-                <a href="/meetings?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Cuộc họp</a>
-                <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
-                <a href="/views/clients/pages/class/prepare_meeting.jsp" target="_parent" class="list-group-item list-group-item-action">
+               <a href="${user.roleID == 2 ? '/teacher' : ''}/class_assignments?classroomID=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Bài tập</a>
+               <a href="/materials?classroomID=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Tài liệu</a>
+               <a href="${user.roleID == 2 ? '/teacher' : ''}/class_members?classId=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Danh sách</a>
+               <a href="/meetings?classroomID=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Cuộc họp</a>
+               <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
+               <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
                     Tạo cuộc họp
-                    <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
-                </a>
+                  <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
+               </a>
             </div>
         </div>
     </div>
@@ -224,7 +211,7 @@
             btn.addEventListener('click', function () {
                 const assignmentCard = btn.closest('.assignment-card');
                 const assignmentText = assignmentCard.querySelector('strong').textContent;
-                const contentText = assignmentCard.childNodes[1].textContent.split('-')[1].trim();
+                const contentText = assignmentCard.childNodesdescription[1].textContent.split('-')[1].trim();
 
                 document.getElementById('resubmission-assignment').value = assignmentText;
                 document.getElementById('resubmission-content').value = contentText;

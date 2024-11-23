@@ -1,6 +1,7 @@
 package service.impl;
 
 import ServerEndpoint.ClassMemberEndpoint;
+import ServerEndpoint.StudentRemoveClassEndpoint;
 import dao.impl.StudentsClassroomsDAO;
 import dao.impl.UserDAO;
 import model.ClassroomsModel;
@@ -22,7 +23,7 @@ public class ClassMemberService implements I_ClassMemberService {
     }
 
     @Override
-    public void deleteStudentFromClass(int studentID, int classID) {
+    public void deleteStudentFromClassRoleTeacher(int studentID, int classID) {
         StudentsClassroomsModel studentsClassroomsModel = new StudentsClassroomsModel();
         studentsClassroomsModel.setStudentID(studentID);
         studentsClassroomsModel.setClassroomID(classID);
@@ -33,6 +34,17 @@ public class ClassMemberService implements I_ClassMemberService {
             SubNotificationModel subNotificationModel = userDAO.getSubNotificationWithClassroom(classID);
 
             notificationService.sendNotificationRemoveStudentFromClass(classID ,studentID, subNotificationModel.getUrl(), subNotificationModel.getContent());
+        }
+    }
+
+    @Override
+    public void deleteStudentFromClassRoleStudent(int studentID, int classID) {
+        StudentsClassroomsModel studentsClassroomsModel = new StudentsClassroomsModel();
+        studentsClassroomsModel.setStudentID(studentID);
+        studentsClassroomsModel.setClassroomID(classID);
+
+        if(studentsClassroomsDAO.delete(studentsClassroomsModel) != 0){
+            StudentRemoveClassEndpoint.removeStudentFromClass(String.valueOf(studentID), String.valueOf(classID));
         }
     }
 }

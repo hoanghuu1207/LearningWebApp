@@ -1,4 +1,4 @@
-const socketClassMember = new WebSocket("wss://192.168.158.200:8443/classMember/" + classID);
+const socketClassMember = new WebSocket("wss://192.168.1.27:8443/classMember/" + classID);
 
 let studentIdDelete;
 
@@ -7,7 +7,6 @@ const listStudentDelete = document.querySelectorAll(".member-group #delete-stude
 listStudentDelete.forEach(studentDelete => {
     studentDelete.addEventListener("click", () => {
         studentIdDelete = studentDelete.closest('tr').getAttribute("studentId");
-        console.log(studentIdDelete);
     });
 });
 
