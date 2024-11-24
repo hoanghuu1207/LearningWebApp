@@ -11,6 +11,24 @@ public class AssignmentsModel {
 	private Timestamp endTime;
 	private int classroomID;
 	private int materialID;
+	private String titleFile;
+	private String filePath;
+
+	public String getTitleFile() {
+		return titleFile;
+	}
+
+	public void setTitleFile(String titleFile) {
+		this.titleFile = titleFile;
+	}
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
 
 	public int getMaterialID() {
 		return materialID;
@@ -21,8 +39,6 @@ public class AssignmentsModel {
 	}
 
 	public AssignmentsModel() {}
-
-
 
 	public AssignmentsModel(String description, String title, Timestamp startTime, Timestamp endTime, int classroomID) {
 		super();

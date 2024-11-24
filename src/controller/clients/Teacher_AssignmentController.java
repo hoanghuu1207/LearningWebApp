@@ -6,6 +6,7 @@ import model.UserModel;
 import service.impl.AssignmentService;
 import service.impl.ClassroomsService;
 import service.impl.MaterialService;
+import service.impl.NotificationService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,6 +28,7 @@ public class Teacher_AssignmentController extends HttpServlet {
     private AssignmentService assignmentService = new AssignmentService();
     private ClassroomsService classroomsService = new ClassroomsService();
     private MaterialService materialService = new MaterialService();
+    private NotificationService notificationService = new NotificationService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -86,7 +88,7 @@ public class Teacher_AssignmentController extends HttpServlet {
 
         int assignmentId = assignmentService.getIdInsertAssignment(assignmentsModel);
 
-        // notification assignment
+        notificationService.sendNotificationAddAssignment(assignmentId, classroomID);
 
         String referer = req.getHeader("Referer");
         resp.sendRedirect(referer);

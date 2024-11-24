@@ -109,9 +109,51 @@
                 <h3>Bài Tập Chưa Nộp</h3>
                 <ul class="list-group">
                     <c:forEach var="assignment" items="${notSubmitted}">
-                        <li class="list-group-item" onclick="location.href='assignmentDetail.jsp?id=${assignment.assignmentID}'">
-                            <strong>${assignment.title} </strong> (Hạn nộp: <fmt:formatDate value="${assignment.endTime}" pattern="dd/MM/yyyy HH:mm" />)
+                        <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#assignmentModal-${assignment.assignmentID}">
+                            <strong>${assignment.title} </strong><br>
+                            <small>Hạn nộp: <fmt:formatDate value="${assignment.endTime}" pattern="dd/MM/yyyy HH:mm" /></small>
                         </li>
+                        <div class="modal fade" id="assignmentModal-${assignment.assignmentID}" tabindex="-1" aria-labelledby="assignmentModalLabel-${assignment.assignmentID}" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="assignmentModalLabel-${assignment.assignmentID}">Bài tập</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="datetime">Thời gian hết hạn</label>
+                                            <input type="datetime-local" class="form-control" id="datetime" name="datetime" required value="${assignment.endTime}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="title">Tiêu đề</label>
+                                            <input type="text" class="form-control" id="title" name="title" required placeholder="Nhập tiêu đề cho bài tập" value="${assignment.title}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="description">Mô tả</label>
+                                            <input type="text" class="form-control" id="description" name="description" required placeholder="Nhập mô tả cho bài tập" value="${assignment.description}" readonly>
+                                        </div>
+                                        <c:if test="${assignment.titleFile != null && assignment.filePath != null}">
+                                            <div class="upload-section">
+                                               <label for="file">Tài liệu tham khảo</label>
+                                               <div class="mb-3">
+                                                    <a class="btn" href="/downloadFile?filePath=${assignment.filePath}" download><i class="fa fa-download"></i> ${assignment.titleFile}</a>
+                                               </div>
+                                            </div>
+                                        </c:if>
+                                        <form action="/class_assignments" method="POST" id="form-search">
+                                            <label for="file" class="h4">Bài làm của bạn</label>
+                                             <div class="mb-3">
+                                               <input type="file" name="file" class="form-control" required>
+                                             </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" onclick="submitForm()">Nộp bài</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </c:forEach>
                 </ul>
             </div>
@@ -119,10 +161,54 @@
             <div id="submitted" class="assignment-table mt-3" style="display: none;">
                 <h3>Bài Tập Đã Nộp</h3>
                 <ul class="list-group">
-                    <c:forEach var="assignment" items="${submitted}">
-                        <li class="list-group-item" onclick="location.href='assignmentDetail.jsp?id=${assignment.assignmentID}'">
-                            <strong> ${assignment.title} </strong> (Hạn nộp: <fmt:formatDate value="${assignment.endTime}" pattern="dd/MM/yyyy HH:mm" />)
+                    <c:forEach var="entry" items="${submitted}">
+                        <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#assignmentModal-${entry.key.assignmentID}">
+                            <strong>${entry.key.title} </strong><br>
+                            <small>Hạn nộp: <fmt:formatDate value="${entry.key.endTime}" pattern="dd/MM/yyyy HH:mm" /></small>
                         </li>
+                        <div class="modal fade" id="assignmentModal-${entry.key.assignmentID}" tabindex="-1" aria-labelledby="assignmentModalLabel-${entry.key.assignmentID}" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="assignmentModalLabel-${entry.key.assignmentID}">Bài tập</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="datetime">Thời gian hết hạn</label>
+                                            <input type="datetime-local" class="form-control" id="datetime" name="datetime" required value="${entry.key.endTime}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="title">Tiêu đề</label>
+                                            <input type="text" class="form-control" id="title" name="title" required placeholder="Nhập tiêu đề cho bài tập" value="${entry.key.title}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="description">Mô tả</label>
+                                            <input type="text" class="form-control" id="description" name="description" required placeholder="Nhập mô tả cho bài tập" value="${entry.key.description}" readonly>
+                                        </div>
+                                        <c:if test="${entry.key.titleFile != null && entry.key.filePath != null}">
+                                            <div class="upload-section">
+                                               <label for="file">Tài liệu tham khảo</label>
+                                               <div class="mb-3">
+                                                    <a class="btn" href="/downloadFile?filePath=${entry.key.filePath}" download><i class="fa fa-download"></i> ${entry.key.titleFile}</a>
+                                               </div>
+                                            </div>
+                                        </c:if>
+                                        <c:if test="${entry.value.titleFile != null && entry.value.filePath != null}">
+                                            <div class="upload-section">
+                                               <label for="file">Bài làm của bạn</label>
+                                               <div class="mb-3">
+                                                    <a class="btn" href="/downloadFile?filePath=${entry.value.filePath}" download><i class="fa fa-download"></i> ${entry.value.titleFile}</a>
+                                               </div>
+                                            </div>
+                                        </c:if>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <%--<button type="button" class="btn btn-primary" onclick="submitForm()">Nộp lại</button>--%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </c:forEach>
                 </ul>
             </div>
@@ -131,9 +217,42 @@
                 <h3>Bài Tập Quá Hạn</h3>
                 <ul class="list-group">
                     <c:forEach var="assignment" items="${overdue}">
-                        <li class="list-group-item" onclick="location.href='assignmentDetail.jsp?id=${assignment.assignmentID}'">
-                            <strong> ${assignment.title} </strong> (Hạn nộp: <fmt:formatDate value="${assignment.endTime}" pattern="dd/MM/yyyy HH:mm" />)
+                        <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#assignmentModal-${assignment.assignmentID}">
+                            <strong>${assignment.title} </strong><br>
+                            <small>Hạn nộp: <fmt:formatDate value="${assignment.endTime}" pattern="dd/MM/yyyy HH:mm" /></small>
                         </li>
+                        <div class="modal fade" id="assignmentModal-${assignment.assignmentID}" tabindex="-1" aria-labelledby="assignmentModalLabel-${assignment.assignmentID}" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="assignmentModalLabel-${assignment.assignmentID}">Bài tập</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="datetime">Thời gian hết hạn</label>
+                                            <input type="datetime-local" class="form-control" id="datetime" name="datetime" required value="${assignment.endTime}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="title">Tiêu đề</label>
+                                            <input type="text" class="form-control" id="title" name="title" required placeholder="Nhập tiêu đề cho bài tập" value="${assignment.title}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="description">Mô tả</label>
+                                            <input type="text" class="form-control" id="description" name="description" required placeholder="Nhập mô tả cho bài tập" value="${assignment.description}" readonly>
+                                        </div>
+                                        <c:if test="${assignment.titleFile != null && assignment.filePath != null}">
+                                            <div class="upload-section">
+                                               <label for="file">Tài liệu tham khảo</label>
+                                               <div class="mb-3">
+                                                    <a class="btn" href="/downloadFile?filePath=${assignment.filePath}" download><i class="fa fa-download"></i> ${assignment.titleFile}</a>
+                                               </div>
+                                            </div>
+                                        </c:if>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </c:forEach>
                 </ul>
             </div>
@@ -144,7 +263,17 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<%
+    int classID = (Integer) session.getAttribute("classID");
+%>
+
+<script>
+    const classID = "<%= classID %>";
+</script>
+
+<script src="/views/clients/assets/js/ClassAssignmentWebSocket.js"></script>
 <script>
     // Chuyển đổi giữa các tab
     function showTab(tabId) {
@@ -162,79 +291,6 @@
     document.getElementById('not-submitted-tab').addEventListener('click', () => showTab('not-submitted'));
     document.getElementById('submitted-tab').addEventListener('click', () => showTab('submitted'));
     document.getElementById('overdue-tab').addEventListener('click', () => showTab('overdue'));
-
-    // Khi click vào bài tập chưa nộp
-    document.querySelectorAll('#not-submitted .list-group-item').forEach(item => {
-        item.addEventListener('click', function () {
-            $('#submissionModal').modal('show');
-            document.getElementById('selected-assignment').value = this.textContent;
-            document.getElementById('submission-form').dataset.deadline = this.dataset.deadline;
-        });
-    });
-
-    // Xử lý sự kiện nộp bài
-    document.getElementById('submission-form').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const assignment = document.getElementById('selected-assignment').value;
-        const content = document.getElementById('content').value;
-        const deadline = this.dataset.deadline;
-        const submissionStatus = new Date(deadline) >= new Date() ? 'Đúng Hạn' : 'Quá Hạn';
-
-        let newAssignment;
-        if (submissionStatus === 'Đúng Hạn') {
-            newAssignment = `<div class="assignment-card">
-                                    <strong>${assignment}</strong> - ${content}<br>
-                                    Hạn nộp: ${deadline.replace('T', ' ')} <span class="text-success">(${submissionStatus})</span>
-                                    <button class="btn btn-link resubmit-btn">Nộp Lại</button>
-                                </div>`;
-            document.getElementById('submitted-assignments').innerHTML += newAssignment;
-        } else {
-            newAssignment = `<div class="assignment-card overdue">
-                                    <strong>${assignment}</strong> - ${content}<br>
-                                    Hạn nộp: ${deadline.replace('T', ' ')} <span class="text-danger">(${submissionStatus})</span>
-                                    <button class="btn btn-link resubmit-btn">Nộp Lại</button>
-                                </div>`;
-            document.getElementById('overdue-assignments').innerHTML += newAssignment;
-        }
-
-        this.reset();
-        $('#submissionModal').modal('hide'); // Ẩn modal sau khi nộp bài
-        showTab('submitted'); // Hiển thị tab đã nộp
-
-        // Đăng ký sự kiện cho nút nộp lại
-        registerResubmitEvents();
-    });
-
-    // Đăng ký sự kiện cho nút nộp lại
-    function registerResubmitEvents() {
-        document.querySelectorAll('.resubmit-btn').forEach(btn => {
-            btn.addEventListener('click', function () {
-                const assignmentCard = btn.closest('.assignment-card');
-                const assignmentText = assignmentCard.querySelector('strong').textContent;
-                const contentText = assignmentCard.childNodesdescription[1].textContent.split('-')[1].trim();
-
-                document.getElementById('resubmission-assignment').value = assignmentText;
-                document.getElementById('resubmission-content').value = contentText;
-                $('#resubmissionModal').modal('show');
-            });
-        });
-    }
-
-    // Xử lý sự kiện nộp lại bài
-    document.getElementById('resubmission-form').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const assignment = document.getElementById('resubmission-assignment').value;
-        const content = document.getElementById('resubmission-content').value;
-
-        const newResubmission = `<div class="assignment-card">
-                                        <strong>${assignment}</strong> - ${content}<br>
-                                        <span class="text-info">(Bài nộp lại)</span>
-                                    </div>`;
-        document.getElementById('submitted-assignments').innerHTML += newResubmission;
-
-        this.reset();
-        $('#resubmissionModal').modal('hide'); // Ẩn modal sau khi nộp lại
-    });
 
 </script>
 </body>

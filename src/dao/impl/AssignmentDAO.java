@@ -2,13 +2,17 @@ package dao.impl;
 
 import dao.DAOInterface;
 import model.AssignmentsModel;
+import model.SubmissionsModel;
 import util.JDBCUtil;
 
+import java.net.URLEncoder;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AssignmentDAO implements DAOInterface<AssignmentsModel> {
     @Override
@@ -37,10 +41,12 @@ public class AssignmentDAO implements DAOInterface<AssignmentsModel> {
     }
     public ArrayList<AssignmentsModel> getNotSubmittedAssignmentsOnTime(int userID, int classroomID) {
         ArrayList<AssignmentsModel> assignments = new ArrayList<>();
-        String sql = "SELECT * FROM assignments a " +
-                "WHERE a.classroomID = ? " +
-                "AND a.assignmentID NOT IN (SELECT assignmentID FROM submissions " +
-                "WHERE studentID = ?) " + "AND a.endTime >= NOW()";
+        String sql = "SELECT a.assignmentID, a.title AS titleAssignment, a.description, a.startTime, a.endTime, a.classroomID, m.materialID, m.title AS titleFile, m.filePath\n" +
+                "FROM assignments a\n" +
+                "LEFT JOIN materials AS m ON a.materialID = m.materialID\n" +
+                "WHERE a.classroomID = ?\n" +
+                "AND a.assignmentID NOT IN (SELECT assignmentID FROM submissions \n" +
+                "WHERE studentID = ?) AND a.endTime >= NOW()";
 
         try (Connection conn = JDBCUtil.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql)) {
@@ -51,11 +57,20 @@ public class AssignmentDAO implements DAOInterface<AssignmentsModel> {
             while (rs.next()) {
                 AssignmentsModel assignment = new AssignmentsModel();
                 assignment.setAssignmentID(rs.getInt("assignmentID"));
-                assignment.setTitle(rs.getString("title"));
+                assignment.setTitle(rs.getString("titleAssignment"));
                 assignment.setClassroomID(rs.getInt("classroomID"));
                 assignment.setDescription(rs.getString("description"));
                 assignment.setStartTime(rs.getTimestamp("startTime"));
                 assignment.setEndTime(rs.getTimestamp("endTime"));
+                assignment.setMaterialID(rs.getInt("materialID"));
+                assignment.setTitleFile(rs.getString("titleFile"));
+
+                String filePath = rs.getString("filePath");
+                if (filePath != null) {
+                    String encodedFilePath = URLEncoder.encode(filePath, "UTF-8");
+                    assignment.setFilePath(encodedFilePath);
+                }
+
                 assignments.add(assignment);
             }
             JDBCUtil.closeConnection(conn);
@@ -65,12 +80,14 @@ public class AssignmentDAO implements DAOInterface<AssignmentsModel> {
         return assignments;
     }
 
-    public ArrayList<AssignmentsModel> getSubmittedAssignments(int userID, int classroomID) {
-        ArrayList<AssignmentsModel> assignments = new ArrayList<>();
-        String sql = "SELECT a.* FROM assignments a " +
-                "INNER JOIN submissions s ON a.assignmentID = s.assignmentID " +
-                "WHERE a.classroomID = ? " +
-                "AND s.studentID = ?";
+    public Map<AssignmentsModel, SubmissionsModel> getSubmittedAssignments(int userID, int classroomID) {
+        Map<AssignmentsModel, SubmissionsModel> map = new HashMap<>();
+        String sql = "SELECT a.assignmentID, a.title AS titleAssignment, a.classroomID, a.description, a.startTime, a.endTime, ma.title AS titleFileAssignment, ma.filePath AS filePathAssignment, s.submissionID, s.submissionDate, m.title AS titleFileSubmission, m.filePath AS filePathSubmission\n" +
+                "FROM assignments a\n" +
+                "LEFT JOIN materials ma ON a.materialID = ma.materialID\n" +
+                "INNER JOIN submissions s ON a.assignmentID = s.assignmentID\n" +
+                "INNER JOIN materials AS m ON s.materialID = m.materialID\n" +
+                "WHERE a.classroomID = ? AND s.studentID = ?";
 
         try (Connection conn = JDBCUtil.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql)) {
@@ -81,25 +98,46 @@ public class AssignmentDAO implements DAOInterface<AssignmentsModel> {
             while (rs.next()) {
                 AssignmentsModel assignment = new AssignmentsModel();
                 assignment.setAssignmentID(rs.getInt("assignmentID"));
-                assignment.setTitle(rs.getString("title"));
+                assignment.setTitle(rs.getString("titleAssignment"));
                 assignment.setClassroomID(rs.getInt("classroomID"));
                 assignment.setDescription(rs.getString("description"));
                 assignment.setStartTime(rs.getTimestamp("startTime"));
                 assignment.setEndTime(rs.getTimestamp("endTime"));
-                assignments.add(assignment);
+                assignment.setTitleFile(rs.getString("titleFileAssignment"));
+
+                String filePath = rs.getString("filePathAssignment");
+                if (filePath != null) {
+                    String encodedFilePath = URLEncoder.encode(filePath, "UTF-8");
+                    assignment.setFilePath(encodedFilePath);
+                }
+
+                SubmissionsModel submissionsModel = new SubmissionsModel();
+                submissionsModel.setSubmissionID(rs.getInt("submissionID"));
+                submissionsModel.setSubmissionDate(rs.getTimestamp("submissionDate"));
+                submissionsModel.setTitleFile(rs.getString("titleFileSubmission"));
+
+                String filePath1 = rs.getString("filePathSubmission");
+                if (filePath1 != null) {
+                    String encodedFilePath = URLEncoder.encode(filePath1, "UTF-8");
+                    submissionsModel.setFilePath(encodedFilePath);
+                }
+
+                map.put(assignment, submissionsModel);
             }
             JDBCUtil.closeConnection(conn);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return assignments;
+        return map;
     }
 
     public ArrayList<AssignmentsModel> getOverdueAssignments(int userID, int classroomID) {
         ArrayList<AssignmentsModel> assignments = new ArrayList<>();
-        String sql = "SELECT * FROM assignments a " +
-                "WHERE a.classroomID = ? " +
-                "AND a.assignmentID NOT IN (SELECT assignmentID FROM submissions WHERE studentID = ?) " +
+        String sql = "SELECT a.assignmentID, a.title AS titleAssignment, a.description, a.startTime, a.endTime, a.classroomID, m.materialID, m.title AS titleFile, m.filePath\n" +
+                "FROM assignments a\n" +
+                "LEFT JOIN materials AS m ON a.materialID = m.materialID\n" +
+                "WHERE a.classroomID = ? \n" +
+                "AND a.assignmentID NOT IN (SELECT assignmentID FROM submissions WHERE studentID = ?)\n" +
                 "AND a.endTime < NOW()";
 
         System.out.println("Hehe: " + userID + " " + classroomID);
@@ -112,13 +150,21 @@ public class AssignmentDAO implements DAOInterface<AssignmentsModel> {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 AssignmentsModel assignment = new AssignmentsModel();
-                System.out.println(rs.getString("description"));
                 assignment.setAssignmentID(rs.getInt("assignmentID"));
-                assignment.setTitle(rs.getString("title"));
+                assignment.setTitle(rs.getString("titleAssignment"));
                 assignment.setClassroomID(rs.getInt("classroomID"));
                 assignment.setDescription(rs.getString("description"));
                 assignment.setStartTime(rs.getTimestamp("startTime"));
                 assignment.setEndTime(rs.getTimestamp("endTime"));
+                assignment.setMaterialID(rs.getInt("materialID"));
+                assignment.setTitleFile(rs.getString("titleFile"));
+
+                String filePath = rs.getString("filePath");
+                if (filePath != null) {
+                    String encodedFilePath = URLEncoder.encode(filePath, "UTF-8");
+                    assignment.setFilePath(encodedFilePath);
+                }
+
                 assignments.add(assignment);
             }
             JDBCUtil.closeConnection(conn);

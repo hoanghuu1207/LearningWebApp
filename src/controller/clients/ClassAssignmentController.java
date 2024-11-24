@@ -2,6 +2,7 @@ package controller.clients;
 
 import model.AssignmentsModel;
 import model.ClassroomsModel;
+import model.SubmissionsModel;
 import model.UserModel;
 import service.impl.AssignmentService;
 import service.impl.ClassroomsService;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
 
 @WebServlet(urlPatterns = {"/class_assignments"})
 public class ClassAssignmentController extends HttpServlet {
@@ -36,7 +38,7 @@ public class ClassAssignmentController extends HttpServlet {
             request.getSession().setAttribute("classID", classroomID);
 
             ArrayList<AssignmentsModel> notSubmitted = assignmentService.getNotSubmittedAssignmentsOnTime(studentId, classroomID);
-            ArrayList<AssignmentsModel> submitted = assignmentService.getSubmittedAssignments(studentId, classroomID);
+            Map<AssignmentsModel, SubmissionsModel> submitted = assignmentService.getSubmittedAssignments(studentId, classroomID);
             ArrayList<AssignmentsModel> overdue = assignmentService.getOverdueAssignments(studentId, classroomID);
 
             request.setAttribute("notSubmitted", notSubmitted);

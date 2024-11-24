@@ -1,10 +1,13 @@
 package service.impl;
 
+import ServerEndpoint.ClassAssignmentEndpoint;
 import dao.impl.AssignmentDAO;
 import model.AssignmentsModel;
+import model.SubmissionsModel;
 import service.I_AssignmentService;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class AssignmentService implements I_AssignmentService {
     private AssignmentDAO assignmentDAO = new AssignmentDAO();
@@ -15,7 +18,7 @@ public class AssignmentService implements I_AssignmentService {
     }
 
     @Override
-    public ArrayList<AssignmentsModel> getSubmittedAssignments(int userID, int classroomID) {
+    public Map<AssignmentsModel, SubmissionsModel> getSubmittedAssignments(int userID, int classroomID) {
         return assignmentDAO.getSubmittedAssignments(userID, classroomID);
     }
 
@@ -32,5 +35,14 @@ public class AssignmentService implements I_AssignmentService {
     @Override
     public int getIdInsertAssignment(AssignmentsModel assignmentsModel) {
         return assignmentDAO.getIdAfterInsertAssignment(assignmentsModel);
+    }
+
+    @Override
+    public void changeAssignmentLoop(int userID, int classroomID) {
+        ArrayList<AssignmentsModel> notSubmitted = assignmentDAO.getNotSubmittedAssignmentsOnTime(userID, classroomID);
+        Map<AssignmentsModel, SubmissionsModel> submitted = assignmentDAO.getSubmittedAssignments(userID, classroomID);
+        ArrayList<AssignmentsModel> overdue = assignmentDAO.getOverdueAssignments(userID, classroomID);
+
+        ClassAssignmentEndpoint.sendAssignment(notSubmitted, submitted, overdue);
     }
 }

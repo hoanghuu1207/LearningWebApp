@@ -103,7 +103,7 @@
         </div>
 
         <div class="fixed-bottom">
-            <form action="/teacher/class_assignments" method="POST" enctype="multipart/form-data">
+            <form action="/teacher/class_assignments" method="POST" enctype="multipart/form-data" id="assignmentForm">
                 <h2 class="mb-4">Tạo bài tập</h2>
                 <div class="form-group">
                     <label for="datetime">Thời gian hết hạn</label>
@@ -123,12 +123,29 @@
                         <input type="hidden" name="classID" value="${classroom.classroomID}">
                        <input type="file" name="file" class="form-control" required>
                      </div>
-                 </div>
+                </div>
                 <button type="submit" class="btn btn-primary">Thêm Bài Tập</button>
             </form>
         </div>
     </div>
 </div>
+<script>
+    const datetimeInput = document.getElementById('datetime');
+    const form = document.getElementById('assignmentForm');
 
+    const now = new Date();
+    const isoNow = now.toISOString().slice(0, 16);
+    datetimeInput.min = isoNow;
+
+    form.addEventListener('submit', function (event) {
+        const selectedTime = new Date(datetimeInput.value);
+        const currentTime = new Date();
+
+        if (selectedTime <= currentTime) {
+            event.preventDefault();
+            alert("Vui lòng chọn thời gian lớn hơn thời gian hiện tại.");
+        }
+    });
+</script>
 </body>
 </html>

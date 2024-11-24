@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <style>
     .container-class {
@@ -75,8 +76,7 @@
                <tr>
                  <td>${material.title}</td>
                  <td>
-                   <a href="/downloadFile?filePath=${material.filePath}"
-                      class="btn btn-primary btn-sm" download>Tải xuống</a>
+                    <a class="btn" href="/downloadFile?filePath=${material.filePath}" download><i class="fa fa-download"></i> Download</a>
                  </td>
                </tr>
              </c:forEach>

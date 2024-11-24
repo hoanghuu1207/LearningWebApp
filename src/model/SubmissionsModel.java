@@ -8,12 +8,41 @@ public class SubmissionsModel {
 	private int assignmentID;
 	private int studentID;
 	private Timestamp submissionDate;
+	private int materialID;
+	private String titleFile;
+	private String filePath;
+
+	public SubmissionsModel(){}
 
 	public SubmissionsModel(int assignmentID, int studentID, Timestamp submissionDate) {
 		super();
 		this.assignmentID = assignmentID;
 		this.studentID = studentID;
 		this.submissionDate = submissionDate;
+	}
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public int getMaterialID() {
+		return materialID;
+	}
+
+	public void setMaterialID(int materialID) {
+		this.materialID = materialID;
+	}
+
+	public String getTitleFile() {
+		return titleFile;
+	}
+
+	public void setTitleFile(String titleFile) {
+		this.titleFile = titleFile;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
 	}
 
 	public int getSubmissionID() {

@@ -10,4 +10,6 @@ public interface I_NotificationService {
     void sendNotificationAddStudentIntoClass(int classroomID, int studentID, String url, String content, int student_classroomId);
 
     void sendNotificationRemoveStudentFromClass(int classroomID, int studentID, String url, String content);
+
+    void sendNotificationAddAssignment(int assignmentID, int classroomID);
 }

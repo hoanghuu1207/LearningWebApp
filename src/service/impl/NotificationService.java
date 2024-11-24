@@ -4,10 +4,7 @@ import ServerEndpoint.NotificationEndpoint;
 import dao.impl.ClassMessageDAO;
 import dao.impl.NotificationDAO;
 import dao.impl.StudentsClassroomsDAO;
-import model.ClassMessageModel;
-import model.NotificationModel;
-import model.StudentsClassroomsModel;
-import model.UserModel;
+import model.*;
 import service.I_NotificationService;
 
 import java.util.ArrayList;
@@ -66,5 +63,24 @@ public class NotificationService implements I_NotificationService {
         NotificationModel insertedNotification = notificationDAO.insertAndGetNotificationOfRemoveStudentFromClass(notification);
 
         NotificationEndpoint.sendNotificationToUser(String.valueOf(studentID), url, content, insertedNotification.getNotificationID());
+    }
+
+    @Override
+    public void sendNotificationAddAssignment(int assignmentID, int classroomID) {
+        SubNotificationModel subNotificationModel = notificationDAO.subNotificationAddAssignment(classroomID);
+
+        ArrayList<StudentsClassroomsModel> studentsClassroomsModels = studentsClassroomsDAO.selectByClassroomID(classroomID);
+
+        for(StudentsClassroomsModel studentsClassroomsModel: studentsClassroomsModels){
+            NotificationModel notification = new NotificationModel();
+            notification.setStatus(0);
+            notification.setType("assignment");
+            notification.setRelatedID(assignmentID);
+            notification.setInformedID(studentsClassroomsModel.getStudentID());
+
+            NotificationModel insertedNotification = notificationDAO.insertAndGetNotificationOfAddAssignmentToClass(notification);
+
+            NotificationEndpoint.sendNotificationToUser(String.valueOf(studentsClassroomsModel.getStudentID()), subNotificationModel.getUrl(), subNotificationModel.getContent(), insertedNotification.getNotificationID());
+        }
     }
 }
