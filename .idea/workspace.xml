@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="fix ui account">
-      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/account_background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/img/default-avatar2.png" afterDir="false" />
+    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="change animation in homepage and layout in account">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/user/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/user/account.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +147,8 @@
       <workItem from="1731983385238" duration="955000" />
       <workItem from="1731986324025" duration="13000" />
       <workItem from="1732078560665" duration="279000" />
-      <workItem from="1732159832401" duration="7215000" />
+      <workItem from="1732159832401" duration="7374000" />
+      <workItem from="1732667153797" duration="450000" />
     </task>
     <task id="LOCAL-00001" summary="merge feature/post_article into feature/admin">
       <option name="closed" value="true" />
@@ -178,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731984329845</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="change animation in homepage and layout in account">
+      <option name="closed" value="true" />
+      <created>1732167428660</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732167428660</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +204,8 @@
     <MESSAGE value="save workspace.xml" />
     <MESSAGE value="change fe of prepare_meeting and meeting" />
     <MESSAGE value="fix ui account" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix ui account" />
+    <MESSAGE value="change animation in homepage and layout in account" />
+    <option name="LAST_COMMIT_MESSAGE" value="change animation in homepage and layout in account" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
