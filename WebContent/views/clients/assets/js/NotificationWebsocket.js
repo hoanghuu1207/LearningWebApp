@@ -1,4 +1,4 @@
-const socketNotification = new WebSocket("wss://172.20.10.5:8443/notification/" + userID);
+const socketNotification = new WebSocket("wss://192.168.50.118:8443/notification/" + userID);
 
 socketNotification.onerror = function(error) {
     console.error("WebSocket Error: ", error);
