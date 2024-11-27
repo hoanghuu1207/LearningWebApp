@@ -46,9 +46,9 @@
 							</li>
 							<c:if test="${user.roleID == 3}">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" href="/assignments">Bài tập
+                                    <%--<a class="nav-link" href="/assignments">Bài tập
                                         <div class="slider"></div>
-                                    </a>
+                                    </a>--%>
                                 </li>
 							</c:if>
 						</ul>

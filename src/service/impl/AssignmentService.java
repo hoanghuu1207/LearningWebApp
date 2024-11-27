@@ -43,6 +43,6 @@ public class AssignmentService implements I_AssignmentService {
         Map<AssignmentsModel, SubmissionsModel> submitted = assignmentDAO.getSubmittedAssignments(userID, classroomID);
         ArrayList<AssignmentsModel> overdue = assignmentDAO.getOverdueAssignments(userID, classroomID);
 
-        ClassAssignmentEndpoint.sendAssignment(notSubmitted, submitted, overdue);
+        ClassAssignmentEndpoint.sendAssignment(String.valueOf(userID), notSubmitted, submitted, overdue);
     }
 }

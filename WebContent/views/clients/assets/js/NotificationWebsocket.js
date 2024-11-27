@@ -1,4 +1,11 @@
-const socketNotification = new WebSocket("wss://192.168.1.27:8443/notification/" + userID);
+const socketNotification = new WebSocket("wss://172.20.10.5:8443/notification/" + userID);
+
+socketNotification.onerror = function(error) {
+    console.error("WebSocket Error: ", error);
+};
+socketNotification.onclose = function(event) {
+    console.warn("WebSocket Closed: ", event);
+};
 
 socketNotification.onmessage = function(event) {
     const data = JSON.parse(event.data);

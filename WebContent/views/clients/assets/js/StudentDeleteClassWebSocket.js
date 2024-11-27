@@ -1,4 +1,4 @@
-const socketStudentDeleteClass = new WebSocket("wss://192.168.1.27:8443/student_remove_class/" + userID);
+const socketStudentDeleteClass = new WebSocket("wss://172.20.10.5:8443/student_remove_class/" + userID);
 
 let classDelete;
 

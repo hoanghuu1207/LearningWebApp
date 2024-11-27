@@ -92,13 +92,36 @@
                     </thead>
                     <tbody>
                     <c:forEach var="assignment" items="${assignments}">
-                        <tr>
+                        <tr data-bs-toggle="modal" data-bs-target="#assignmentModal" style="cursor: pointer;" onclick="toggleAssignment(${assignment.assignmentID})">
                             <td>${assignment.title}</td>
                             <td><fmt:formatDate value="${assignment.endTime}" pattern="HH:mm dd/MM/yyyy"/></td>
                         </tr>
                     </c:forEach>
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div class="modal fade" id="assignmentModal" tabindex="-1" aria-labelledby="assignmentModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="assignmentModalLabel-${assignment.assignmentID}">Bài tập</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tên sinh viên</th>
+                                    <th>Nộp lúc</th>
+                                    <th>Bài làm</th>
+                                </tr>
+                            </thead>
+                            <tbody id="modal-submision">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -121,7 +144,7 @@
                    <label for="file">Tài liệu tham khảo</label>
                      <div class="mb-3">
                         <input type="hidden" name="classID" value="${classroom.classroomID}">
-                       <input type="file" name="file" class="form-control" required>
+                       <input type="file" name="file" class="form-control">
                      </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Thêm Bài Tập</button>
@@ -147,5 +170,6 @@
         }
     });
 </script>
+<script src="/views/clients/assets/js/TeacherAssignmentWebsocket.js"></script>
 </body>
 </html>

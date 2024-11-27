@@ -111,7 +111,7 @@
                     <c:forEach var="assignment" items="${notSubmitted}">
                         <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#assignmentModal-${assignment.assignmentID}">
                             <strong>${assignment.title} </strong><br>
-                            <small>Hạn nộp: <fmt:formatDate value="${assignment.endTime}" pattern="dd/MM/yyyy HH:mm" /></small>
+                            <small>Hạn nộp: <fmt:formatDate value="${assignment.endTime}" pattern="dd/MM/yyyy, HH:mm" /></small>
                         </li>
                         <div class="modal fade" id="assignmentModal-${assignment.assignmentID}" tabindex="-1" aria-labelledby="assignmentModalLabel-${assignment.assignmentID}" aria-hidden="true">
                             <div class="modal-dialog">
@@ -141,15 +141,17 @@
                                                </div>
                                             </div>
                                         </c:if>
-                                        <form action="/class_assignments" method="POST" id="form-search">
+                                        <form action="/class_assignments" method="POST" id="form-search" enctype="multipart/form-data">
                                             <label for="file" class="h4">Bài làm của bạn</label>
                                              <div class="mb-3">
+                                                <input type="hidden" name="classID" value="${classroom.classroomID}">
+                                                <input type="hidden" name="assignmentID" value="${assignment.assignmentID}">
                                                <input type="file" name="file" class="form-control" required>
+                                               <div class="modal-footer">
+                                                <input type="submit" class="btn btn-primary" value="Nộp bài"></button>
+                                               </div>
                                              </div>
                                         </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary" onclick="submitForm()">Nộp bài</button>
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +166,7 @@
                     <c:forEach var="entry" items="${submitted}">
                         <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#assignmentModal-${entry.key.assignmentID}">
                             <strong>${entry.key.title} </strong><br>
-                            <small>Hạn nộp: <fmt:formatDate value="${entry.key.endTime}" pattern="dd/MM/yyyy HH:mm" /></small>
+                            <small>Hạn nộp: <fmt:formatDate value="${entry.key.endTime}" pattern="dd/MM/yyyy, HH:mm" /></small>
                         </li>
                         <div class="modal fade" id="assignmentModal-${entry.key.assignmentID}" tabindex="-1" aria-labelledby="assignmentModalLabel-${entry.key.assignmentID}" aria-hidden="true">
                             <div class="modal-dialog">
@@ -219,7 +221,7 @@
                     <c:forEach var="assignment" items="${overdue}">
                         <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#assignmentModal-${assignment.assignmentID}">
                             <strong>${assignment.title} </strong><br>
-                            <small>Hạn nộp: <fmt:formatDate value="${assignment.endTime}" pattern="dd/MM/yyyy HH:mm" /></small>
+                            <small>Hạn nộp: <fmt:formatDate value="${assignment.endTime}" pattern="dd/MM/yyyy, HH:mm" /></small>
                         </li>
                         <div class="modal fade" id="assignmentModal-${assignment.assignmentID}" tabindex="-1" aria-labelledby="assignmentModalLabel-${assignment.assignmentID}" aria-hidden="true">
                             <div class="modal-dialog">

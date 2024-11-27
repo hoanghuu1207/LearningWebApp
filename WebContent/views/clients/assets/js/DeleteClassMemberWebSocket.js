@@ -1,4 +1,4 @@
-const socketClassMember = new WebSocket("wss://192.168.1.27:8443/classMember/" + classID);
+const socketClassMember = new WebSocket("wss://172.20.10.5:8443/classMember/" + classID);
 
 let studentIdDelete;
 

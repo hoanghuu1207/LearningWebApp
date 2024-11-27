@@ -46,7 +46,8 @@ public class AssignmentDAO implements DAOInterface<AssignmentsModel> {
                 "LEFT JOIN materials AS m ON a.materialID = m.materialID\n" +
                 "WHERE a.classroomID = ?\n" +
                 "AND a.assignmentID NOT IN (SELECT assignmentID FROM submissions \n" +
-                "WHERE studentID = ?) AND a.endTime >= NOW()";
+                "WHERE studentID = ?) AND a.endTime >= NOW()\n" +
+                "ORDER BY a.endTime DESC;";
 
         try (Connection conn = JDBCUtil.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql)) {
@@ -87,7 +88,8 @@ public class AssignmentDAO implements DAOInterface<AssignmentsModel> {
                 "LEFT JOIN materials ma ON a.materialID = ma.materialID\n" +
                 "INNER JOIN submissions s ON a.assignmentID = s.assignmentID\n" +
                 "INNER JOIN materials AS m ON s.materialID = m.materialID\n" +
-                "WHERE a.classroomID = ? AND s.studentID = ?";
+                "WHERE a.classroomID = ? AND s.studentID = ?\n" +
+                "ORDER BY a.endTime DESC;";
 
         try (Connection conn = JDBCUtil.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql)) {
@@ -138,7 +140,8 @@ public class AssignmentDAO implements DAOInterface<AssignmentsModel> {
                 "LEFT JOIN materials AS m ON a.materialID = m.materialID\n" +
                 "WHERE a.classroomID = ? \n" +
                 "AND a.assignmentID NOT IN (SELECT assignmentID FROM submissions WHERE studentID = ?)\n" +
-                "AND a.endTime < NOW()";
+                "AND a.endTime < NOW()\n" +
+                "ORDER BY a.endTime DESC;";
 
         System.out.println("Hehe: " + userID + " " + classroomID);
 
@@ -177,7 +180,8 @@ public class AssignmentDAO implements DAOInterface<AssignmentsModel> {
     public ArrayList<AssignmentsModel> teacherGetAssignments(int classroomID) {
         ArrayList<AssignmentsModel> assignments = new ArrayList<>();
         String sql = "SELECT * FROM assignments AS a " +
-                "WHERE a.classroomID = ?";
+                "WHERE a.classroomID = ?\n" +
+                "ORDER BY a.endTime DESC;";
 
         try (Connection conn = JDBCUtil.getConnection();
              PreparedStatement statement = conn.prepareStatement(sql)) {

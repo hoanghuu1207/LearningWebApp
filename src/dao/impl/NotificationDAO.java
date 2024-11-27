@@ -304,7 +304,7 @@ public class NotificationDAO implements DAOInterface<NotificationModel> {
                 String firstName = rs.getString("firstname");
                 String lastName = rs.getString("lastname");
 
-                if(notificationID == 0 || type == null || status == 0 || classroomID == 0 || title == null || firstName == null || lastName == null) continue;
+                if(notificationID == 0 || type == null || classroomID == 0 || title == null || firstName == null || lastName == null) continue;
 
                 String url = "";
                 String content = "";
