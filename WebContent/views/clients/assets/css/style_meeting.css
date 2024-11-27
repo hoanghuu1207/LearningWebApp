@@ -1,100 +1,9 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-    padding: 20px;
-}
-
-.chat-container {
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: left;
-    width: 100%;
-}
-
-#chatWindow {
-    width: 100%;
-    height: 400px; Tăng chiều cao khung chat
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    overflow-y: auto; Cho phép cuộn khi có nhiều tin nhắn
-    margin-bottom: 10px;
-}
-
-.input-area {
-    display: flex;
-    width: 100%;
-}
-
-input[type="text"] {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    margin-right: 10px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-button i {
-    margin-right: 5px;
-}
-
-#chatWindow p {
-    margin-bottom: 10px;
-    padding: 8px 12px;
-    background-color: #e2e2e2;
-    border-radius: 5px;
-    max-width: 80%;
-    word-wrap: break-word;
-    text-align: left;
-}
- */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #221f1f;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
@@ -104,22 +13,26 @@ body {
     align-items: center;
     width: 90%;
     max-width: 1500px;
+    transition: margin-right 0.5s ease;
 }
 
-h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
+.secondary-container {
+    position: fixed;
+    top: 0;
+    right: -25%;
+    width: 25%;
+    height: 100vh;
+    background-color: #f0f0f0;
+    transition: right 0.5s ease;
+    z-index: 10;
 }
 
 .main-content {
     display: flex;
     width: 100%;
-    height: 70vh;
-    margin-bottom: 20px;
+    height: 85vh;
     position: relative;
+    margin: 10px;
 }
 
 #mainScreen {
@@ -145,63 +58,32 @@ h1 {
 }
 #chatSection,
 .sidebar {
-    width: 30%;
-    background-color: #dbd9d9;
-    height: 100%;
-    border-left: 1px solid #ccc;
-    overflow-y: auto;
     position: fixed;
-    right: 20px;
-    top: 40px;
-    width: 400px; /* Độ rộng của sidebar */
-    height: 700px; /* Chiều cao cố định */
-    background-color: #dbd9d9; /* Màu nền */
-    border-left: 1px solid #ccc; /* Viền chia tách */
-    border-radius: 10px;
-    padding: 10px; /* Khoảng cách bên trong */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
-    overflow-y: auto; /* Cuộn khi nội dung vượt quá chiều cao */
-    overflow-x: hidden;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    height: 100%;
+    width: 25%;
+    padding: 10px;
+    background-color: #f0f0f0;
     transition: right 0.5s ease;
 }
-/*#chatSection {*/
-/*    width: 30%;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*}*/
-/* Khung sidebar */
-/*.sidebar {*/
-/*    position: fixed; !* Giữ cố định vị trí bên cạnh *!*/
-/*    right: 0; !* Gắn vào phía bên phải của màn hình *!*/
-/*    top: 0; !* Đặt từ trên xuống (tùy chỉnh khoảng cách với header nếu có) *!*/
-/*    width: 350px; !* Độ rộng của sidebar *!*/
-/*    height: 400px; !* Chiều cao cố định *!*/
-/*    background-color: #dbd9d9; !* Màu nền *!*/
-/*    border-left: 1px solid #ccc; !* Viền chia tách *!*/
-/*    padding: 10px; !* Khoảng cách bên trong *!*/
-/*    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); !* Hiệu ứng đổ bóng *!*/
-/*    overflow-y: auto; !* Cuộn khi nội dung vượt quá chiều cao *!*/
-/*    z-index: 1000; !* Đảm bảo khung nằm phía trên nội dung khác *!*/
-/*    transition: right 0.1s ease;*/
-/*}*/
 
 
 
 #chatWindow {
-    width: 93%;
-    height: 600px; /* Tăng chiều cao khung chat */
+    width: 100%;
+    height: 85%;
     background-color: #f0f0f0;
-    border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
-    overflow-y: auto; /* Cho phép cuộn khi có nhiều tin nhắn */
+    overflow-y: auto;
     margin-bottom: 10px;
 }
 
 #messageInput {
     width: 100%;
     padding: 10px;
-    margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -220,7 +102,8 @@ input[type="text"] {
     font-size: 16px;
 }
 button {
-    padding: 10px 15px;
+    height: 40px;
+    padding: 0 15px;
     background-color: #007bff;
     color: white;
     border: none;

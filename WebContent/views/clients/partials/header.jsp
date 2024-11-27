@@ -100,7 +100,7 @@
                                 </span>
                                 <span class="dropdown">
                                     <a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><img
-                                        src="/views/clients/assets/img/user_icon.png" alt="User"
+                                        src="/views/clients/assets/img/user.png" alt="User"
                                         height="35px" width="35px">
                                     </a>
                                     <div class="dropdown-menu" role="menu" style="left: 50%; transform: translateX(-40%);">

@@ -31,7 +31,16 @@
 			color: white;
 			text-shadow: 2px 2px 4px #5a5757;
 		}
+		.hidden {
+			opacity: 0;
+			transform: translateY(100px);
+			transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+		}
 
+		.item-slide {
+			opacity: 1 !important;
+			transform: translateY(0) !important;
+		}
 
 
 		#team .card {
@@ -76,11 +85,13 @@
 		}
 
 		</style>
+
 </head>
 
 
 <body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
 <%--slider--%>
 	<section class="mt-0 ">
 		<div class="container-fluid p-0">
@@ -113,11 +124,11 @@
 				</button>
 			</div>
 		</div>
-		<div class="container my-5">
+		<div class="container my-5 hidden">
 			<div class="row g-4 align-items-center">
 				<div class="col-lg-6" data-aos="fade-right">
 					<h3 class="display-3 fw-bold mb-3">
-						Học Tập Cùng Chúng Tôi</span>
+						Học Tập Cùng Chúng Tôi
 					</h3>
 					<p class="lead">Giảng dạy linh hoạt.</p>
 					<p class="lead">Học tập hiệu quả.</p>
@@ -129,11 +140,11 @@
 			</div>
 		</div>
 
-		<div class="container my-5">
+		<div class="container my-5 hidden">
 			<div class="row g-4 align-items-center">
 				<div class="col-lg-6 order-lg-2" data-aos="fade-left">
 					<h3 class="display-3 fw-bold mb-3">
-						Học Tập Cùng Chúng Tôi</span>
+						Học Tập Cùng Chúng Tôi
 					</h3>
 					<p class="lead">Giảng dạy linh hoạt.</p>
 					<p class="lead">Học tập hiệu quả.</p>
@@ -147,7 +158,7 @@
 	</section>
 
 <!-- Team Section -->
-<section id="team" class="py-5 bg-light">
+<section id="team" class="py-5 bg-light hidden">
 	<div class="container d-flex flex-column align-items-center">
 		<div class="text-center mx-auto mb-5" style="max-width: 550px;">
 			<h2 class="mb-3">Nhóm tác giả</h2>
@@ -209,5 +220,30 @@
 		</div>
 	</div>
 </section>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const elements = document.querySelectorAll(".hidden");
+
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				const element = entry.target;
+
+				if (entry.isIntersecting) {
+					element.classList.add("item-slide");
+				} else {
+					element.classList.remove("item-slide");
+				}
+			});
+		}, { threshold: 0.1 });
+
+		elements.forEach(element => observer.observe(element));
+	});
+</script>
+
+
+
+
+
 </body>
 </html>
