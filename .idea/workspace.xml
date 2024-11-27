@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="change animation in homepage and layout in account">
+    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merge feature/assignment into fe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732167428660</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="merge feature/assignment into fe">
+      <option name="closed" value="true" />
+      <created>1732672755207</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732672755207</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +214,9 @@
     <MESSAGE value="change fe of prepare_meeting and meeting" />
     <MESSAGE value="fix ui account" />
     <MESSAGE value="change animation in homepage and layout in account" />
-    <option name="LAST_COMMIT_MESSAGE" value="change animation in homepage and layout in account" />
+    <MESSAGE value="save workspace" />
+    <MESSAGE value="merge feature/assignment into fe" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge feature/assignment into fe" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

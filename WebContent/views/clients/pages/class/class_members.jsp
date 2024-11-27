@@ -110,9 +110,17 @@
             <div class="mb-4">
                 <div class="d-flex align-items-center">
                     <c:forEach var="teacher" items="${teachers}">
-                        <img src="${teacher.avatar}" alt="${teacher.firstName}" class="rounded-circle bg-dark" style="width: 48px; height: 48px; margin-right: 15px; object-fit: contain;">
+                        <c:choose>
+                            <c:when test="${teacher.avatar != null}">
+                                <img src="${teacher.avatar}" alt="${teacher.firstName}" class="rounded-circle bg-dark" style="width: 48px; height: 48px; margin-right: 15px; object-fit: contain;">
+                            </c:when>
+                            <c:otherwise>
+                                <img src="<%= request.getContextPath() %>/views/clients/assets/img/default-avatar2.png" alt="${teacher.firstName}" class="rounded-circle bg-dark" style="width: 48px; height: 48px; margin-right: 15px; object-fit: contain;">
+                            </c:otherwise>
+                        </c:choose>
                         <span class="fs-5">${teacher.firstName} ${teacher.lastName}</span>
                     </c:forEach>
+
                 </div>
             </div>
 
