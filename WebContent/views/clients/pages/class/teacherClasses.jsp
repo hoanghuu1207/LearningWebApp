@@ -60,7 +60,7 @@
                                 <img src="/views/clients/assets/img/more_icon.jpg" alt="More"
                                      height="20px" width="20px"> </a>
                             <div class="dropdown-menu" role="menu">
-                                <a class="dropdown-item" role="presentation" href="/class/delete">Xóa</a>
+                                <%--<a class="dropdown-item" role="presentation" href="/teacher/class/delete">Xóa</a>--%>
                                 <a id="get-code" class="dropdown-item" role="presentation">Lấy code</a>
                             </div>
                         </span>

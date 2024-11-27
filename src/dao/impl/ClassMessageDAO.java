@@ -139,15 +139,4 @@ public class ClassMessageDAO implements DAOInterface<ClassMessageModel> {
         }
         return insertedMessage;
     }
-    public static void main(String[] args) {
-        ClassMessageDAO dao = new ClassMessageDAO();
-        ArrayList<ClassMessageModel> messages = dao.selectAllByClassId(1);
-        for (ClassMessageModel message : messages) {
-            System.out.println("MesageID: " + message.getMessageID());
-            System.out.println("Name: " + message.getSenderName());
-            System.out.println("Content: " + message.getContent());
-            System.out.println("Content: " + (message.getParentMessageID() == 0));
-            System.out.println("Time: " + message.getCreatedAt());
-        }
-    }
 }

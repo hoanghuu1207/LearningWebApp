@@ -2,6 +2,7 @@ package controller.clients;
 
 import model.ClassroomsModel;
 import model.MaterialsModel;
+import model.UserModel;
 import service.impl.ClassroomsService;
 import service.impl.MaterialService;
 
@@ -32,25 +33,37 @@ public class ClassMaterialController extends HttpServlet {
         String action = request.getServletPath();
 
         if (action.equals("/materials")) {
-            //System.out.println("abc111");
             int classroomID = Integer.parseInt(request.getParameter("classroomID"));
-            ClassroomsModel classroomsModel = classroomsService.selectById(classroomID);
-            ArrayList<MaterialsModel> materials = materialService.getFilesByClassroomID(classroomID);
-            for(MaterialsModel m : materials) {
-                String encodedFilePath = URLEncoder.encode(m.getFilePath(), "UTF-8");
-                m.setFilePath(encodedFilePath);
+
+            UserModel user = (UserModel) request.getAttribute("user");
+
+            int userId = user.getUserID();
+
+            ClassroomsModel classroomsModel = classroomsService.selectByIdAndStudentID(classroomID, userId);
+            if(classroomsModel == null) classroomsModel = classroomsService.selectByIdAndTeacherID(classroomID, userId);
+
+            if (classroomsModel != null) {
+                ArrayList<MaterialsModel> materials = materialService.getFilesByClassroomID(classroomID);
+                for(MaterialsModel m : materials) {
+                    String encodedFilePath = URLEncoder.encode(m.getFilePath(), "UTF-8");
+                    m.setFilePath(encodedFilePath);
+                }
+                for(MaterialsModel m : materials) {
+                    System.out.println(m.getFilePath());
+                }
+                request.setAttribute("materials", materials);
+                request.setAttribute("classroom", classroomsModel);
+                request.getSession().setAttribute("classID", classroomID);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/views/clients/pages/class/class_materials.jsp");
+                dispatcher.forward(request, response);
+            } else {
+                String url = "/class";
+                if(user.getRoleID() == 2) url = "/teacher" + url;
+                response.sendRedirect(url);
             }
-            for(MaterialsModel m : materials) {
-                System.out.println(m.getFilePath());
-            }
-            request.setAttribute("materials", materials);
-            request.setAttribute("classroom", classroomsModel);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/views/clients/pages/class/class_materials.jsp");
-            dispatcher.forward(request, response);
         } else if (action.equals("/downloadFile")) {
             System.out.println("abc");
             String filePath = URLDecoder.decode(request.getParameter("filePath"), "UTF-8");
-            // Handle file download
             File file = new File(filePath);
 
             if (file.exists()) {
@@ -79,18 +92,6 @@ public class ClassMaterialController extends HttpServlet {
         Part filePart = request.getPart("file");
         String fileName = filePart.getSubmittedFileName();
 
-        // Define the file path where the file will be saved
-//        String uploadPath = getServletContext().getRealPath("/") + "uploads" + File.separator + fileName;
-//
-//        File fileSaveDir = new File(getServletContext().getRealPath("/") + "uploads");
-//        if (!fileSaveDir.exists()) {
-//            fileSaveDir.mkdirs(); // Tạo thư mục nếu nó chưa tồn tại
-//        }
-//
-//        System.out.println(uploadPath);
-//        filePart.write(uploadPath);
-
-
         String classroomUploadPath = getServletContext().getRealPath("/") + "uploads" + File.separator + classroomID;
         File classroomDir = new File(classroomUploadPath);
         if (!classroomDir.exists()) {
@@ -99,7 +100,7 @@ public class ClassMaterialController extends HttpServlet {
 
         String uploadPath = classroomUploadPath + File.separator + fileName;
         filePart.write(uploadPath);
-        // Save the file path in the database
+
         materialService.uploadFile(classroomID, fileName, uploadPath);
 
         response.sendRedirect(request.getContextPath() + "/materials?classroomID=" + classroomID);

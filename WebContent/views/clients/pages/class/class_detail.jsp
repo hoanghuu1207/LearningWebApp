@@ -8,38 +8,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Detail</title>
-
-    <style>
-        .container-class{
-            display: flex;
-            width: 100%;
-            height:100%;
-        }
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            overflow-y: auto;
-            background-color: rgba(248, 249, 250, 0.67);
-        }
-
-        .main-content-class {
-            flex-grow: 1;
-            padding: 20px;
-        }
-        #postContainer {
-            height: 100vh;          /* Chiều cao của container */
-            overflow-y: auto;       /* Cho phép cuộn dọc */
-        }
-
-        .message-box { border: 1px solid rgba(221, 221, 221, 0.51); border-radius: 8px; padding: 10px; margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.47); }
-        .reply-box { margin-left: 40px; display: none; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="/views/clients/assets/css/popup.css">
 <link rel="stylesheet" href="/views/clients/assets/css/class_detail.css">
+<style>
+    .container-class{
+        display: flex;
+        width: 100%;
+        height:100%;
+    }
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        overflow-y: auto;
+        background-color: #f8f9fa;
+    }
+
+    .main-content-class {
+        flex-grow: 1;
+        padding: 20px;
+    }
+    #postContainer {
+        height: 100vh;          /* Chiều cao của container */
+        overflow-y: auto;       /* Cho phép cuộn dọc */
+    }
+
+    .message-box { border: 1px solid rgba(221, 221, 221, 0.51); border-radius: 8px; padding: 10px; margin-bottom: 10px; background-color: rgba(255, 255, 255, 0.47); }
+    .reply-box { margin-left: 40px; display: none; }
+</style>
 <!-- Sidebar -->
 <div class = "container-class">
     <div class="sidebar">
@@ -48,13 +48,13 @@
                 <h5 id="class_name">${classroom.title}</h5>
             </div>
             <div class="list-group">
-                <a href="/class/detail?classID=${classroom.classroomID}"
+                <a href="${user.roleID == 2 ? '/teacher' : ''}/class/detail?classID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Trang chủ</a>
-                <a href="/class_assignments?classroomID=${classroom.classroomID}"
+                <a href="${user.roleID == 2 ? '/teacher' : ''}/class_assignments?classroomID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Bài tập</a>
                 <a href="/materials?classroomID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Tài liệu</a>
-                <a href="/class_members?classId=${classroom.classroomID}"
+                <a href="${user.roleID == 2 ? '/teacher' : ''}/class_members?classId=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Danh sách</a>
                 <a href="/meetings?classroomID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Cuộc họp</a>

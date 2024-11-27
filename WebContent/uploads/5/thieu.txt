@@ -1,0 +1,14 @@
+CV cần cómột số thông tin cơ bản sau:
+ ● Ảnh đại diện (Gần giống ảnh thẻ)
+
+ ● Liệt kê các kỹ năng lập trình
+ ● Liệt kê một vài kỹ năng mềm (nếu có)
+ 	● Giao tiếp
+ 	● Làm việc nhóm
+ 	● Quản lý thời gian
+ 	● Sáng tạo
+ 	● Phân tích
+ ● Liệt kê một số project đã làm
+ 	● Tên project
+ 	● Link project
+ 	● Mô tả ngắn (viết ngắn gọn nhất có thể

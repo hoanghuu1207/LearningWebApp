@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import dao.DAOInterface;
+import model.SubNotificationModel;
 import model.UserModel;
 import util.JDBCUtil;
 
@@ -314,6 +315,7 @@ public class UserDAO implements DAOInterface<UserModel> {
 				int userid = rs.getInt("userID");
 				String firstName = rs.getString("firstname");
 				String lastName = rs.getString("lastname");
+				String email = rs.getString("email");
 				String password = rs.getString("password");
 				int roleID = rs.getInt("roleID");
 				String avatar = rs.getString("avatar");
@@ -323,6 +325,7 @@ public class UserDAO implements DAOInterface<UserModel> {
 				userModel.setUserID(userid);
 				userModel.setFirstName(firstName);
 				userModel.setLastName(lastName);
+				userModel.setEmail(email);
 				userModel.setPassword(password);
 				userModel.setRoleID(roleID);
 				userModel.setAvatar(avatar);
@@ -349,10 +352,11 @@ public class UserDAO implements DAOInterface<UserModel> {
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-				UserModel userModel= new UserModel();
+				UserModel userModel = new UserModel();
 				int userid = rs.getInt("userID");
 				String firstName = rs.getString("firstname");
 				String lastName = rs.getString("lastname");
+				String email = rs.getString("email");
 				String password = rs.getString("password");
 				int roleID = rs.getInt("roleID");
 				String avatar = rs.getString("avatar");
@@ -361,6 +365,7 @@ public class UserDAO implements DAOInterface<UserModel> {
 				userModel.setUserID(userid);
 				userModel.setFirstName(firstName);
 				userModel.setLastName(lastName);
+				userModel.setEmail(email);
 				userModel.setPassword(password);
 				userModel.setRoleID(roleID);
 				userModel.setAvatar(avatar);
@@ -372,5 +377,80 @@ public class UserDAO implements DAOInterface<UserModel> {
 			e.printStackTrace();
 		}
 		return students;
+	}
+	public ArrayList<UserModel> getStudentsOutOfClassAndExceptTeacher(int classID) {
+		ArrayList<UserModel> students = new ArrayList<>();
+		String sql = "SELECT * FROM " +
+				"users AS u " +
+				"LEFT JOIN students_classrooms sc " +
+				"ON u.userID = sc.studentID AND sc.classroomID = ? " +
+				"WHERE sc.classroomID IS NULL AND u.roleID = 3;";
+
+		try (Connection conn = JDBCUtil.getConnection();
+			 PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+			stmt.setInt(1, classID);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				UserModel userModel = new UserModel();
+				int userid = rs.getInt("userID");
+				String firstName = rs.getString("firstname");
+				String lastName = rs.getString("lastname");
+				String email = rs.getString("email");
+				String password = rs.getString("password");
+				int roleID = rs.getInt("roleID");
+				String avatar = rs.getString("avatar");
+				String tokenUser = rs.getString("tokenUser");
+
+				userModel.setUserID(userid);
+				userModel.setFirstName(firstName);
+				userModel.setLastName(lastName);
+				userModel.setEmail(email);
+				userModel.setPassword(password);
+				userModel.setRoleID(roleID);
+				userModel.setAvatar(avatar);
+				userModel.setTokenUser(tokenUser);
+				students.add(userModel);
+			}
+			JDBCUtil.closeConnection(conn);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return students;
+	}
+	public SubNotificationModel getSubNotificationWithClassroom(int classroomID){
+		SubNotificationModel subNotificationModel = null;
+
+		try {
+			Connection con = JDBCUtil.getConnection();
+
+			String query = "SELECT * FROM classrooms AS c " +
+					"JOIN users AS u ON c.teacherID = u.userID " +
+					"WHERE c.classroomID = ?";
+
+			PreparedStatement pstm = con.prepareStatement(query);
+
+			pstm.setInt(1, classroomID);
+
+			ResultSet rs = pstm.executeQuery();
+
+			while (rs.next()) {
+				String url = "#";
+				String title = rs.getString("title");
+				String firstname = rs.getString("firstname");
+				String lastname = rs.getString("lastname");
+
+				subNotificationModel = new SubNotificationModel();
+
+				subNotificationModel.setUrl(url);
+				subNotificationModel.setContent(firstname + " " + lastname + " đã xóa bạn khỏi " + title);
+			}
+
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return subNotificationModel;
 	}
 }

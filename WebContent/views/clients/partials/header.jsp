@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="model.UserModel" %>
 
 <html>
 
@@ -43,21 +44,23 @@
 									<div class="slider"></div>
 								</a>
 							</li>
-                            <li class="nav-item" role="presentation">
-								<a class="nav-link" href="/assignments">Bài tập
-									<div class="slider"></div>
-								</a>
-							</li>
+							<c:if test="${user.roleID == 3}">
+                                <li class="nav-item" role="presentation">
+                                    <%--<a class="nav-link" href="/assignments">Bài tập
+                                        <div class="slider"></div>
+                                    </a>--%>
+                                </li>
+							</c:if>
 						</ul>
                     </c:if>
 					<form class="form-inline mr-auto" target="_self">
-						<c:if test="${user != null}">
+						<%--<c:if test="${user != null}">
 							<div class="form-group">
 								<label for="search-field"><i class="fa fa-search"></i></label><input
 									class="form-control search-field" type="search" name="search"
 									id="search-field">
 							</div>
-						</c:if>
+						</c:if>--%>
 					</form>
 
 					<c:choose>
@@ -69,7 +72,6 @@
 									<a class="btn action-button signup" role="button" href="/user/register">Sign Up
 									<div class="slider"></div>
 									</a>
-
 							</span>
 
 						</c:when>
@@ -78,7 +80,9 @@
 						    <div class='notification-container'>
                                 <span class="dropdown">
                                     <span class="notification-box nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
-                                        <span class="notification-count" style="display: none;"></span>
+                                        <c:if test="${status != null}">
+                                            <span class="notification-count" style="display: ${status == 'true' ? 'block' : 'none'};"></span>
+                                        </c:if>
                                         <div class="notification-bell">
                                             <span class="bell-top"></span>
                                             <span class="bell-middle"></span>
@@ -86,13 +90,12 @@
                                             <span class="bell-rad"></span>
                                         </div>
                                     </span>
-                                    <div class="dropdown-menu" role="menu" style="left: 30%; transform: translateX(-60%);">
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;" data-bs-toggle="tooltip" title="Hoang Huu thêm bài viết mới trong Công nghệ Web">Hoang Huu thêm bài viết mới trong Công nghệ Web</a>
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
-                                        <a class="dropdown-item" role="presentation" href="#" style="font-size:12px;">Một bài viết mới trong Lập trình mạng</a>
+                                    <div id="notification-content" class="dropdown-menu" role="menu" style="left: 30%; transform: translateX(-60%);">
+                                        <c:if test="${notifications != null}">
+                                            <c:forEach var="notification" items="${notifications}">
+                                                <a class="dropdown-item" noti_id="${notification.notificationID}" role="presentation" href="${notification.url}" style="font-size:12px;" data-bs-toggle="tooltip" title="${notification.content}">${notification.content}</a>
+                                            </c:forEach>
+                                        </c:if>
                                     </div>
                                 </span>
                                 <span class="dropdown">
@@ -113,6 +116,7 @@
 			</div>
 		</nav>
 	</div>
+	<button style="display: none;" id="volume-button"></button>
 
 
 <script
@@ -129,6 +133,18 @@
 			}
 		});
 	</script>
+
+<%
+    String userID = String.valueOf(request.getAttribute("userID"));
+    String roleID = String.valueOf(request.getAttribute("roleID"));
+%>
+
+<script>
+    const userID = "<%= userID %>";
+    const roleID = "<%= roleID %>";
+</script>
+
+<script src="/views/clients/assets/js/NotificationWebsocket.js"></script>
 
 </body>
 </html>

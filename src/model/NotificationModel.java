@@ -5,20 +5,21 @@ import java.time.LocalDateTime;
 
 public class NotificationModel {
 	private int notificationID;
-	private int userID;
-	private boolean status;
+	private int informedID;
+	private int status;
 	private String type;
 	private int relatedID;
 	private Timestamp createdAt;
 
-	public NotificationModel(int userID, boolean status, String type, int relatedID, Timestamp createdAt) {
-		super();
-		this.userID = userID;
-		this.status = status;
-		this.type = type;
-		this.relatedID = relatedID;
+	public Timestamp getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Timestamp createdAt) {
 		this.createdAt = createdAt;
 	}
+
+	public NotificationModel(){}
 
 	public int getNotificationID() {
 		return notificationID;
@@ -28,19 +29,19 @@ public class NotificationModel {
 		this.notificationID = notificationID;
 	}
 
-	public int getUserID() {
-		return userID;
+	public int getInformedID() {
+		return informedID;
 	}
 
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public void setInformedID(int informedID) {
+		this.informedID = informedID;
 	}
 
-	public boolean isStatus() {
+	public int getStatus() {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 
@@ -58,13 +59,5 @@ public class NotificationModel {
 
 	public void setRelatedID(int relatedID) {
 		this.relatedID = relatedID;
-	}
-
-	public Timestamp getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Timestamp createdAt) {
-		this.createdAt = createdAt;
 	}
 }

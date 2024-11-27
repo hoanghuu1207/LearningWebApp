@@ -4,11 +4,13 @@ import dao.DAOInterface;
 import model.AssignmentsModel;
 import model.MaterialsModel;
 import model.MeetingsModel;
+import model.NotificationModel;
 import util.JDBCUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class MaterialDAO implements DAOInterface<MaterialsModel> {
@@ -74,6 +76,34 @@ public class MaterialDAO implements DAOInterface<MaterialsModel> {
         catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public int getMaterialAfterUploadFileAssignment(String fileName, String filePath) {
+        int materialID = 0;
+        String query = "INSERT INTO materials (title, filePath) VALUES (?, ?)";
+
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+            ps.setString(1, fileName);
+            ps.setString(2, filePath);
+            int row = ps.executeUpdate();
+
+            if (row > 0) {
+                try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        int generatedId = generatedKeys.getInt(1);
+                        System.out.println("Thêm thành công: " + row + ", ID: " + generatedId);
+
+                        materialID = generatedId;
+                    }
+                }
+            }
+
+            JDBCUtil.closeConnection(conn);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return materialID;
     }
     public static void main(String[] args) {
           MeetingDAO dao = new MeetingDAO();
