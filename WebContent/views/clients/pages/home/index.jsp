@@ -127,15 +127,11 @@
 		<div class="container my-5 hidden">
 			<div class="row g-4 align-items-center">
 				<div class="col-lg-6" data-aos="fade-right">
-					<h3 class="display-3 fw-bold mb-3">
-						Học Tập Cùng Chúng Tôi
-					</h3>
-					<p class="lead">Giảng dạy linh hoạt.</p>
-					<p class="lead">Học tập hiệu quả.</p>
+					<p class="lead">Giảng dạy linh hoạt</p>
+					<p class="lead">Học tập hiệu quả</p>
 				</div>
 				<div class="col-lg-6" data-aos="fade-left">
-					<img src="/views/clients/assets/img/i1.jpg" class="img-fluid rounded"
-						alt="Giáo dục tiên tiến">
+					<img src="/views/clients/assets/img/i1.jpg" class="img-fluid rounded">
 				</div>
 			</div>
 		</div>
@@ -143,15 +139,11 @@
 		<div class="container my-5 hidden">
 			<div class="row g-4 align-items-center">
 				<div class="col-lg-6 order-lg-2" data-aos="fade-left">
-					<h3 class="display-3 fw-bold mb-3">
-						Học Tập Cùng Chúng Tôi
-					</h3>
-					<p class="lead">Giảng dạy linh hoạt.</p>
-					<p class="lead">Học tập hiệu quả.</p>
+					<p class="lead">Giáo dục tiên tiến</p>
+					<p class="lead">Giải pháp tương lai</p>
 				</div>
 				<div class="col-lg-6 order-lg-1" data-aos="fade-right">
-					<img src="/views/clients/assets/img/i1.jpg" class="img-fluid rounded"
-						alt="Giáo dục tiên tiến">
+					<img src="/views/clients/assets/img/i11.jpg" class="img-fluid rounded">
 				</div>
 			</div>
 		</div>
@@ -173,7 +165,7 @@
 				<div class="card text-center shadow-sm h-100 position-relative">
 					<div class="card-body">
 						<div class="mb-3 position-relative" style="margin: 0 auto;">
-							<img src="/views/clients/assets/img/i1.jpg" alt="Võ Thị Quỳnh Nga" class="avatar-img">
+							<img src="/views/clients/assets/img/h1.jpg" alt="Võ Thị Quỳnh Nga" class="avatar-img">
 						</div>
 						<h4 class="card-title mb-1">Võ Thị Quỳnh Nga</h4>
 						<p class="card-text text-muted mb-3">Frontend Developer</p>
@@ -189,7 +181,7 @@
 				<div class="card text-center shadow-sm h-100 position-relative">
 					<div class="card-body">
 						<div class="mb-3 position-relative" style="margin: 0 auto;">
-							<img src="/views/clients/assets/img/i2.jpg"  alt="Huỳnh Hữu Hoàng" class="avatar-img">
+							<img src="/views/clients/assets/img/h2.jpg"  alt="Huỳnh Hữu Hoàng" class="avatar-img">
 						</div>
 						<h4 class="card-title mb-1">Huỳnh Hữu Hoàng</h4>
 						<p class="card-text text-muted mb-3">Backend Developer</p>
@@ -205,9 +197,10 @@
 				<div class="card text-center shadow-sm h-100 position-relative">
 					<div class="card-body">
 						<div class="mb-3 position-relative" style="margin: 0 auto;">
-							<img src="/views/clients/assets/img/i3.jpg"  alt="Lê Xuân Hòa" class="avatar-img">
+							<img src="/views/clients/assets/img/h3.jpg"  alt="Lê Xuân Hòa" class="avatar-img">
 						</div>
 						<h4 class="card-title mb-1">Lê Xuân Hòa</h4>
+						<br>
 						<p class="card-text text-muted mb-3">Backend Developer</p>
 						<div class="d-flex justify-content-center gap-3">
 							<a href="#" class="text-dark"><i class="bi bi-facebook"></i></a>
