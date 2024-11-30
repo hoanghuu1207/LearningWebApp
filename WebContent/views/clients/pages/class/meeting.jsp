@@ -15,7 +15,7 @@
     <div class="main-content">
         <!-- Màn hình lớn để hiển thị video hoặc chia sẻ màn hình -->
         <div id="mainScreen" class="expanded">
-            <video id="mainVideo" autoplay="autoplay" ></video>
+            <video id="mainVideo" autoplay ></video>
         </div>
 
 
@@ -64,7 +64,7 @@
     const classroomID = '<%= request.getAttribute("classroomID") %>';
     const userId = '<%= request.getAttribute("userId") %>';
 </script>
-<script src="/views/clients/assets/js/app2.js"></script>
+<script src="/views/clients/assets/js/app4.js"></script>
 
 </body>
 </html>

@@ -4,9 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merge fe into Hoa's local branch">
+    <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merged in Hoa's local branch">
+      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerEndpoint/ChatServer22.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerEndpoint/ChatServer2711.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerEndpoint/ChatServerMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerEndpoint/SignalingEndPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerEndpoint/SignalingServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerEndpoint/SignalingServlet2711.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/prepare_meeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/prepare_meeting.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/catalina.policy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/catalina.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/jaspic-providers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/jaspic-providers.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/server.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/tomcat-users.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/tomcat-users.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meeting.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerEndpoint/ChatServer2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerEndpoint/ChatServer2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,13 +42,18 @@
       <list>
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/notification" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -39,7 +65,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/nomenoparty/LearningWebApp.git&quot;,
-    &quot;accountId&quot;: &quot;0474d934-7cbf-402c-b88a-7495f180690e&quot;
+    &quot;accountId&quot;: &quot;cd8fde6f-1856-45f1-ba30-55d5850faf8f&quot;
   }
 }</component>
   <component name="LogFilters">
@@ -49,6 +75,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -57,36 +86,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MeetingDAO.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Smart Tomcat.Tomcat.executor": "Run",
-    "Smart Tomcat.Tomcat2.executor": "Run",
-    "Smart Tomcat.Tomcat9.executor": "Run",
-    "Smart Tomcat.Tomcat: LearningWebApp.executor": "Run",
-    "Smart Tomcat.TomcatSSL.executor": "Run",
-    "Smart Tomcat.Unnamed.executor": "Run",
-    "Tomcat Server.Tomcat 9.0.95.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/notification",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/ProjectPBL4-Clone16_11/LearningWebApp",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MeetingDAO.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Smart Tomcat.Tomcat.executor&quot;: &quot;Run&quot;,
+    &quot;Smart Tomcat.Tomcat2.executor&quot;: &quot;Run&quot;,
+    &quot;Smart Tomcat.Tomcat9.executor&quot;: &quot;Run&quot;,
+    &quot;Smart Tomcat.Tomcat: LearningWebApp.executor&quot;: &quot;Run&quot;,
+    &quot;Smart Tomcat.TomcatSSL.executor&quot;: &quot;Run&quot;,
+    &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.95.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/meeting&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/ProjectPBL4-Clone16_11/LearningWebApp&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\TechCare\eclipse-workspace\LearningWebApp\WebContent\views\admin\pages\user" />
@@ -156,6 +185,35 @@
       <workItem from="1732145919048" duration="10436000" />
       <workItem from="1732173041863" duration="3482000" />
       <workItem from="1732177266315" duration="372000" />
+      <workItem from="1732189395378" duration="9429000" />
+      <workItem from="1732234453244" duration="1379000" />
+      <workItem from="1732240517306" duration="11428000" />
+      <workItem from="1732254347721" duration="4267000" />
+      <workItem from="1732258649697" duration="5234000" />
+      <workItem from="1732264748304" duration="13540000" />
+      <workItem from="1732289683573" duration="1705000" />
+      <workItem from="1732318875414" duration="21308000" />
+      <workItem from="1732343956313" duration="10265000" />
+      <workItem from="1732369645573" duration="10000" />
+      <workItem from="1732406533592" duration="895000" />
+      <workItem from="1732407757626" duration="12803000" />
+      <workItem from="1732435510216" duration="7128000" />
+      <workItem from="1732445920588" duration="2204000" />
+      <workItem from="1732456390227" duration="3782000" />
+      <workItem from="1732493169164" duration="10402000" />
+      <workItem from="1732546699241" duration="2461000" />
+      <workItem from="1732576579494" duration="905000" />
+      <workItem from="1732581836685" duration="2237000" />
+      <workItem from="1732591806485" duration="429000" />
+      <workItem from="1732607080048" duration="21826000" />
+      <workItem from="1732635250226" duration="1529000" />
+      <workItem from="1732660525092" duration="3581000" />
+      <workItem from="1732672621877" duration="3704000" />
+      <workItem from="1732676555687" duration="750000" />
+      <workItem from="1732696006471" duration="16092000" />
+      <workItem from="1732862953435" duration="4658000" />
+      <workItem from="1732944766705" duration="2671000" />
+      <workItem from="1732949046441" duration="7519000" />
     </task>
     <task id="LOCAL-00001" summary="merge feature/post_article into feature/admin">
       <option name="closed" value="true" />
@@ -181,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732178423967</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="merged in Hoa's local branch">
+      <option name="closed" value="true" />
+      <created>1732178926673</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732178926673</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +273,8 @@
     <MESSAGE value="fix ui account" />
     <MESSAGE value="save unversioned files in feature/notification in Hoa's local branch" />
     <MESSAGE value="merge fe into Hoa's local branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge fe into Hoa's local branch" />
+    <MESSAGE value="merged in Hoa's local branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged in Hoa's local branch" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
