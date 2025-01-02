@@ -54,8 +54,7 @@ public class MeetingDAO implements DAOInterface<MeetingsModel> {
         }
         return meetingsModel;
     }
-
-    public ArrayList<MeetingsModel> getUpcomingMeetings(int id) {
+    public ArrayList<MeetingsModel> getUpcomingMeetings(int id){
         ArrayList<MeetingsModel> meetings = new ArrayList<>();
         String sql = "SELECT * FROM meetings WHERE startTime > NOW() AND isCancelled = 0" +
                 " AND classroomID = ?";
@@ -81,8 +80,7 @@ public class MeetingDAO implements DAOInterface<MeetingsModel> {
         }
         return meetings;
     }
-
-    public ArrayList<MeetingsModel> getPastMeetings(int id) {
+    public ArrayList<MeetingsModel> getPastMeetings(int id){
         ArrayList<MeetingsModel> meetings = new ArrayList<>();
         String sql = "SELECT * FROM meetings WHERE endTime < NOW() AND isCancelled = 0" +
                 " AND classroomID = ?";
@@ -108,8 +106,7 @@ public class MeetingDAO implements DAOInterface<MeetingsModel> {
         }
         return meetings;
     }
-
-    public ArrayList<MeetingsModel> getCanceledMeetings(int id) {
+    public ArrayList<MeetingsModel> getCanceledMeetings(int id){
         ArrayList<MeetingsModel> meetings = new ArrayList<>();
         String sql = "SELECT * FROM meetings WHERE isCancelled = 1 AND classroomID = ?";
 
@@ -134,7 +131,6 @@ public class MeetingDAO implements DAOInterface<MeetingsModel> {
         }
         return meetings;
     }
-
     public ArrayList<MeetingsModel> getOngoingMeetings(int id) {
         ArrayList<MeetingsModel> meetings = new ArrayList<>();
         String sql = "SELECT * FROM meetings WHERE startTime <= NOW() AND endTime IS NULL AND isCancelled = 0" +
@@ -182,8 +178,7 @@ public class MeetingDAO implements DAOInterface<MeetingsModel> {
         }
         return meetingID;
     }
-
-    public int createNewSchedule_Meeting(String title, Timestamp startTime, int classroomID) {
+    public int createNewSchedule_Meeting(String title, Timestamp startTime, int classroomID ) {
         int meetingID = -1;
         String sql = "INSERT INTO meetings (title, startTime, endTime, classroomID, duration, isCancelled) " +
                 "VALUES (?, ?, NULL, ?, '00:00:00', '0')";
@@ -207,7 +202,8 @@ public class MeetingDAO implements DAOInterface<MeetingsModel> {
 
     public void ModifierEndMeeting(int meetingID) {
         String sql = "UPDATE meetings " +
-                "SET endTime = current_timestamp(), " + " duration = TIMEDIFF(current_timestamp(), startTime) " +
+                "SET endTime = current_timestamp(), " +
+                "duration = TIMEDIFF(current_timestamp(), startTime) " +
                 "WHERE meetingID = ?";
 
         try (Connection conn = JDBCUtil.getConnection();
@@ -219,7 +215,6 @@ public class MeetingDAO implements DAOInterface<MeetingsModel> {
             e.printStackTrace();
         }
     }
-
     public void cancelMeeting(int meetingID) {
         String sql = "UPDATE meetings " +
                 "SET endTime = CURRENT_TIMESTAMP(), isCancelled = 1 " +
@@ -236,5 +231,14 @@ public class MeetingDAO implements DAOInterface<MeetingsModel> {
     }
 
     public static void main(String[] args) {
+//        MeetingDAO meetingDAO = new MeetingDAO();
+//        int meetingID = 14;
+//        meetingDAO.cancelMeeting(meetingID);
+//        if (success) {
+//            System.out.println("Cuộc họp đã bị hủy thành công!");
+//        } else {
+//            System.out.println("Hủy cuộc họp thất bại! Vui lòng kiểm tra lại meetingID.");
+//        }
     }
+
 }

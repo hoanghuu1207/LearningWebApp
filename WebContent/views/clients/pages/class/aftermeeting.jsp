@@ -57,7 +57,7 @@
       Chúng tôi hy vọng cuộc họp đã mang lại giá trị cho bạn!
     </h5>
     <div class="options">
-      <a href="class_detail.jsp" class="btn btn-custom ms-3">Quay lại Lớp học</a>
+      <a href="/class/detail?classID=<%= request.getAttribute("classID") %>" class="btn btn-custom ms-3">Quay lại Lớp học</a>
     </div>
   </div>
 </div>

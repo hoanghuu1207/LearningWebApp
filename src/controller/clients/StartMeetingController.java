@@ -26,14 +26,14 @@ public class StartMeetingController extends HttpServlet {
         int classroomID = Integer.parseInt(request.getParameter("classroomID"));
         int userId = Integer.parseInt(request.getParameter("userId"));
         if (meetingId == 0){
-//            String meetingTitle = request.getParameter("meetingTitle");
-//            if (meetingTitle == null || meetingTitle.trim().isEmpty()) {
-//                request.setAttribute("error", "Meeting title is required!");
-//                RequestDispatcher dispatcher = request.getRequestDispatcher("/prepareMeeting?classroomID=" + classroomID);
-//                dispatcher.forward(request, response);
-//                return;
-//            }
-//            meetingId = meetingService.createNewMeeting(meetingTitle, classroomID);
+            String meetingTitle = request.getParameter("meetingTitle");
+            if (meetingTitle == null || meetingTitle.trim().isEmpty()) {
+                request.setAttribute("error", "Meeting title is required!");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/prepareMeeting?classroomID=" + classroomID);
+                dispatcher.forward(request, response);
+                return;
+            }
+            meetingId = meetingService.createNewMeeting(meetingTitle, classroomID);
         }
 
         System.out.println(isPermittedvideo);

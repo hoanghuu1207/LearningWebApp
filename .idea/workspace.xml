@@ -5,40 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="052ee3af-0400-444c-8d51-4a31fbd45827" name="Changes" comment="merge feature/post_article into feature/admin">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/Catalina/localhost/ROOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/catalina.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/catalina.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/jaspic-providers.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/jaspic-providers.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/tomcat-users.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/tomcat-users.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/admin/pages/user/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/admin/pages/user/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/DeleteClassMemberWebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/DeleteClassMemberWebSocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/NotificationWebsocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/NotificationWebsocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/PostArticleWebsocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/PostArticleWebsocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/StudentDeleteClassWebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/StudentDeleteClassWebSocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/TeacherAssignmentWebsocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/TeacherAssignmentWebsocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerEndpoint/ChatServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerEndpoint/ChatServer2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/clients/AfterMeetingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/catalina.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/catalina.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/logging.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/logging.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/LearningWebApp/conf/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/admin/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/admin/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/aftermeeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/aftermeeting.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_meetings.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/class_meetings.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meeting.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/partials/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meetingDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/meetingDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/prepare_meeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/prepare_meeting.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClass_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClass_detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClasses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/views/clients/pages/class/teacherClasses.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerEndpoint/ChatServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerEndpoint/ChatServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/ChatServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/ClassDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/ClassDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/ClassMeetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/ClassMeetingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/MeetingDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/MeetingDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/PrepareMeetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/PrepareMeetingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/clients/StartMeetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/StartMeetingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/Teacher_ClassDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clients/Teacher_ScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clients/Teacher_ScheduleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/impl/MeetingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/MeetingDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/impl/ScheduleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/ScheduleDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/I_MeetingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/I_MeetingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/I_UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/I_UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/I_ScheduleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/I_ScheduleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/impl/MeetingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/MeetingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/I_UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/I_UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/impl/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/impl/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/LearningWebApp/LearningWebApp/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/impl/ScheduleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/impl/ScheduleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/clients/ErrorHandleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/clients/ErrorHandleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/DAOInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/DAOInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/ForgotPasswordDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/ForgotPasswordDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/helper/EmailSender$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/EmailSender$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/helper/EmailSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/EmailSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/helper/Generate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/helper/Generate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/ForgotPasswordModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ForgotPasswordModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/RolesModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/RolesModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/UserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/UserModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/JDBCUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/JDBCUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/ForgotPasswordValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/ForgotPasswordValidate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/LoginValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/LoginValidate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/OtpPasswordValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/OtpPasswordValidate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/RegisterValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/RegisterValidate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/validate/clients/ResetPasswordValidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validate/clients/ResetPasswordValidate.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,34 +106,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Smart Tomcat.Tomcat.executor&quot;: &quot;Run&quot;,
-    &quot;Smart Tomcat.Tomcat2.executor&quot;: &quot;Run&quot;,
-    &quot;Smart Tomcat.Tomcat9.executor&quot;: &quot;Run&quot;,
-    &quot;Smart Tomcat.TomcatSSL.executor&quot;: &quot;Run&quot;,
-    &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Tomcat Server.Tomcat 9.0.95.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/assignment&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/TechCare/eclipse-workspace/ArticleApp&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.17011495&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Smart Tomcat.Tomcat.executor": "Run",
+    "Smart Tomcat.Tomcat2.executor": "Run",
+    "Smart Tomcat.Tomcat9.executor": "Run",
+    "Smart Tomcat.TomcatSSL.executor": "Run",
+    "Smart Tomcat.Unnamed.executor": "Run",
+    "Tomcat Server.Tomcat 9.0.95.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Merging feature/assignment",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/TechCare/eclipse-workspace/ArticleApp",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.17011495",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\TechCare\eclipse-workspace\LearningWebApp\WebContent\views\admin\pages\user" />
@@ -142,9 +154,6 @@
       <option name="catalinaBase" value="C:\Users\TechCare\.SmartTomcat\LearningWebApp\LearningWebApp" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/WebContent" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="sslPort" value="8443" />
       <option name="tomcatInfo">

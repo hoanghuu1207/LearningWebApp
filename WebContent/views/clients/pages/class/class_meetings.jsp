@@ -68,7 +68,8 @@
                    class="list-group-item list-group-item-action">Cuộc họp</a>
                 <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
                 <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
-                    Tạo cuộc họp <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
+                    Tạo cuộc họp
+                    <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
                 </a>
             </div>
         </div>
@@ -124,7 +125,7 @@
                        <li class="list-group-item" onclick="location.href='/meetingDetail?id=${meeting.meetingID}&classroomID=${meeting.classroomID}&type=3'">
                            <strong>${meeting.title}</strong> <br>
                            <span> Thời gian diễn ra: <fmt:formatDate value="${meeting.startTime}" pattern="dd/MM/yyyy HH:mm" />
-                                - Thời gian kết thúc: <fmt:formatDate value="${meeting.endTime}" pattern="dd/MM/yyyy HH:mm"/>
+                           - Thời gian kết thúc: <fmt:formatDate value="${meeting.endTime}" pattern="dd/MM/yyyy HH:mm"/>
                                - Thời lượng: <fmt:formatDate value="${meeting.duration}" pattern="HH:mm:ss"/> </span>
                        </li>
                    </c:forEach>

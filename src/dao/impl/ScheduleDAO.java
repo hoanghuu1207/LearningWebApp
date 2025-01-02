@@ -13,8 +13,23 @@ import java.util.ArrayList;
 
 public class ScheduleDAO implements DAOInterface<ScheduleModel> {
     @Override
-    public int insert(ScheduleModel scheduleModel) {
-        return 0;
+    public int insert(ScheduleModel schedule) {
+        int rowsInserted = 0;
+        String sql = "INSERT INTO schedule (meetingID, timeCreate, timeAccess, title) " +
+                "VALUES (?, CURRENT_TIMESTAMP(), ?, ?)";
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, schedule.getMeetingID());
+            ps.setTimestamp(2, schedule.getTimeAccess());
+            ps.setString(3, schedule.getTitle());
+
+            rowsInserted = ps.executeUpdate();
+            JDBCUtil.closeConnection(conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rowsInserted;
     }
 
     @Override
@@ -84,4 +99,20 @@ public class ScheduleDAO implements DAOInterface<ScheduleModel> {
         }
         return scheduleModels;
     }
+    public void createSchedule(ScheduleModel schedule) {
+        String sql = "INSERT INTO schedule (meetingID, timeCreate, timeAccess, title) " +
+                "VALUES (?, CURRENT_TIMESTAMP(), ?, ?)";
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, schedule.getMeetingID());
+            ps.setTimestamp(2, schedule.getTimeAccess());
+            ps.setString(3, schedule.getTitle());
+            ps.executeUpdate();
+            JDBCUtil.closeConnection(conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
