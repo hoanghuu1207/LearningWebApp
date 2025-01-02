@@ -9,21 +9,21 @@
     <title>Login</title>
     <link rel="stylesheet" href="/views/clients/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/views/clients/assets/css/style.css">
-    <link rel="stylesheet" href="/vsiews/clients/assets/css/login.css">
+    <link rel="stylesheet" href="/views/clients/assets/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body class="mt-0 overflow-hidden vh-100 d-flex justify-content-center align-items-center p-4">
     <div class="col col-md-8 col-lg-6 col-xxl-5">
         <a class="navbar-brand fw-bold fs-3 flex-shrink-0 order-0 align-self-center justify-content-center d-flex mx-0 px-0"
             href="/src/index.html">
-            <!-- {{> logo/logo-icon }} -->
         </a>
 
         <div class="shadow-xl p-4 p-lg-5 bg-white">
             <h1 class="text-center fw-bold mb-5 fs-2">Login</h1>
-            <a href="#" class="btn btn-facebook d-block mb-2"><i class="ri-facebook-circle-fill align-bottom"></i> Login
+            <a href="#" class="btn btn-facebook border-1 d-block mb-2"><i class="fab fa-facebook align-center"></i> Login
                 with Facebook</a>
-            <a href="#" class="btn btn-twitter d-block mb-2"><i class="ri-twitter-fill align-bottom"></i> Login with
+            <a href="#" class="btn btn-twitter border-1 d-block mb-2"><i class="fab fa-twitter align-center"></i> Login with
                 Twitter</a>
             <span class="text-muted text-center d-block fw-bolder my-4">OR</span>
             <form action="/user/login" method="POST"> <!-- Gọi hàm login khi submit form -->

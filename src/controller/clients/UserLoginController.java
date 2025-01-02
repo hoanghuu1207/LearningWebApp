@@ -26,6 +26,8 @@ public class UserLoginController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html; charset=UTF-8");
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 
@@ -52,11 +54,15 @@ public class UserLoginController extends HttpServlet {
 			System.out.println("Dang nhap thanh cong");
 
 			Cookie cookie = new Cookie("tokenUser", userModel.getTokenUser());
+			Cookie role = new Cookie("role", userModel.getRoleID() + "");
 
 			cookie.setPath("/");
 			cookie.setMaxAge(1 * 60 * 60); // set coookie trong 1h
+			role.setPath("/");
+			role.setMaxAge(1 * 60 * 60);
 
 			resp.addCookie(cookie);
+			resp.addCookie(role);
 
 			resp.sendRedirect("/home");
 		}

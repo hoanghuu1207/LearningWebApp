@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/class.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
+        <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/class_detail.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
+        <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/class_materials.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
+        <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/class_members.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
+        <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/meeting.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
+        <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/meetingDetail.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
+        <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/class/messages.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/class" />
+        <entry key="file://$PROJECT_DIR$/WebContent/views/clients/pages/home/index.jsp" value="file://$PROJECT_DIR$/WebContent/views/clients/pages/home" />
+      </map>
+    </option>
+  </component>
+</project>

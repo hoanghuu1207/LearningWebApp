@@ -6,22 +6,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign up</title>
-<link rel="stylesheet"
-	href="/views/clients/assets/css/bootstrap.min.css">
+<link rel="stylesheet"href="/views/clients/assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="/views/clients/assets/css/style.css">
+	<style>
+		.form-group, .form-label {
+			text-align: left;
+			width: 100%;
+			display: block;
+			margin-top: 7px;
+			margin-bottom: 2px;
+		}
+
+	</style>
 </head>
-<body class=" bg-light">
+<body class="bg-light overflow-hidden">
 
-	<section
-		class="mt-0 overflow-hidden  vh-100 d-flex justify-content-center align-items-center p-4">
-
+	<section class="mt-0 overflow-hidden  vh-100 d-flex justify-content-center align-items-center p-4">
 		<div class="col col-md-8 col-lg-6 col-xxl-5">
 			<div class="shadow-xl p-4 p-lg-5 bg-white">
-				<a href="#" class="btn btn-facebook d-block mb-2"><i
-					class="ri-facebook-circle-fill align-bottom"></i> Login with
-					Facebook</a> <a href="#" class="btn btn-twitter d-block mb-2"><i
-					class="ri-twitter-fill align-bottom"></i> Login with Twitter</a> <span
-					class="text-muted text-center d-block fw-bolder my-4">OR</span>
+				<h1 class="text-center fw-bold mb-5 fs-2">Sign up</h1>
 				<form method="POST" action="/user/register">
 					<div class="form-group">
 						<label class="form-label" for="register-fname">First name</label>
@@ -45,11 +48,9 @@
 							name="password" placeholder="Enter your password" required>
 					</div>
 					<div class="form-group">
-						<label class="form-label" for="register-roles">Roles</label><br>
-						<input type="radio" id="teacher" name="role" value="teacher" checked>
-						<label for="teacher">Teacher</label><br> 
-						<input type="radio" id="student" name="role" value="student">
-						<label for="student">Student</label><br>
+						<label class="form-label" for="register-password">Confirm Password</label>
+						<input type="password" class="form-control" id="register-password-again"
+							   name="password" placeholder="Confirm your password" required>
 					</div>
 					<button type="submit" class="btn btn-dark d-block w-100 my-4">Sign
 						Up</button>
@@ -64,12 +65,22 @@
 
 	</section>
 
-	<footer>
-		<p>&copy; PBL4</p>
-	</footer>
-	<!-- <script src="./assets/js/vendor.bundle.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const form = document.querySelector("form");
+			const password = document.getElementById("register-password");
+			const confirmPassword = document.getElementById("register-password-again");
 
-    <script src="./assets/js/theme.bundle.js"></script> -->
+			form.addEventListener("submit", function (event) {
+				if (password.value !== confirmPassword.value) {
+					event.preventDefault();
+					alert("Passwords do not match. Please try again.");
+					confirmPassword.focus();
+				}
+			});
+		});
+	</script>
+
 </body>
 
 </html>

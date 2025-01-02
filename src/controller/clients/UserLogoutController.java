@@ -29,7 +29,7 @@ public class UserLogoutController extends HttpServlet {
 					if (referer != null) {
 						resp.sendRedirect(referer);
 					} else {
-						resp.sendRedirect("/user/home");
+						resp.sendRedirect("/home");
 					}
 
 					return;

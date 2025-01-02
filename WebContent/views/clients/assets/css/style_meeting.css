@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #221f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1500px;
+    transition: margin-right 0.5s ease;
+}
+
+.secondary-container {
+    position: fixed;
+    top: 0;
+    right: -25%;
+    width: 25%;
+    height: 100vh;
+    background-color: #f0f0f0;
+    transition: right 0.5s ease;
+    z-index: 10;
+}
+
+.main-content {
+    display: flex;
+    width: 100%;
+    height: 85vh;
+    position: relative;
+    margin: 10px;
+}
+
+#mainScreen {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    transition: width 0.3s ease;
+}
+#mainScreen.expanded {
+    width: 100%;
+}
+#mainVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.hidden {
+    display: none;
+}
+#chatSection,
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    height: 100%;
+    width: 25%;
+    padding: 10px;
+    background-color: #f0f0f0;
+    transition: right 0.5s ease;
+}
+
+
+
+#chatWindow {
+    width: 100%;
+    height: 85%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+#messageInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.input-area {
+    display: flex;
+    width: 100%;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 10px;
+    font-size: 16px;
+}
+button {
+    height: 40px;
+    padding: 0 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+button i {
+    margin-right: 5px;
+}
+#participantsArea {
+    width: 30%;
+}
+/* #participantsButton {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+} */
+
+/* #participantsList {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 10px;
+} */
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Khi danh sách ẩn */
+.hidden {
+    display: none;
+}
+
+/* Thêm một chút style cho danh sách */
+ul#participants {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul#participants li {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+ul#participants li button {
+    margin-left: 10px;
+}
+.icon-muted {
+    background-color: rgb(234, 22, 22);
+}
+.icon-active {
+    background-color: #1a73e8;
+}
+.icon-normal {
+    background-color: rgb(140, 226, 218);
+}
+.icon-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 40px 5px;
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+    overflow: visible;
+}

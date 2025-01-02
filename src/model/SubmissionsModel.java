@@ -1,18 +1,48 @@
 package model;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class SubmissionsModel {
 	private int submissionID;
 	private int assignmentID;
 	private int studentID;
-	private LocalDateTime submissionDate;
+	private Timestamp submissionDate;
+	private int materialID;
+	private String titleFile;
+	private String filePath;
 
-	public SubmissionsModel(int assignmentID, int studentID, LocalDateTime submissionDate) {
+	public SubmissionsModel(){}
+
+	public SubmissionsModel(int assignmentID, int studentID, Timestamp submissionDate) {
 		super();
 		this.assignmentID = assignmentID;
 		this.studentID = studentID;
 		this.submissionDate = submissionDate;
+	}
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public int getMaterialID() {
+		return materialID;
+	}
+
+	public void setMaterialID(int materialID) {
+		this.materialID = materialID;
+	}
+
+	public String getTitleFile() {
+		return titleFile;
+	}
+
+	public void setTitleFile(String titleFile) {
+		this.titleFile = titleFile;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
 	}
 
 	public int getSubmissionID() {
@@ -39,11 +69,11 @@ public class SubmissionsModel {
 		this.studentID = studentID;
 	}
 
-	public LocalDateTime getSubmissionDate() {
+	public Timestamp getSubmissionDate() {
 		return submissionDate;
 	}
 
-	public void setSubmissionDate(LocalDateTime submissionDate) {
+	public void setSubmissionDate(Timestamp submissionDate) {
 		this.submissionDate = submissionDate;
 	}
 }

@@ -27,18 +27,14 @@ public class UserRegisterController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html; charset=UTF-8");
 		String firstName = req.getParameter("firstName");
 		String lastName = req.getParameter("lastName");
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
-		String role = req.getParameter("role");
 
 		int roleID = 3;
-
-		if (role.equals("teacher")) {
-			roleID = 2;
-		} else if (role.equals("student"))
-			roleID = 3;
 
 		// Tạo Salt và băm mật khẩu
 		String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(12));

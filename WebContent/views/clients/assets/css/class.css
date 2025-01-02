@@ -5,6 +5,7 @@ body{
     /* width: 200px;
     height: 200px; */
     margin: 20px;
+    cursor: pointer;
 
 }
 
@@ -13,6 +14,7 @@ body{
     height: 200px;
     display: flex;
     flex-direction: column;
+    margin: 5px;
 }
 
 .class-avatar{
@@ -21,8 +23,8 @@ body{
 }
 
 .class-box-bottom{
-    width: 180px;
-     height: 60px;
+    /*width: 180px;*/
+    height: 60px;
 }
 
 .class_name_box{
@@ -34,62 +36,35 @@ body{
     height: 3em;
 }
 
-.ti-more-alt{
-    padding-left: 10px;
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.subnav {
-    list-style-type: none;
-}
-
-.ti-more-alt small .subnav {
-    display: block;
-}
-
-
-
-
-.subnav {
+.dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0px;
-    background-color: #f4f4f4;
-    min-width: 160px;
+    left: 0;
+    min-width: 120px;
     padding: 0;
-    z-index: 9;
+    background-color: #f4f4f4;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: left;
+    z-index: 5;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
 
-
-.subnav a {
+.dropdown-item {
     color: black;
-    padding: 0 12px;
-    line-height: 38px;
+    padding: 8px 12px;
     text-decoration: none;
-
-}
-
-.subnav li {
     display: block;
 }
 
-.subnav>li:hover>a {
-    display: block;
-    color: black;
+.dropdown-item:hover {
     background-color: gray;
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown .subnav {
-    display: none;
-}
-
-.dropdown.active .subnav {
-    display: block;
+    color: white;
 }
