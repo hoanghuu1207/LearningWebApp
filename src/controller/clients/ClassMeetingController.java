@@ -28,16 +28,16 @@ public class ClassMeetingController extends HttpServlet {
 
         int studentId = user.getUserID();
 
-        ClassroomsModel classroom = classroomsService.selectByIdAndStudentID(classroomID, studentId);
+        ClassroomsModel classroom = classroomsService.selectById(classroomID);
 
         ArrayList<MeetingsModel> upcomingMeetings = meetingService.getUpcomingMeetings(classroomID);
         ArrayList<MeetingsModel> pastMeetings = meetingService.getPastMeetings(classroomID);
         ArrayList<MeetingsModel> canceledMeetings = meetingService.getCanceledMeetings(classroomID);
         ArrayList<MeetingsModel> ongoingMeetings = meetingService.getOngoingMeetings(classroomID);
-for(MeetingsModel m : ongoingMeetings){
-    System.out.println(m.getMeetingID());
-    System.out.println(m.getStartTime());
-}
+        for(MeetingsModel m : ongoingMeetings){
+            System.out.println(m.getMeetingID());
+            System.out.println(m.getStartTime());
+        }
         request.setAttribute("upcomingMeetings", upcomingMeetings);
         request.setAttribute("pastMeetings", pastMeetings);
         request.setAttribute("canceledMeetings", canceledMeetings);

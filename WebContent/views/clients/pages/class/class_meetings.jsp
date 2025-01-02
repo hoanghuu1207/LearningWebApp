@@ -56,21 +56,21 @@
                 <h5 id="class_name">${classroom.title}</h5>
             </div>
             <div class="list-group">
-                <a href="/class/detail?classID=${classroom.classroomID}"
+               <a href="${user.roleID == 2 ? '/teacher' : ''}/class/detail?classID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Trang chủ</a>
-                <a href="/class_assignments?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Bài tập</a>
-                <a href="/materials?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Tài liệu</a>
-                <a href="/class_members?classId=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Danh sách</a>
-                <a href="/meetings?classroomID=${classroom.classroomID}"
-                   class="list-group-item list-group-item-action">Cuộc họp</a>
-                <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
-                <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
+               <a href="${user.roleID == 2 ? '/teacher' : ''}/class_assignments?classroomID=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Bài tập</a>
+               <a href="/materials?classroomID=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Tài liệu</a>
+               <a href="${user.roleID == 2 ? '/teacher' : ''}/class_members?classId=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Danh sách</a>
+               <a href="/meetings?classroomID=${classroom.classroomID}"
+                  class="list-group-item list-group-item-action">Cuộc họp</a>
+               <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
+               <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
                     Tạo cuộc họp
-                    <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
-                </a>
+                  <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
+               </a>
             </div>
         </div>
     </div>
