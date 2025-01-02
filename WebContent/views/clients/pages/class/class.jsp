@@ -30,7 +30,7 @@
 				</c:choose>
 				<div class="fixed-box">
 					<div
-						class="container-md class-box p-3 border rounded shadow-lg text-center" class_id="${classroom.classroomID}">
+                            class="container-md class-box p-3 border rounded shadow-lg text-center" class_id="${classroom.classroomID}">
 
 						<div
 							class="container class-avatar bg-secondary text-white p-3 rounded justify-content-center align-content-center">

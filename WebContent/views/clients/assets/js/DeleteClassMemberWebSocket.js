@@ -1,4 +1,4 @@
-const socketClassMember = new WebSocket("wss://192.168.50.118:8443/classMember/" + classID);
+const socketClassMember = new WebSocket("wss://192.168.1.9:8443/classMember/" + classID);
 
 let studentIdDelete;
 
@@ -23,3 +23,4 @@ socketClassMember.onmessage = function(event){
     const row = document.querySelector(`tr[studentId="${data.studentID}"]`);
     row.remove();
 }
+

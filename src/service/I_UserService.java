@@ -29,4 +29,6 @@ public interface I_UserService {
 	ArrayList<UserModel> getStudentsByClassId(int classId);
 
 	ArrayList<UserModel> getStudentsOutofClassAndExceptTeacher(int classId);
+
+	public String getUserNameById(int userId);
 }

@@ -152,4 +152,8 @@ public class UserService implements I_UserService {
 	public ArrayList<UserModel> getStudentsOutofClassAndExceptTeacher(int classId) {
 		return userDao.getStudentsOutOfClassAndExceptTeacher(classId);
 	}
+	@Override
+	public String getUserNameById(int userId) {
+		return userDao.getUserNameById(userId);
+	}
 }

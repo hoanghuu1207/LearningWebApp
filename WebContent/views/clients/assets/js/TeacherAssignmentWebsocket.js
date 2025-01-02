@@ -1,4 +1,4 @@
-const socketTeacherAssignment = new WebSocket("wss://192.168.50.118:8443/teacher_assignment/" + userID);
+const socketTeacherAssignment = new WebSocket("wss://192.168.1.9:8443/teacher_assignment/" + userID);
 
 function toggleAssignment(assignmentID){
     console.log(assignmentID);
