@@ -47,6 +47,11 @@
 						<input type="password" class="form-control" id="register-password"
 							name="password" placeholder="Enter your password" required>
 					</div>
+					<div class="form-group">
+						<label class="form-label" for="register-password">Confirm Password</label>
+						<input type="password" class="form-control" id="register-password-again"
+							   name="password" placeholder="Confirm your password" required>
+					</div>
 					<button type="submit" class="btn btn-dark d-block w-100 my-4">Sign
 						Up</button>
 				</form>
@@ -59,6 +64,23 @@
 		</div>
 
 	</section>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const form = document.querySelector("form");
+			const password = document.getElementById("register-password");
+			const confirmPassword = document.getElementById("register-password-again");
+
+			form.addEventListener("submit", function (event) {
+				if (password.value !== confirmPassword.value) {
+					event.preventDefault();
+					alert("Passwords do not match. Please try again.");
+					confirmPassword.focus();
+				}
+			});
+		});
+	</script>
+
 </body>
 
 </html>
