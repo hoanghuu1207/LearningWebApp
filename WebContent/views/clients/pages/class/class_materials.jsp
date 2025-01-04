@@ -50,7 +50,10 @@
                     class="list-group-item list-group-item-action">Danh sách</a>
                 <a href="/meetings?classroomID=${classroom.classroomID}"
                    class="list-group-item list-group-item-action">Cuộc họp</a>
-                <!--<a href="?page=schedule" class="list-group-item list-group-item-action">Lịch</a>-->
+               <c:if test="${user.roleID == 2}">
+                   <a href="/teacher/schedules?classroomID=${classroom.classroomID}"
+                       class="list-group-item list-group-item-action">Lên lịch hẹn</a>
+               </c:if>
                 <a href="/prepareMeeting?classroomID=${classroom.classroomID}" target="_parent" class="list-group-item list-group-item-action">
                         Tạo cuộc họp
                     <img src="/views/clients/assets/fonts/myself-icons/ic_video_camera.png" class="icon-btn" alt="">
